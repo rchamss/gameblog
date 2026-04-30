@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Tipos de Jogos</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(#202020, #0d0d0d);
+      color: rgb(255, 255, 255);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    main {
+      width: 100%;
+      max-width: 1000px;
+    }
+
+    h1 {
+      margin-bottom: 45px;
+      font-weight: 400px;
+      font-size: 30px;
+    }
+
+    ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    li a {
+      display: flex;
+      align-items: center;
+      padding: 32px;
+      border-radius: 15px;
+      text-decoration: none;
+      color: rgb(255, 255, 255);
+      font-size: 34px;
+      font-weight: 400;
+
+      background: linear-gradient(135deg, #004974 30%, #011e3d);
+      transition: all 0.2s ease;
+    }
+
+    li a:hover {
+      transform: scale(1.008);
+      filter: brightness(1.02);
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <main>
+    <h1>Tipos de Jogos</h1>
+
+    <ul>
+      <li><a href="#">Ação</a></li>
+      <li><a href="#">Aventura</a></li>
+
+      <li><a href="#">Quebra-Cabeça</a></li>
+      <li><a href="#">FPS</a></li>
+
+      <li><a href="#">Plataforma</a></li>
+      <li><a href="#">Corrida</a></li>
+
+      <li><a href="#">Esportes</a></li>
+      <li><a href="#">???</a></li>
+    </ul>
+  </main>
+
+</body>
+</html>
