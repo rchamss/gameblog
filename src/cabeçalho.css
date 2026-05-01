@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "inter", sans-serif;
+}
+
+header {
+    background-color: #1a5fb4;
+    border-radius: 0 0 15px 15px;
+    margin: 0 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    overflow: hidden;
+
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav {
+    margin-left: 20px;
+}
+
+.header-direito {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo span {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.input-pesquisa {
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 5px 10px;
+    color: white;
+    outline: none;
+}
+
+.btn {
+    background-color: #1a5fb4;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 50px;
+    border-radius: 4px 0 0 4px;
+}
+
+.avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: #888;
+}
+
+.icone {
+    color: white;
+    font-size: 18px;
+}
+
+body {
+    background-color: #2d2d2d;
+}
+
+nav ul li:first-child a {
+    text-decoration: underline;
+}
+
+.pesquisa-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.input-pesquisa {
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 5px 30px 5px 10px;
+    color: white;
+    outline: none;
+}
