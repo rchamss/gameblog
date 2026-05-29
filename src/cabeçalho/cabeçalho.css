@@ -61,10 +61,10 @@ nav a {
     color: white;
     cursor: pointer;
     position: absolute;
-    right: 0;
-    height: 100%;
+    right: 2px;
+    height: calc(100% - 4px);
+    border-radius: 4px;
     width: 50px;
-    border-radius: 4px 0 0 4px;
 }
 
 .avatar {
@@ -72,11 +72,7 @@ nav a {
     height: 35px;
     border-radius: 50%;
     background-color: #888;
-}
-
-.icone {
-    color: white;
-    font-size: 18px;
+    cursor: pointer;
 }
 
 body {
@@ -100,4 +96,16 @@ nav ul li:first-child a {
     padding: 5px 30px 5px 10px;
     color: white;
     outline: none;
+}
+
+nav a:hover {
+    font-size: 15px;
+    transition: font-size 0.2s;
+}
+
+.icone-sol {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    filter: invert(1);
 }
