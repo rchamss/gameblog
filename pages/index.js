@@ -1,8 +1,7 @@
 import React from "react"
-import Cabecalho from '../src/components/cabecalho'
 
 export default function Gameblog(){
     return (
-        <Cabecalho></Cabecalho>
+        <h1>Olá, Mundo! Estou na pagina inicial</h1>
     )
 }

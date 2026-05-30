@@ -1,11 +1,7 @@
 import React from "react"
-import Cabecalho from '../src/components/cabecalho'
 
-export default function Gameblog(){
+export default function Categorias(){
     return (
-        <div>
-            <Cabecalho/>
-            <h1>Você esta na aba de Categorias</h1>
-        </div>
+        <h1>Olá, Mundo! Estou na pagina Categorias</h1>
     )
 }

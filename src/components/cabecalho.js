@@ -1,29 +1,29 @@
+import { useRouter } from 'next/router'
 import cabecalhoStyle from '../style/cabecalho.module.css'
 import Link from 'next/link'
+const navBar = [
+    {pagina: 'Recomendados', caminho: '/recomendado'},
+    {pagina: 'Categorias', caminho: '/categorias'},
+    {pagina: 'Distruir', caminho: '/distribuir'},
+]
 
-export default function Cabecalho(){    
+export default function Cabecalho(){
+    const router = useRouter()
+
     return (
     <header className={cabecalhoStyle.header}>
         <span className={cabecalhoStyle.gameblog}>gameblog</span>
         <nav className={cabecalhoStyle.navLinks}>
-            <div className={cabecalhoStyle.divLink}>
-                <img src='/assets/flecha_baixo.svg' />
-                <Link className={cabecalhoStyle.Link} href='/recomendado'>
-                Recomendado
-                </Link>
-            </div>
-            <div className={cabecalhoStyle.divLink}>
-                <img src='/assets/flecha_baixo.svg'/>
-                <Link className={cabecalhoStyle.Link} href='/categorias'>
-                Categorias
-                </Link>
-            </div>
-            <div className={cabecalhoStyle.divLink}>
-                <img src='/assets/flecha_baixo.svg'/>
-                <Link className={cabecalhoStyle.Link} href='/distribuir'>
-                Distribuir
-                </Link>
-            </div>
+            {navBar.map(pg => {
+                const isActive = router.pathname === pg.caminho
+                console.log(isActive)
+                return(
+                <div key={pg.caminho} className={`${cabecalhoStyle.divLink} ${isActive ? cabecalhoStyle.divLinkActive : cabecalhoStyle.divLinkUnactive}`}>
+                    <img src='/assets/flecha_baixo.svg'/>
+                    <Link className={cabecalhoStyle.Link} href={pg.caminho}>{pg.pagina}</Link>
+                </div>
+                )
+            })}
         </nav>
         
         <div className={cabecalhoStyle.sidePannel}>

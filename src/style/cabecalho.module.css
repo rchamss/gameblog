@@ -43,8 +43,19 @@
 .divLink {
     display: flex;
     align-items: center;
-
+    opacity: 100%;
+    border-bottom: transparent;
     margin: 0px 10px;
+
+    transition: opacity 0.3s ease;
+    transition: border-bottom 0.3s ease;
+}
+
+.divLinkActive {
+    border-bottom: white solid 2px;
+}
+.divLinkUnactive {
+    opacity: 50%;
 }
 .Link {
     color: rgb(255, 255, 255)
