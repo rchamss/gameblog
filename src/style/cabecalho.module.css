@@ -1,0 +1,100 @@
+.header{
+    display: flex;
+    position: relative;
+    align-items: center;
+
+    margin-top: -150px;
+    padding-top: 140px;
+
+    width: 100%;
+    height: 15rem;
+
+    background-color: #01569A;
+
+    border: 2px solid #068FFF;
+    border-radius: 35px;
+
+}
+.sidePannel{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    color: aliceblue;
+
+    right: 0rem;
+}
+.gameblog{
+    color: var(--cor-primaria-darkmode);
+    font-size: 1.7rem;
+    font-weight: 500;
+    font-family: var(--fonte-principal);
+
+    margin-left: 50px;
+    margin-right: 70px;
+}
+.navLinks{
+    display: flex;
+    align-items: center;
+}
+.divLink img{
+    width: 24px;
+    height: 24px;
+}
+.divLink {
+    display: flex;
+    align-items: center;
+
+    margin: 0px 10px;
+}
+.Link {
+    color: rgb(255, 255, 255)
+}
+
+
+.busca {
+    display: flex;
+    align-items: center;
+    background-color: #ffff;
+    border-radius: 10px;
+    margin-right: 150px;
+    width: 350px;
+    height: 50px;
+}
+.busca input{
+    background-color: #ffff;
+    width: inherit;
+    border: transparent ;
+    margin-left: 10px;
+    font-size: large;
+}
+.busca input:focus{
+    outline: none;
+}
+.busca button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 50px;
+    background-color: #01569A;
+    border: 5px solid white;
+    border-radius: 10px;
+}
+.pesquisarIcon{
+    height: 30px;
+}
+
+.alterMode{
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: transparent;
+    height: 50px;
+    margin: 0px 10px;
+    padding: 0px;
+}
+
+.alterMode img{
+    width: 30px;
+    height: 30px;
+}
