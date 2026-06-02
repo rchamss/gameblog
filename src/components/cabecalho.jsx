@@ -5,6 +5,7 @@ const navBar = [
     {pagina: 'Recomendados', caminho: '/recomendado'},
     {pagina: 'Categorias', caminho: '/categorias'},
     {pagina: 'Distruir', caminho: '/distribuir'},
+    {pagina: 'Login', caminho: '/login'},
 ]
 
 export default function Cabecalho(){
@@ -16,7 +17,6 @@ export default function Cabecalho(){
         <nav className={cabecalhoStyle.navLinks}>
             {navBar.map(pg => {
                 const isActive = router.pathname === pg.caminho
-                console.log(isActive)
                 return(
                 <div key={pg.caminho} className={`${cabecalhoStyle.divLink} ${isActive ? cabecalhoStyle.divLinkActive : cabecalhoStyle.divLinkUnactive}`}>
                     <img src='/assets/flecha_baixo.svg'/>

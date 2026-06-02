@@ -1,7 +1,13 @@
 import React from "react"
+import LoginBG from "../src/components/login/login-bg"
+import LoginAuthForm from "../src/components/login/loginAuth"
 
 export default function Login(){
     return (
-        <h1>Olá, Mundo! Estou na pagina de Login</h1>
+        <LoginBG>
+            <LoginAuthForm>
+
+            </LoginAuthForm>
+        </LoginBG>
     )
 }

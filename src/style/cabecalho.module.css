@@ -13,7 +13,6 @@
 
     border: 2px solid #068FFF;
     border-radius: 35px;
-
 }
 .sidePannel{
     display: flex;
@@ -25,8 +24,8 @@
 }
 .gameblog{
     color: var(--cor-primaria-darkmode);
-    font-size: 1.7rem;
-    font-weight: 500;
+    font-size: 2rem;
+    font-weight: 700;
     font-family: var(--fonte-principal);
 
     margin-left: 50px;
@@ -39,6 +38,9 @@
 .divLink img{
     width: 24px;
     height: 24px;
+    transform: rotate(-90deg);
+
+    transition: transform 0.3s ease;
 }
 .divLink {
     display: flex;
@@ -53,6 +55,9 @@
 
 .divLinkActive {
     border-bottom: white solid 2px;
+}
+.divLinkActive img{
+    transform: rotate(0deg);
 }
 .divLinkUnactive {
     opacity: 50%;
@@ -70,6 +75,10 @@
     margin-right: 150px;
     width: 350px;
     height: 50px;
+
+    box-shadow: 1px 3px 5px 1px rgba(0,0,0,0.29);
+    -webkit-box-shadow: 1px 3px 5px 1px rgba(0,0,0,0.29);
+    -moz-box-shadow: 1px 3px 5px 1px rgba(0,0,0,0.29);
 }
 .busca input{
     background-color: #ffff;
