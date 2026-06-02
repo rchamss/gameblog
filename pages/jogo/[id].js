@@ -1,6 +1,6 @@
 import { useRouter } from "next/router"
 
-export default function JogoTeste() {
+/*export default function JogoTeste() {
     const router = useRouter(); 
     const jogo = jogos.find((j) => j.id === router.query.id)
 
@@ -10,4 +10,4 @@ export default function JogoTeste() {
 
     return <h1>Você está na página do jogo {jogo.id}!</h1>
     
-}
+}*/
