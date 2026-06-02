@@ -11,3 +11,9 @@ import { useRouter } from "next/router"
     return <h1>Você está na página do jogo {jogo.id}!</h1>
     
 }*/
+
+export default function teste(){
+    return (
+        <h1>Olá! Esta pagina ainda está sendo construída!</h1>
+    )
+}
