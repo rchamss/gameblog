@@ -1,11 +1,11 @@
 import '../src/style/global.css'
-import { Google_Sans } from 'next/font/google'
+import { Google_Sans_Flex } from 'next/font/google'
 import { useRouter } from 'next/router'
 import Cabecalho from '../src/components/cabecalho'
 
 const PG_SEM_CABECALHO = ['/login', '/404']
 
-const googleSans = Google_Sans({ 
+const googleSans = Google_Sans_Flex({ 
   variable: '--fonte-principal'
 })
 

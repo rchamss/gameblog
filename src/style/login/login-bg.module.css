@@ -10,13 +10,14 @@
     position: absolute;
 
     justify-self: center;
-    top: -25px;
+    top: -1.5rem;
 
-    width: 400px;
-    height: 800px;
+    width: 25rem;
+    height: 45rem;
+    padding: 0px 20px;
 
     background-color: var(--cor-principal);
-    border: 3px solid var(--cor-complementar);
-    border-radius: 25px;
+    border: 0.18rem solid var(--cor-complementar);
+    border-radius: 1.5rem;
 
 }
