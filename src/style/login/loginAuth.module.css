@@ -24,7 +24,7 @@
     font-weight: 500;
     cursor:pointer;
 }
-.RegisterSync{
+.registrar{
     font-size:smaller;
 }
 .login{
@@ -33,76 +33,9 @@
     flex-direction: column;
     gap: 20px;
 }
-.user, .senha{
-    display: block;
-    border-radius: 20px;
-    border: 2px solid #3c6691;
-    outline: transparent;
 
-    padding: 0px 15px;
 
-    width: 21.8rem;
-    height: 3.4rem;
-
-    font-size: large;
-    font-weight: bold;
-
-    color:#0D3D6B;
-
-    box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31);
-    -webkit-box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31);
-    -moz-box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31);
-}
-
-.userLabel {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    color: #0D3D6B;
-
-    opacity: 50%;
-
-    font-weight: bold;
-
-    top: 352px;
-    left: 40px;
-
-    cursor:text;
-    pointer-events: none;
-
-    transition: opacity 0.2s ease;
-}
-.passwordLabel {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    color: #0D3D6B;
-
-    opacity: 50%;
-
-    font-weight: bold;
-
-    top: 428px;
-    left: 40px;
-
-    cursor:text;
-    pointer-events: none;
-
-    transition: opacity 0.2s ease;
-}
-
-.user:focus + .userLabel{
-    opacity: 0%;
-}
-.senha:focus + .passwordLabel{
-    opacity: 0%;
-}
-
-.unactive{
-    opacity: 0%;
-}
-
-.logon{
+.loginButton{
     display: block;
     border-radius: 20px;
     border: 2px solid var(--cor-secundaria-complementar);
@@ -118,7 +51,4 @@
     box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31);
     -webkit-box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31);
     -moz-box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31);
-}
-.none{
-
 }

@@ -1,0 +1,55 @@
+.div{
+    position: relative;
+}
+
+.campo{
+    display: block;
+    position: relative;
+    border-radius: 20px;
+    border: 2px solid #3c6691;
+    outline: transparent;
+
+    padding: 0px 15px;
+
+    width: 21.8rem;
+    height: 3.4rem;
+
+    font-size: large;
+    font-weight: bold;
+
+    color:#0D3D6B;
+
+    box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31);
+    -webkit-box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31);
+    -moz-box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31);
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    color: #0D3D6B;
+
+    opacity: 50%;
+
+    font-weight: bold;
+
+    top: 30%;
+    left: 5%;
+
+    cursor:text;
+    pointer-events: none;
+
+    transition: opacity 0.2s ease;
+}
+
+.campo:placeholder-shown + .label{
+    opacity: 50%;
+}
+.campo:not(:placeholder-shown) + .label{
+    opacity: 0%;
+}
+
+.campo:focus + .label{
+    opacity: 0%;
+}
