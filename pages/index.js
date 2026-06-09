@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
+import { useRequireLogin } from "../hooks/useUser"
+
 
 export default function Gameblog(){
-
     const [jogos, setJogos] = useState([])
 
-    useEffect(() => {
+    useEffect(() => { 
         async function getAPI() {
             const resposta = await fetch('https://gameblog-api.onrender.com/api/v1/public/jogos')
             const api = await resposta.json()
@@ -15,7 +16,7 @@ export default function Gameblog(){
     }, [])
     
     return (
-        <div>
+         <div>
             <h1>Olá, Mundo! Estou na pagina inicial!</h1>
             {jogos.map((i) => (
                 <p>{i.nome}</p>

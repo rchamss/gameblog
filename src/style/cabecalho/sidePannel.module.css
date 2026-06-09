@@ -1,0 +1,57 @@
+.sidePannel{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    color: aliceblue;
+
+    right: 0rem;
+}
+.alterMode{
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: transparent;
+    height: 50px;
+    margin: 0px 10px;
+    padding: 0px;
+}
+.alterMode img{
+    width: 30px;
+    height: 30px;
+}
+.pesquisarIcon{
+    height: 30px;
+}
+.busca {
+    display: flex;
+    align-items: center;
+    background-color: #ffff;
+    border-radius: 10px;
+    margin-right: 150px;
+    width: 350px;
+    height: 50px;
+
+    box-shadow: 1px 3px 5px 1px rgba(0,0,0,0.29);
+    -webkit-box-shadow: 1px 3px 5px 1px rgba(0,0,0,0.29);
+    -moz-box-shadow: 1px 3px 5px 1px rgba(0,0,0,0.29);
+}
+.busca input{
+    background-color: #ffff;
+    width: inherit;
+    border: transparent ;
+    margin-left: 10px;
+    font-size: large;
+}
+.busca input:focus{
+    outline: none;
+}
+.busca button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 55px;
+    height: 50px;
+    background-color: #01569A;
+    border: 5px solid white;
+    border-radius: 10px;
+}

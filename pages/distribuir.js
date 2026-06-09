@@ -1,6 +1,13 @@
-import React from "react"
+import React, { useEffect } from "react"
+import { TestContext } from "../src/context/TestContext"
+import { useContext } from "react"
 
 export default function Distribuir(){
+    const testContext = useContext(TestContext)
+        useEffect(() => {
+            testContext.setTest('agora foi porra')
+        }, [])
+        console.log(testContext.test)
     return (
         <h1>Olá, Mundo! Estou na pagina de Distribuir</h1>
     )

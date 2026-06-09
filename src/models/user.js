@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useRouter } from "next/router";
+
 export default async function FazerLogin(event, valueEmail, valueSenha){
     event.preventDefault();
 
@@ -11,6 +14,7 @@ export default async function FazerLogin(event, valueEmail, valueSenha){
     })
 
     const dados = await resposta.json()
+    const token = await localStorage.setItem('token', dados.token)
     console.log(dados)
 }
 
