@@ -10,7 +10,7 @@ export default function Login(){
 
     function isNewCheck(){ // Validação se o usuário esta querendo logar ou registrar
         if (isNew === false){
-            return( // Sessão de Login do usuário
+            return( // Chamada do componente de Login do usuário
                 <main className={style.main}>
                     <span>Faça Login para continuar</span>
                     <LoginAuthForm/>
@@ -18,7 +18,7 @@ export default function Login(){
                 </main>
             )
         } else {
-            return( // Sessão de Registro do usuário
+            return( // Chamada do Componente de Registro do usuário
                 <main className={style.main}>
                     <span>Registre-se! Temos bolo :)</span>
                     <LoginRegisterForm/>

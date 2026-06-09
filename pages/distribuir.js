@@ -1,6 +1,4 @@
 import React, { useEffect } from "react"
-import { TestContext } from "../src/context/TestContext"
-import { useContext } from "react"
 
 export default function Distribuir(){
     const testContext = useContext(TestContext)

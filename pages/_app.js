@@ -2,7 +2,7 @@ import '../src/style/global.css'
 import { Google_Sans_Flex } from 'next/font/google'
 import { useRouter } from 'next/router'
 import Cabecalho from '../src/components/header/cabecalho'
-import { useRequireLogin } from '../hooks/useUser'
+import { useRequireLogin } from '../hooks/useRequireLogin'
 
 const PG_SEM_CABECALHO = ['/login', '/404']
 

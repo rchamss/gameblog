@@ -1,9 +1,8 @@
 import React, { useContext } from "react"
-import { TestContext } from "../src/context/TestContext"
+import { useRequireLogin } from "../hooks/useRequireLogin"
 
 export default function Recomendado(){
-    const test = useContext(TestContext)
-    console.log(test.test)
+    useRequireLogin() // Hook de Proteção de Pagina
     return (
         <h1>Olá, Mundo! Estou na pagina de Recomendado</h1>
     )

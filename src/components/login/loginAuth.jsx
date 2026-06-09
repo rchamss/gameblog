@@ -1,16 +1,9 @@
 // Inputs base
 import { useEffect, useState } from 'react'
-
-// Import de Componentes
 import Campo from '../login/components/input'
 import Logo from '../logo'
-
-// Import de CSS
 import style from '../../style/login/loginAuth.module.css'
-
-// Import de Models
 import FazerLogin, { RegistrarUsuario } from '../../models/user'
-
 
 export default function LoginAuthForm(){
     const [valueEmail, setEmail] = useState()
