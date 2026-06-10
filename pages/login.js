@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useState } from "react"
-import LoginBG from "../src/components/login/login-bg"
 import style from '../src/style/login/login.module.css'
 import Logo from "../src/components/logo"
 import LoginAuthForm from "../src/components/login/loginAuth"
 import LoginRegisterForm from "../src/components/login/loginRegister"
+import LoginCardBG from "../src/components/login/login-bg";
 
 export default function Login(){
     const [isNew, setNew] = useState(false)
@@ -28,12 +28,14 @@ export default function Login(){
         }
     }
     return( // Retorno padrão do componente
-        <LoginBG>
-            <div className={style.div}>
-                <Logo/>
-                {isNewCheck()}
-            </div>
-        </LoginBG>
+        <div className={style.background}>
+            <LoginCardBG>
+                <div className={style.card}>
+                    <Logo/>
+                    {isNewCheck()}
+                </div>
+            </LoginCardBG>
+        </div>
     )
 }
 //}
