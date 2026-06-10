@@ -1,21 +1,37 @@
 // Inputs base
-import { useEffect, useState } from 'react'
-import Campo from '../login/components/input'
-import Logo from '../logo'
+import { useState } from 'react'
+import {useRouter} from "next/router";
 import style from '../../style/login/loginAuth.module.css'
-import FazerLogin, { RegistrarUsuario } from '../../models/user'
+import FazerLogin from '../../models/user'
+import Campo from '../login/components/input'
+import SubmitButton from "../submitButton";
 
 export default function LoginAuthForm(){
     const [valueEmail, setEmail] = useState()
     const [valueSenha, setSenha] = useState()
-    const [valueNome, setNome] = useState()
-    const [valueDtNasc, setDt] = useState()
-        
+    const [valueCarregando, setCarregando] = useState(false)
+    const router = useRouter()
+
+    async function handleLogin(event){
+        event.preventDefault()
+        try{
+            setCarregando(true)
+            await FazerLogin(valueEmail, valueSenha)
+            await router.push('/recomendado')
+        }
+        catch (error){
+            console.log(error.message)
+            setCarregando(false)
+        }
+        finally {
+            setCarregando(false)
+        }
+    }
     return(
-    <form className={style.login}>
+    <form className={style.login} onSubmit={handleLogin}>
         <Campo tipo='email' label='Usuário' img='/assets/user.svg' obrigatorio={true} aoDigitar={setEmail}/>
         <Campo tipo='password' label='Senha' img='/assets/key.svg' obrigatorio={true} aoDigitar={setSenha}/>
-        <button onClick={(event) => FazerLogin(event, valueEmail, valueSenha)} className={style.loginButton}>Logar</button>
+        <SubmitButton tipo='submit' label='Fazer Login' action={null} carregando={valueCarregando}/>
     </form>
     )
 }

@@ -1,0 +1,40 @@
+.submitButton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 20px;
+    border: 2px solid var(--cor-secundaria-complementar);
+    outline: transparent;
+    background-color: var(--cor-secundaria);
+
+    font-size: large;
+    font-weight: 600;
+    color: var(--cor-primaria-darkmode);
+
+    width: 21.8rem;
+    height: 3.4rem;
+
+    top: 0px;
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+    transition: box-shado 0.1s ease;
+    transition: top 0.1s ease;
+    box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31);
+}
+
+.submitButton:active{
+    background-color: var(--cor-secundaria-selecionado);
+    top: 5px;
+    box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31) inset;
+}
+
+.submitButton:focus-visible {
+    outline: 2px solid var(--cor-primaria-darkmode);
+    outline-offset: 3px;
+}
+
+.carregamento{
+    width: 6rem;
+    height: 6rem;
+}

@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react"
-import { useRequireLogin } from "../hooks/useRequireLogin"
+import { useRequireLogin } from "../src/hooks/useRequireLogin"
 
 
 export default function Gameblog(){
