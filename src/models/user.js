@@ -1,5 +1,3 @@
-import {error} from "next/dist/build/output/log";
-
 export default async function FazerLogin(valueEmail, valueSenha){
     const resposta = await fetch('https://gameblog-api.onrender.com/api/v1/auth/login', {
         method: 'POST',
@@ -13,8 +11,8 @@ export default async function FazerLogin(valueEmail, valueSenha){
     const dados = await resposta.json()
     if (resposta.ok){
         localStorage.setItem('token', dados.token)
-        return dados.token
-    } else { throw new error(dados.message) }
+        return dados
+    } else { throw new Error(dados.message)}
 
 }
 
@@ -30,8 +28,8 @@ export async function RegistrarUsuario(valueEmail, valueSenha, valueNome, valueD
         })
     })
     const dados = await resposta.json()
-    if (resposta.ok){
+    if (resposta.ok){ 
         localStorage.setItem('token', dados.token)
-        return dados.token
-    } else { throw new error(dados.message) }
+        return dados
+    } else { throw new Error(dados.message) }
 }

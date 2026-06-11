@@ -1,6 +1,6 @@
 import style from '../../../style/login/componentsCSS/input.module.css'
 
-export default function Campo({tipo, label, obrigatorio, img, aoDigitar}){ return (
+export default function Campo({tipo, label, obrigatorio, img, aoDigitar, autoComplete}){ return (
     <div className={style.div}>
         <input 
             id={label} 
@@ -8,9 +8,10 @@ export default function Campo({tipo, label, obrigatorio, img, aoDigitar}){ retur
             required={obrigatorio} 
             className={style.campo} 
             placeholder=''
+            autoComplete={autoComplete}
             onChange={(valor) => aoDigitar(valor.target.value)}
         />
-            <label hmtlFor={label} className={style.label}>
+            <label htmlFor={label} className={style.label}>
                 <img src={img}/>
                     {label}
             </label>

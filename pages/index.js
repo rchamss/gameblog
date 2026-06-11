@@ -4,7 +4,6 @@ import { useRequireLogin } from "../src/hooks/useRequireLogin"
 
 export default function Gameblog(){
     const [jogos, setJogos] = useState([])
-
     useEffect(() => { 
         async function getAPI() {
             const resposta = await fetch('https://gameblog-api.onrender.com/api/v1/public/jogos')

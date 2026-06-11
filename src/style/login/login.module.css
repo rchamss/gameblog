@@ -33,5 +33,5 @@
     align-items: center;
 
     height: 100vh;
-    background-image: src('../../../public/loginbg.png');
+    background-image:url('../../../public//loginbg.png');
 }

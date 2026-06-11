@@ -27,8 +27,8 @@ export default function Login(){
             )
         }
     }
-    return( // Retorno padrão do componente
-        <div className={style.background}>
+    return( // Renderiza o plano de fundo
+        <div className={style.background}> 
             <LoginCardBG>
                 <div className={style.card}>
                     <Logo/>
