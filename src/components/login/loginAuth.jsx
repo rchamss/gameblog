@@ -1,7 +1,7 @@
 // Inputs base
 import { useState } from 'react'
 import {useRouter} from "next/router";
-import style from '../../style/login/loginAuth.module.css'
+import style from '../../style/components/login/loginAuth.module.css'
 import FazerLogin from '../../models/user'
 import Campo from '../login/components/input'
 import SubmitButton from "../submitButton";

@@ -1,4 +1,4 @@
-const jogosData = [
+export const jogosData = [
     {
         nome: "The Witcher 3: Wild Hunt",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/coaarl.webp",

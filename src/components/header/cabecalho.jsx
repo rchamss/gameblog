@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import style from '../../style/cabecalho/cabecalho.module.css'
+import style from '../../style/components/header/cabecalho.module.css'
 import Link from 'next/link'
 import SidePannel from './sidePannel'
 const navBar = [

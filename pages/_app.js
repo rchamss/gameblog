@@ -20,7 +20,7 @@ export default function App({ Component, pageProps}) {
   
     return (
       <MensagemContext value={{chamado, setChamado}}>
-        <div className={`${googleSans.variable}`}>
+        <div className={googleSans.variable}>
           {naoMostrarCabecalho && <Cabecalho/>}
           {chamado ? <SystemMensagem tipo={chamado.tipo} mensagem={chamado.texto}/> : null}
           <Component {...pageProps} />
