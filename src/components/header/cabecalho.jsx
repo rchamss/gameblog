@@ -6,6 +6,7 @@ const navBar = [
     {pagina: 'Recomendados', caminho: '/recomendado'},
     {pagina: 'Categorias', caminho: '/categorias'},
     {pagina: 'Distruir', caminho: '/distribuir'},
+    {pagina: 'index', caminho: '/'},
 ]
 
 export default function Cabecalho(){
