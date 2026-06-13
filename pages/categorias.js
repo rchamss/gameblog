@@ -1,8 +1,9 @@
 import React, { useState } from "react"
-import { useRequestCategorias } from "../src/hooks/useRequestAPI"
+import { useRequestCategorias, useRequestJogos_private } from "../src/hooks/useRequestAPI"
 
 export default function Categorias(){
     const categorias = useRequestCategorias()
+    useRequestJogos_private()
 
     return (
         <div>

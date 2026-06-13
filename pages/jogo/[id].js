@@ -1,31 +1,37 @@
 import style from "../../src/style/pages/jogo/[id].module.css"
 import Carregamento from "../../src/components/loading";
-import { useRequestJogos } from "../../src/hooks/useRequestAPI";
+import { useRequestJogos, useRequestJogos_private } from "../../src/hooks/useRequestAPI";
 import { useRouter } from "next/router"
 import { jogosData } from "../../src/data/complementaryData";
-import { useEffect } from "react";
+import { createContext, useEffect } from "react";
 import useAwaitLoading from "../../src/hooks/useAwaitLoading";
+import ApresentacaoJogo from "../../src/components/jogo/ApresentacaoJogo";
+
+export const JogoContext = createContext({})
 
 export default function Jogo() {
-    const jogosLista = useRequestJogos() 
-    const dadosProntos = useAwaitLoading(jogosLista)
     const router = useRouter()
     const paginaPronta = router.isReady
+
+    const jogosLista = useRequestJogos_private() 
+    const dadosProntos = useAwaitLoading(jogosLista)
+
     const jogo = jogosLista.find((item) => item.nome.toLowerCase() === router.query.id.toLowerCase())
     const jogoComplementaryData = jogosData.find((item) => item.nome.toLowerCase() === jogo?.nome.toLowerCase())
+
+    console.log(jogo)
     
     if (paginaPronta && dadosProntos) {
         if (jogo) {
             return (
-                <div>
-                    <h1>Você está na página do jogo {jogo.nome}!</h1>
-                    <img src={jogoComplementaryData.capa}/>
-                </div>
+                <JogoContext value={{jogo, jogoComplementaryData}}>
+                    <div className={style.container_pg}>
+                        <ApresentacaoJogo/>
+                    </div>
+                </JogoContext>
             )
         }
-        else{
-             return <h1>ERRRO 404!</h1> 
-        }
+        else{ return <h1>ERRRO 404! Jogo Não</h1> }
     }
     else{
         return (

@@ -6,3 +6,9 @@
     height: 100vh;
     background-color: var(--fundo-darkmode);
 }
+
+.container_pg{
+    display: flex;
+   justify-content: center;
+    
+}

@@ -1,0 +1,32 @@
+.container_gametrailer{
+    overflow: hidden;
+    border-radius: 20px;
+    width: 1000px;
+    height: 562px;
+}
+
+.gametrailer{
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: transparent;
+}
+
+/*
+Pessoal, Rodrigo aqui.
+Atenção: O trailer do jogo precisa ter as proporções de altura e largura corretas (16:9), caso contrário vai ficar com barras pretas em algumas bordas.
+Portanto, utilizem apenas alguma dessas proporções para ajustar a responsividade:
+
+560 x 315
+640 x 360
+800 x 450
+1000 x 562  
+1280 x 720
+
+Caso precisem de algum outro valor de proporção, basta fazer essa conta (definindo largura primeiro, eu acredito)
+
+altura = largura ÷ 16 × 9
+
+Jogem duro!
+ -- Nenhum Desafio Dificil Demais
+*/
