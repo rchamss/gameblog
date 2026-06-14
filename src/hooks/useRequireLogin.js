@@ -12,7 +12,7 @@ export function useRequireLogin() {
             setLogado(true)
         }
         else{
-            router.push('/login')
+            
         }
     } , [])
     return token

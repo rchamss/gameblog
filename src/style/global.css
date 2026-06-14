@@ -1,7 +1,8 @@
 :root {
   --fonte-principal: 'Google Sans';
-  --cor-primaria-darkmode: #ffffff ;
-  --fundo-darkmode: #0D0D0D;
+  --cor-primaria: #ffffff;
+  --fundo: #0D0D0D;
+  --fundo-gradiente: #2D2D2D;
   --cor-principal: #01569A;
   --cor-complementar: #008CFF;
   --cor-secundaria: #008704;
@@ -23,11 +24,12 @@
   font-family: var(--fonte-principal);
 }
 
-body{
-    background-image: linear-gradient(#0D0D0D, #2D2D2D);
-    background-repeat: no-repeat;
-    color: var(--cor-primaria-darkmode);
-    background-color: var(--fundo-darkmode);
+body {
+  background-image: linear-gradient(var(--fundo), var(--fundo-gradiente));
+  background-repeat: no-repeat;
+  color: var(--cor-primaria);
+  background-color: var(--fundo);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 a {

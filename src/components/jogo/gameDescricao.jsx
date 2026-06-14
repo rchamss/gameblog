@@ -6,7 +6,7 @@ export default function GameDescricao(){
     const {jogo, jogoComplementaryData} = useContext(JogoContext)
     return (
         <div className={style.container}>
-            <p>{jogoComplementaryData.descricao}</p>
+            <p>{jogoComplementaryData.descrição}</p>
             <img src={jogoComplementaryData.capa}/>
         </div>
     )

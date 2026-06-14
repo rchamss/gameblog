@@ -19,7 +19,8 @@ export default function LoginAuthForm(){
         try{
             setCarregando(true)
             const dados = await FazerLogin(valueEmail, valueSenha)
-            mostrarMensagem(dados.status, dados.mensagem)
+            console.log(dados)
+            mostrarMensagem(200, dados.message)
             await router.push('/recomendado')
         }
         catch (error){
