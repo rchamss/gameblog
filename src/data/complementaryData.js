@@ -1,4 +1,4 @@
-const jogosData = [
+export const jogosData = [
     {
         nome: "Place Holder",
         capa: "https://placehold.net/800x600.png",

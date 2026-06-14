@@ -1,19 +1,44 @@
+import style from "../../src/style/pages/jogo/[id].module.css"
+import Carregamento from "../../src/components/loading";
+import { useRequestJogos, useRequestJogos_private } from "../../src/hooks/useRequestAPI";
 import { useRouter } from "next/router"
+import { jogosData } from "../../src/data/complementaryData";
+import { createContext, useEffect } from "react";
+import useAwaitLoading from "../../src/hooks/useAwaitLoading";
+import ApresentacaoJogo from "../../src/components/jogo/ApresentacaoJogo";
 
-/*export default function JogoTeste() {
-    const router = useRouter(); 
-    const jogo = jogos.find((j) => j.id === router.query.id)
+export const JogoContext = createContext({})
 
-    if (!router.isReady) { return <h1>Carregando, painhoo...</h1> }
+export default function Jogo() {
+    const router = useRouter()
+    const paginaPronta = router.isReady
 
-    if (jogo === undefined) { return <h1>ERRRO 404!</h1> }
+    const jogosLista = useRequestJogos_private() 
+    const dadosProntos = useAwaitLoading(jogosLista)
 
-    return <h1>Você está na página do jogo {jogo.id}!</h1>
+    const jogo = jogosLista.find((item) => item.nome.toLowerCase() === router.query.id.toLowerCase())
+    const jogoComplementaryData = jogosData.find((item) => item.nome.toLowerCase() === jogo?.nome.toLowerCase())
+
+    console.log(jogo)
     
-}*/
-
-export default function teste(){
-    return (
-        <h1>Olá! Esta pagina ainda está sendo construída!</h1>
-    )
+    if (paginaPronta && dadosProntos) {
+        if (jogo) {
+            return (
+                <JogoContext value={{jogo, jogoComplementaryData}}>
+                    <div className={style.container_pg}>
+                        <ApresentacaoJogo/>
+                    </div>
+                </JogoContext>
+            )
+        }
+        else{ return <h1>ERRRO 404! Jogo Não</h1> }
+    }
+    else{
+        return (
+            <div className={style.container_carregamento}>
+                <Carregamento /> 
+            </div>
+        )
+    }
+    
 }

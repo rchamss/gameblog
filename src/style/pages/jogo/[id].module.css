@@ -1,0 +1,14 @@
+.container_carregamento{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+    background-color: var(--fundo-darkmode);
+}
+
+.container_pg{
+    display: flex;
+   justify-content: center;
+    
+}

@@ -1,4 +1,4 @@
-import style from '../../../style/login/componentsCSS/input.module.css'
+import style from '../../../style/components/login/componentsCSS/input.module.css'
 
 export default function Campo({tipo, label, obrigatorio, img, aoDigitar, autoComplete}){ return (
     <div className={style.div}>

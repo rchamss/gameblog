@@ -1,7 +1,7 @@
 import {useRouter} from "next/router";
 import { useState } from 'react'
 import { RegistrarUsuario } from '../../models/user'
-import style from '../../style/login/loginRegister.module.css'
+import style from '../../style/components/login/loginRegister.module.css'
 import Campo from './components/input'
 import SubmitButton from "../submitButton";
 import useSystemMensage from "../../hooks/useSystemMensage";

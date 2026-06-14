@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react"
-import style from '../src/style/login/login.module.css'
+import style from '../src/style/pages/login.module.css'
 import Logo from "../src/components/logo"
 import LoginAuthForm from "../src/components/login/loginAuth"
 import LoginRegisterForm from "../src/components/login/loginRegister"

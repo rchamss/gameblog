@@ -4,8 +4,16 @@ import { useRouter } from 'next/router'
 export function useRequireLogin() {
     const router = useRouter()
     const [logado, setLogado] = useState(false)
+    const [token, setToken] = useState(null)
      useEffect(() =>{
-        const token = localStorage.getItem('token')
-        token ? setLogado(true) : router.push('/login')
+        const temToken = localStorage.getItem('token')
+        if (temToken){
+            setToken(temToken)
+            setLogado(true)
+        }
+        else{
+            router.push('/login')
+        }
     } , [])
+    return token
 }

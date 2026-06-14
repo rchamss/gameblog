@@ -1,4 +1,4 @@
-import style from '../../style/cabecalho/sidePannel.module.css'
+import style from '../../style/components/header/sidePannel.module.css'
 
 export default function SidePannel(){
     return(

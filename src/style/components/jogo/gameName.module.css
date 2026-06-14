@@ -1,0 +1,17 @@
+.container_module{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+
+    margin-top: 10px;
+
+    width: 1000px; /* <-- Precisa ser a exata mesma largura do trailer */
+}
+
+.jogoNome h1{
+    text-align: center;
+}
+.jogoNome p{
+    margin-top: 0px;
+    text-align: center;
+}
