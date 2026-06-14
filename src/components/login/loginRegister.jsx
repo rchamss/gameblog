@@ -4,7 +4,6 @@ import { RegistrarUsuario } from '../../models/user'
 import style from '../../style/components/login/loginRegister.module.css'
 import Campo from './components/input'
 import SubmitButton from "../submitButton";
-import useSystemMensage from "../../hooks/useSystemMensage";
 
 export default function LoginRegisterForm(){
     const [valueEmail, setEmail] = useState()
@@ -13,18 +12,14 @@ export default function LoginRegisterForm(){
     const [valueDtNasc, setDt] = useState()
     const [valueCarregando, setCarregando] = useState(false)
     const router = useRouter()
-    const {callSystemMensagem} = useSystemMensage()
 
     async function handleRegister(event){
         event.preventDefault()
         try{
             setCarregando(true)
             const dados = await RegistrarUsuario(valueEmail, valueSenha, valueNome, valueDtNasc)
-            callSystemMensagem('valid', dados.message)
-            await router.push('/recomendado')
         }
         catch (error){
-            callSystemMensagem('valid', error.message)
             setCarregando(false)
         }
         finally {

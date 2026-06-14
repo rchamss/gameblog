@@ -2,8 +2,8 @@ import '../src/style/global.css'
 import { Google_Sans_Flex } from 'next/font/google'
 import { useRouter } from 'next/router'
 import Cabecalho from '../src/components/header/cabecalho'
-import SystemMensagem from '../src/components/systemMensagem'
-import { useContext, createContext, useState } from 'react'
+import { useContext, createContext, useState, useEffect } from 'react'
+import MensagemSistema from '../src/components/MensagemSistema'
 
 const PG_SEM_CABECALHO = ['/login', '/404']
 
@@ -11,18 +11,29 @@ const googleSans = Google_Sans_Flex({
   variable: '--fonte-principal'
 })
 
-export const MensagemContext = createContext(null)
+export const MensagemContext = createContext()
 
 export default function App({ Component, pageProps}) {
+  const [mensagem, setMensagem] = useState()
   const router = useRouter()
-  const naoMostrarCabecalho = !PG_SEM_CABECALHO.includes(router.pathname)
-  const [chamado, setChamado] = useState()
+  const mostrarCabecalho = !PG_SEM_CABECALHO.includes(router.pathname)
+
+  function mostrarMensagem(codigo, texto){
+    console.log('mostrarMensagem:', codigo, texto, Date.now())
+    setMensagem({ status: codigo, mensagem: texto, ID: Date.now() })
+  }
+
+  useEffect(() => { 
+    if (!mensagem) return
+    const timer = setTimeout(() => setMensagem(null), 4000)
+    return () => clearTimeout(timer)
+  }, [mensagem])
   
     return (
-      <MensagemContext value={{chamado, setChamado}}>
+      <MensagemContext value={ { mostrarMensagem } }>
         <div className={googleSans.variable}>
-          {naoMostrarCabecalho && <Cabecalho/>}
-          {chamado ? <SystemMensagem tipo={chamado.tipo} mensagem={chamado.texto}/> : null}
+          {mostrarCabecalho && <Cabecalho/>}
+          {mensagem && <MensagemSistema key={mensagem.ID} status={mensagem.status} mensagem={mensagem.mensagem} onClose={() => setMensagem(null)} />}
           <Component {...pageProps} />
         </div>
       </MensagemContext>

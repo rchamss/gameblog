@@ -1,11 +1,12 @@
 import style from "../../src/style/pages/jogo/[id].module.css"
 import Carregamento from "../../src/components/loading";
-import { useRequestJogos, useRequestJogos_private } from "../../src/hooks/useRequestAPI";
+import { useRequestJogos, useRequestJogos_private, useRequestStars } from "../../src/hooks/useRequestAPI";
 import { useRouter } from "next/router"
 import { jogosData } from "../../src/data/complementaryData";
 import { createContext, useEffect } from "react";
 import useAwaitLoading from "../../src/hooks/useAwaitLoading";
 import ApresentacaoJogo from "../../src/components/jogo/ApresentacaoJogo";
+import { useRequireLogin } from "../../src/hooks/useRequireLogin";
 
 export const JogoContext = createContext({})
 
@@ -19,8 +20,10 @@ export default function Jogo() {
     const jogo = jogosLista.find((item) => item.nome.toLowerCase() === router.query.id.toLowerCase())
     const jogoComplementaryData = jogosData.find((item) => item.nome.toLowerCase() === jogo?.nome.toLowerCase())
 
+    const jogoStars = useRequestStars(useRequireLogin(), jogo?.id)
+    console.log(jogoStars)
     console.log(jogo)
-    
+
     if (paginaPronta && dadosProntos) {
         if (jogo) {
             return (

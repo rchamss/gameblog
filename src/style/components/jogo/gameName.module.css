@@ -1,17 +1,20 @@
 .container_module{
     display: flex;
     align-items: center;
-    justify-content:space-between;
+    justify-content: space-between;
 
-    margin-top: 10px;
-
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
     width: 1000px; /* <-- Precisa ser a exata mesma largura do trailer */
 }
 
 .jogoNome h1{
     text-align: center;
+    font-size: 38;
 }
 .jogoNome p{
     margin-top: 0px;
+    font-size: 20;
     text-align: center;
 }

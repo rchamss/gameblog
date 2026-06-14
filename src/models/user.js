@@ -11,9 +11,12 @@ export default async function FazerLogin(valueEmail, valueSenha){
     const dados = await resposta.json()
     if (resposta.ok){
         localStorage.setItem('token', dados.token)
-        console.log(dados)
         return dados
-    } else { throw new Error(dados.message)}
+    } 
+    else { 
+        console.log(dados)
+        throw { status: resposta.status, mensagem: dados.message }
+    }
 
 }
 

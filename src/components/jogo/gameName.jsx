@@ -10,7 +10,7 @@ export default function GameName(){
         <div className={style.container_module}>
             <ButtonProximoJogo sentido={null}/>
             <div className={style.jogoNome}>
-                <h1>{jogo.nome}!</h1>
+                <h1>{jogo.nome}</h1>
                 <p>{jogo.descricao}</p>
             </div>
             <ButtonProximoJogo sentido={null}/>

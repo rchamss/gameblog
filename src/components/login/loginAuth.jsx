@@ -1,30 +1,30 @@
 // Inputs base
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import {useRouter} from "next/router";
 import style from '../../style/components/login/loginAuth.module.css'
 import FazerLogin from '../../models/user'
 import Campo from '../login/components/input'
 import SubmitButton from "../submitButton";
-import useSystemMensage from '../../hooks/useSystemMensage';
+import { MensagemContext } from '../../../pages/_app';
 
 export default function LoginAuthForm(){
     const [valueEmail, setEmail] = useState()
     const [valueSenha, setSenha] = useState()
     const [valueCarregando, setCarregando] = useState(false)
     const router = useRouter()
-    const {callSystemMensagem} = useSystemMensage()
+    const { mostrarMensagem } = useContext(MensagemContext)
 
     async function handleLogin(event){
         event.preventDefault()
         try{
             setCarregando(true)
             const dados = await FazerLogin(valueEmail, valueSenha)
+            mostrarMensagem(dados.status, dados.mensagem)
             await router.push('/recomendado')
-            callSystemMensagem('valid', dados.message)
         }
         catch (error){
-            callSystemMensagem('valid', error.message)
             setCarregando(false)
+            mostrarMensagem(error.status, error.mensagem)
         }
         finally {
             setCarregando(false)

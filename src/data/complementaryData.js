@@ -1,6 +1,7 @@
 export const jogosData = [
     {
         nome: "The Witcher 3: Wild Hunt",
+        descricao: "Você é Geralt de Rívia, mercenário matador de monstros. Você está em um continente devastado pela guerra e infestado de monstros para você explorar à vontade. Sua tarefa é encontrar Ciri, a Criança da Profecia — uma arma viva que pode alterar a forma do mundo.",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/coaarl.webp",
         video: "https://www.youtube.com/embed/MqQ3LeBgGDM?si=oV24BDMbAIvaY2aB",
         imagens: [

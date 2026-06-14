@@ -1,0 +1,14 @@
+.container{
+    width: 1000px; /* Precisa ser o mesmo tamanho da largura do video */
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.container p{
+    display: inline-block;
+    width: 70%;
+    margin-top: 0px;
+}
+.container img{
+    border-radius: 20px;
+}
