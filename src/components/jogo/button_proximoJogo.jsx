@@ -1,9 +1,19 @@
-import style from "../../style/components/jogo/button_proximoJogo.module.css"
+import style from "../../style/components/jogo/button_proximoJogo.module.css";
 
-export default function ButtonProximoJogo({sentido}){
-    return(
+export default function ButtonProximoJogo({ sentido }) {
+    return (
         <button className={style.botao}>
-            <img src='/assets/proximoJogoButton.svg'/>
+            <img
+                className={style.darkIcon}
+                src="/assets/proximoJogoButton.svg"
+                alt="Próximo jogo"
+            />
+
+            <img
+                className={style.lightIcon}
+                src="/assets/proximoJogoButtonLight.svg"
+                alt="Próximo jogo"
+            />
         </button>
-    )
+    );
 }

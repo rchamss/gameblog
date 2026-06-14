@@ -1,4 +1,20 @@
 .botao{
     border-radius: 8px;
-    border: transparent
+    border: transparent;
+}
+
+.darkIcon{
+    display: block;
+}
+
+.lightIcon{
+    display: none;
+}
+
+:global([data-theme="light"]) .darkIcon{
+    display: none;
+}
+
+:global([data-theme="light"]) .lightIcon{
+    display: block;
 }
