@@ -7,6 +7,9 @@
     margin-bottom: 20px;
     
     width: 1000px; /* <-- Precisa ser a exata mesma largura do trailer */
+
+    animation: 
+        entrar 0.5s ease;
 }
 
 .jogoNome h1{
@@ -17,4 +20,9 @@
     margin-top: 0px;
     font-size: 20;
     text-align: center;
+}
+
+@keyframes entrar {
+    from {opacity: 0%; transform: translateY(-20px);}
+    to {opacity: 100%; transform: translateY(0px);}
 }

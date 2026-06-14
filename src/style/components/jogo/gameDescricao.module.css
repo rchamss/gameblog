@@ -3,6 +3,9 @@
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
+
+    animation: 
+        entrar 1s ease;
 }
 .container p{
     display: inline-block;
@@ -11,4 +14,9 @@
 }
 .container img{
     border-radius: 20px;
+}
+
+@keyframes entrar {
+    from {opacity: 0%; transform: translateY(-40px);}
+    to {opacity: 100%; transform: translateY(0px);}
 }

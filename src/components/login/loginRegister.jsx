@@ -1,9 +1,10 @@
 import {useRouter} from "next/router";
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { RegistrarUsuario } from '../../models/user'
 import style from '../../style/components/login/loginRegister.module.css'
 import Campo from './components/input'
 import SubmitButton from "../submitButton";
+import { MensagemContext } from "../../../pages/_app";
 
 export default function LoginRegisterForm(){
     const [valueEmail, setEmail] = useState()
@@ -12,15 +13,18 @@ export default function LoginRegisterForm(){
     const [valueDtNasc, setDt] = useState()
     const [valueCarregando, setCarregando] = useState(false)
     const router = useRouter()
+    const { mostrarMensagem } = useContext(MensagemContext)
 
     async function handleRegister(event){
         event.preventDefault()
         try{
             setCarregando(true)
             const dados = await RegistrarUsuario(valueEmail, valueSenha, valueNome, valueDtNasc)
+            mostrarMensagem(200, dados.message)
         }
         catch (error){
             setCarregando(false)
+            mostrarMensagem(error.status, error.mensagem)
         }
         finally {
             setCarregando(false)

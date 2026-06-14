@@ -35,5 +35,5 @@ export async function RegistrarUsuario(valueEmail, valueSenha, valueNome, valueD
     if (resposta.ok){ 
         localStorage.setItem('token', dados.token)
         return dados
-    } else { throw new Error(dados.message) }
+    } else { throw { status: resposta.status, mensagem: dados.message } }
 }

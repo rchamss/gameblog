@@ -1,6 +1,7 @@
 .output{
     display: flex;
     align-items: center;
+    justify-content: space-between;
     position: absolute;
 
     top: 10%;
@@ -18,12 +19,21 @@
     animation: 
         entrar 0.5s ease,
         sair 0.5s ease 3s forwards;
-    
         z-index: 99999;
+}
+.output div{
+    display: flex;
+    align-items: center;
 }
 
 .output span{
     margin-left: 10px;
+}
+.output button{
+     color: white;
+     background-color: transparent;
+     border: transparent;
+     outline: transparent;
 }
 
 @keyframes entrar {

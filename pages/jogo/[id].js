@@ -34,7 +34,17 @@ export default function Jogo() {
                 </JogoContext>
             )
         }
-        else{ return <h1>ERRRO 404! Jogo Não</h1> }
+        else { 
+            return (
+                <main className={style.notFound}>
+                    <div className={style.iconeContainer}>
+                        <img src="/assets/404.svg"/>
+                    </div>
+                    <h1>Oops!</h1>
+                    <p>Não encontramos nada aqui. Tem certeza que veio no lugar certo?</p>
+                </main>
+            )
+        }
     }
     else{
         return (

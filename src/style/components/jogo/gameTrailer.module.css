@@ -3,6 +3,9 @@
     border-radius: 20px;
     width: 1000px;
     height: 562px;
+
+    animation: 
+        entrar 1s ease;
 }
 
 .gametrailer{
@@ -30,3 +33,8 @@ altura = largura ÷ 16 × 9
 Jogem duro!
  -- Nenhum Desafio Dificil Demais
 */
+
+@keyframes entrar {
+    from {opacity: 0%; transform: translateY(-40px);}
+    to {opacity: 100%; transform: translateY(0px);}
+}
