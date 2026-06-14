@@ -23,7 +23,7 @@
     right: 0rem;
 }
 .gameblog{
-    color: var(--cor-primaria-darkmode);
+    color: #ffffff;
     font-size: 2rem;
     font-weight: 700;
     font-family: var(--fonte-principal);

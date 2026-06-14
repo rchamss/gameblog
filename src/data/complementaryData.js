@@ -1,7 +1,19 @@
 export const jogosData = [
     {
+        nome: "Place Holder",
+        descrição: "Lorem ipsum dolor sit amet. Eum recusandae error et aspernatur fugiat quo quia facere ea voluptates earum aut illum inventore! Et consequatur repellendus sit autem sunt quo suscipit atque nam nihil eveniet.",
+        capa: "https://placehold.net/800x600.png",
+        video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        imagens: [
+            "https://placehold.net/800x600.png",
+            "https://placehold.net/800x600.png",
+            "https://placehold.net/800x600.png",
+            "https://placehold.net/800x600.png",
+            "https://placehold.net/800x600.png"
+        ],
+    },
+    {
         nome: "The Witcher 3: Wild Hunt",
-        descricao: "Você é Geralt de Rívia, mercenário matador de monstros. Você está em um continente devastado pela guerra e infestado de monstros para você explorar à vontade. Sua tarefa é encontrar Ciri, a Criança da Profecia — uma arma viva que pode alterar a forma do mundo.",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/coaarl.webp",
         video: "https://www.youtube.com/embed/MqQ3LeBgGDM?si=oV24BDMbAIvaY2aB",
         imagens: [
@@ -14,6 +26,7 @@ export const jogosData = [
     },
     {
         nome: "Red Dead Redemption 2",
+        descrição: "Arthur Morgan e a gangue Van der Linde são forçados a fugir. Com agentes federais e caçadores de recompensas no seu encalço, a gangue precisa roubar, assaltar e lutar para sobreviver no impiedoso coração dos Estados Unidos.",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co1q1f.webp",
         video: "https://www.youtube.com/embed/94B-38sX5fs?si=yheWnmDHPTmNhfLv",
         imagens: [
@@ -26,6 +39,7 @@ export const jogosData = [
     },
     {
         nome: "The Legend of Zelda: Breath of the Wild",
+        descrição: "Link acorda sozinho num mundo do qual ele não se lembra mais. Agora, o lendário herói deve explorar perigosas terras vastas e recuperar sua memória antes que Hyrule se perca para sempre. Armado apenas com o que encontra, Link parte em busca de respostas e dos recursos necessários para sobreviver.",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co3p2d.webp",
         video: "https://www.youtube.com/embed/zw47_q9wbBE?si=Il_g-gRcrsPkEP2R",
         imagens: [
@@ -38,6 +52,7 @@ export const jogosData = [
     },
     {
         nome: "Minecraft",
+        descrição: "Em Minecraft, os jogadores exploram mundos gerados proceduralmente, coletam recursos, constroem estruturas e enfrentam criaturas em uma aventura aberta. Com infinitas possibilidades de criação e sobrevivência, cada partida permite moldar o mundo do seu próprio jeito, sozinho ou com amigos.",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co8fu7.webp",
         video: "https://www.youtube.com/embed/X-fMtNOS_gU?si=3cCqo0ejrDR41SdR",
         imagens: [
@@ -50,6 +65,7 @@ export const jogosData = [
     },
     {
         nome: "Stardew Valley",
+        descrição: "Você herdou a antiga fazenda do seu avô, em Stardew Valley. Com ferramentas de segunda-mão e algumas moedas, você parte para dar início a sua nova vida. Será que você vai aprender a viver da terra, a transformar esse matagal em um próspero lar?",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/coa93h.webp",
         video: "https://www.youtube.com/embed/8A7A1X1TVNc?si=w25ePwEVSpYSOUpc",
         imagens: [
@@ -62,6 +78,7 @@ export const jogosData = [
     },
     {
         nome: "Portal 2",
+        descrição: "A Iniciativa de Testes Perpétuos foi expandida: crie câmaras cooperativas para você e os seus amigos!",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rs4.webp",
         video: "https://www.youtube.com/embed/SJ5JY-ll2HY?si=o3SQyCYzVK-wBlss",
         imagens: [
@@ -74,6 +91,7 @@ export const jogosData = [
     },
     {
         nome: "Half-Life: Alyx",
+        descrição: "Half-Life: Alyx é a volta da Valve à série Half-Life em realidade virtual. Trata-se da história de uma impossível luta contra uma raça alienígena cruel, conhecida como Combine, situada entre os eventos de Half-Life e Half-Life 2.",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co87vg.webp",
         video: "https://www.youtube.com/embed/O2W0N3uKXmo?si=HoWtBrMb4gv25cyb",
         imagens: [
@@ -86,6 +104,7 @@ export const jogosData = [
     },
     {
         nome: "Cyberpunk 2077",
+        descrição: "Cyberpunk 2077 é um RPG de ação e aventura em mundo aberto que se passa em Night City, uma megalópole perigosa onde todos são obcecados por poder, glamour e alterações corporais.",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/coaih8.webp",
         video: "https://www.youtube.com/embed/qIcTM8WXFjk?si=Q890vxCbLdr1N-5H",
         imagens: [
@@ -98,6 +117,7 @@ export const jogosData = [
     },
     {
         nome: "Among Us",
+        descrição: "Um jogo de trabalho em equipe e trairagem online ou em rede local para 4 a 15 jogadores... no espaço!",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co6kqt.webp",
         video: "https://www.youtube.com/embed/JpalSQkmp2g?si=TKEkOzL5M_vZ_QOA",
         imagens: [
@@ -110,6 +130,7 @@ export const jogosData = [
     },
     {
         nome: "A Lenda do Herói",
+        descrição: "Aventure-se no mundo do Herói em pixel art no qual as ações do jogador são cantadas de forma cômica e dinâmica, nesse jogo de plataforma e muita aventura!",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co2k79.webp",
         video: "https://www.youtube.com/embed/4VgRzOu-VU0?si=Rp28dHZdYgXRvi2V",
         imagens: [
@@ -122,6 +143,7 @@ export const jogosData = [
     },
     {
         nome: "Enigma do Medo",
+        descrição: "Se torne Mia, uma detetive paranormal buscando por seu pai que desapareceu. Investigue e desvende os mistérios do Enigma do Medo, derrotando monstros assustadores em seu caminho.",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co93ft.webp",
         video: "https://www.youtube.com/embed/OvibI1wQZAA?si=M9SOg3njPQiMatwG",
         imagens: [
@@ -134,6 +156,7 @@ export const jogosData = [
     },
     {
         nome: "Horizon Zero Dawn",
+        descrição: "Viva a experiência de Aloy em sua busca lendária para desvendar os mistérios de uma Terra do futuro controlada por máquinas. Use ataques táticos devastadores contra suas presas e explore um mundo aberto majestoso neste premiado RPG de aventura e ação!",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co90ti.webp",
         video: "https://www.youtube.com/embed/rgDYyxOKBgg?si=qvCU8QyJfUYkfGRm",
         imagens: [
@@ -146,6 +169,7 @@ export const jogosData = [
     },
     {
         nome: "Bloodborne",
+        descrição: "Enfrente seus pesadelos enquanto busca respostas na antiga cidade de Yharnam, agora amaldiçoada com uma estranha doença endêmica que se espalha pelas ruas. Perigo, morte e loucura estão em cada canto deste sombrio e horroroso mundo, e você deve descobrir seus segredos mais sombrios para sobreviver.",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/cob99l.webp",
         video: "https://www.youtube.com/embed/AXiUYQ8eunw?si=ribzi2eG_AMue_7a",
         imagens: [
@@ -158,6 +182,7 @@ export const jogosData = [
     },
     {
         nome: "Call of Duty: Modern Warfare",
+        descrição: "Experimente uma Campanha visceral ou monte sua equipe em uma derradeira experiência online com diversos desafios de Operações Especiais e uma mistura de mapas e modos Multijogador.",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rsg.webp",
         video: "https://www.youtube.com/embed/bH1lHCirCGI?si=7EmeYIcchNGKs8j0",
         imagens: [
@@ -170,6 +195,7 @@ export const jogosData = [
     },
     {
         nome: "Sekiro: Shadows Die Twice",
+        descrição: "Jogo do Ano - The Game Awards 2019 Melhor Jogo de Ação de 2019 - IGN Trilhe seu próprio caminho de vingança nesta premiada aventura da FromSoftware, os criadores de Bloodborne e da franquia Dark Souls. Obtenha vingança. Retome sua honra. Mate astuciosamente.",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co2a23.webp",
         video: "https://www.youtube.com/embed/J3AbM_JRkWQ?si=hR4ho3YBwdR08nDQ",
         imagens: [
@@ -182,6 +208,7 @@ export const jogosData = [
     },
     {
         nome: "The Elder Scrolls V: Skyrim",
+        descrição: "Vencedor de mais de 200 prémios de Jogo do Ano, The Elder Scrolls V: Skyrim Special Edition dá vida à fantasia épica com um nível de detalhe espantoso. A Special Edition inclui o jogo aclamado pela crítica e suplementos com novas funcionalidades.",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/cobt0i.webp",
         video: "https://www.youtube.com/embed/0mHGygvlKCQ?si=k0_cHiYUNfoOB5v5",
         imagens: [
@@ -194,6 +221,7 @@ export const jogosData = [
     },
     {
         nome: "Fallout 4",
+        descrição: "A Bethesda Game Studios, criadora premiada de Starfield e The Elder Scrolls V: Skyrim, também criou Fallout 4. Um marco no design de RPGs de mundo aberto e vencedor de mais de 200 prêmios de Melhor Jogo em várias categorias, incluindo o Jogo do Ano da DICE e do BAFTA.",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co1yc6.webp",
         video: "https://www.youtube.com/embed/X5aJfebzkrM?si=cSusIp6n24fRHLWr",
         imagens: [
@@ -206,6 +234,7 @@ export const jogosData = [
     },
     {
         nome: "Monster Hunter: World",
+        descrição: "Conheça o Novo Mundo! Em Monster Hunter: World, o jogo mais recente da série, você pode curtir a experiência máxima de caçada, usando tudo à sua disposição para caçar monstros em um novo mundo repleto de surpresas e emoções.",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rst.webp",
         video: "https://www.youtube.com/embed/TjKQ3fbB27Y?si=z4ho7X2-_fVO_n20",
         imagens: [
@@ -218,6 +247,7 @@ export const jogosData = [
     },
     {
         nome: "Persona 5 Royal",
+        descrição: "Lidere os Ladrões-Fantasma neste premiado e estiloso RPG em turnos, com direito a exploração de masmorras, personalização de grupos, combate estratégico e fusão de Personas. Aventure-se por Tóquio, forme relacionamentos, enfrente Sombras e infiltre as mentes dos corruptos para mudar suas atitudes!",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co8ozn.webp",
         video: "https://www.youtube.com/embed/IR_7H_zzU7Y?si=jFjhMdErX6MBLgQH",
         imagens: [
@@ -230,6 +260,7 @@ export const jogosData = [
     },
     {
         nome: "Yakuza: Like a Dragon",
+        descrição: "Become Ichiban Kasuga, a low-ranking yakuza grunt left on the brink of death by the man he trusted most. Take up your legendary bat and get ready to crack some underworld skulls in dynamic RPG combat set against the backdrop of modern-day Japan.",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co2em9.webp",
         video: "https://www.youtube.com/embed/_uBK1MMC5KQ?si=4ek3QsUKi1uIJeLU",
         imagens: [
@@ -242,6 +273,7 @@ export const jogosData = [
     },
     {
         nome: "Resident Evil 7: Biohazard",
+        descrição: "Medo e isolamento se infiltram nas paredes de uma casa de campo abandonada. 7 marca um novo início para o horror de sobrevivência com a Visão Isolada da visceral perspectiva em primeira pessoa.",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/cobd4o.webp",
         video: "https://www.youtube.com/embed/0osKz2rOTHo?si=hXbkBxW58bwrv7bS",
         imagens: [
@@ -254,6 +286,7 @@ export const jogosData = [
     },
     {
         nome: "Grand Theft Auto V",
+        descrição: "Aproveite os fenômenos do entretenimento Grand Theft Auto V e Grand Theft Auto Online melhorados para uma nova geração, com gráficos deslumbrantes, tempos de carregamento mais rápidos, áudio 3D e mais, além de conteúdo exclusivo para jogadores do GTA Online.",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co2lbd.webp",
         video: "https://www.youtube.com/embed/PIF_fqFZEuk?si=ZsV81kA9pEl_xXs2",
         imagens: [
@@ -265,17 +298,3 @@ export const jogosData = [
         ]
     }
 ];
-
-
-const jogoPlaceholder = {
-    nome: "Jogo Personalizado",
-    capa: "https://placehold.net/800x600.png",
-    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    imagens: [
-        "https://placehold.net/800x600.png",
-        "https://placehold.net/800x600.png",
-        "https://placehold.net/800x600.png",
-        "https://placehold.net/800x600.png",
-        "https://placehold.net/800x600.png"
-    ]
-};
