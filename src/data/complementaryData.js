@@ -1,5 +1,17 @@
 const jogosData = [
     {
+        nome: "Place Holder",
+        capa: "https://placehold.net/800x600.png",
+        video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        imagens: [
+            "https://placehold.net/800x600.png",
+            "https://placehold.net/800x600.png",
+            "https://placehold.net/800x600.png",
+            "https://placehold.net/800x600.png",
+            "https://placehold.net/800x600.png"
+        ],
+    },
+    {
         nome: "The Witcher 3: Wild Hunt",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/coaarl.webp",
         video: "https://www.youtube.com/embed/MqQ3LeBgGDM?si=oV24BDMbAIvaY2aB",
@@ -264,17 +276,3 @@ const jogosData = [
         ]
     }
 ];
-
-
-const jogoPlaceholder = {
-    nome: "Jogo Personalizado",
-    capa: "https://placehold.net/800x600.png",
-    video: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    imagens: [
-        "https://placehold.net/800x600.png",
-        "https://placehold.net/800x600.png",
-        "https://placehold.net/800x600.png",
-        "https://placehold.net/800x600.png",
-        "https://placehold.net/800x600.png"
-    ]
-};
