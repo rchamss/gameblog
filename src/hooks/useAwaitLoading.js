@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-export default function useAwaitLoading(dados){
+export default function useAwaitLoading(dados){ // Recebe uma array de dados e apenas libera depois de 1s
     const [pronto, setPronto] = useState(false)
 
     useEffect(() =>{

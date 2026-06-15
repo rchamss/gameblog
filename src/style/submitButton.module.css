@@ -17,9 +17,7 @@
 
     top: 0px;
     cursor: pointer;
-    transition: background-color 0.1s ease;
-    transition: box-shado 0.1s ease;
-    transition: top 0.1s ease;
+    transition: background-color 0.1s ease, box-shadow 0.1s ease, top 0.1s ease;
     box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31);
 }
 

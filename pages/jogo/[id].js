@@ -1,12 +1,13 @@
 import style from "../../src/style/pages/jogo/[id].module.css"
 import Carregamento from "../../src/components/loading";
-import { useRequestJogos, useRequestJogos_private, useRequestStars } from "../../src/hooks/useRequestAPI";
 import { useRouter } from "next/router"
 import { jogosData } from "../../src/data/complementaryData";
 import { createContext, useEffect } from "react";
 import useAwaitLoading from "../../src/hooks/useAwaitLoading";
 import ApresentacaoJogo from "../../src/components/jogo/ApresentacaoJogo";
 import { useRequireLogin } from "../../src/hooks/useRequireLogin";
+import useBuscarJogos from "../../src/hooks/Api/protected/useBuscarJogos";
+import usePublicBuscarJogos from "../../src/hooks/Api/useBuscarJogos";
 
 export const JogoContext = createContext({})
 
@@ -14,20 +15,20 @@ export default function Jogo() {
     const router = useRouter()
     const paginaPronta = router.isReady
 
-    const jogosLista = useRequestJogos_private() 
+    const jogosLista = useBuscarJogos()
     const dadosProntos = useAwaitLoading(jogosLista)
+    const jogosListaPublic = usePublicBuscarJogos()
 
     const jogo = jogosLista.find((item) => item.nome.toLowerCase() === router.query.id.toLowerCase())
+    const jogoPublic = jogosListaPublic.find((item) => item.nome.toLowerCase() === router.query.id.toLowerCase())
     const jogoComplementaryData = jogosData.find((item) => item.nome.toLowerCase() === jogo?.nome.toLowerCase())
 
-    const jogoStars = useRequestStars(useRequireLogin(), jogo?.id)
-    console.log(jogoStars)
     console.log(jogo)
 
     if (paginaPronta && dadosProntos) {
         if (jogo) {
             return (
-                <JogoContext value={{jogo, jogoComplementaryData}}>
+                <JogoContext value={{jogo, jogoComplementaryData, jogoPublic}}>
                     <div className={style.container_pg}>
                         <ApresentacaoJogo/>
                     </div>

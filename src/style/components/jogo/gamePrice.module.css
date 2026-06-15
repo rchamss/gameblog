@@ -1,0 +1,52 @@
+.priceBG{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+    background-color: #626262;
+    border-radius: 10px;
+    height: 60px;
+    width: 460px;
+}
+.priceBG div{
+    display: flex;
+    align-items: center;
+    height: inherit;    
+}
+.priceBG h2{
+    margin-right: 10px;
+    color: white;
+    font-size: 30; 
+}
+.butao{
+    border: 2px solid var(--cor-secundaria-complementar);
+    position: relative;
+    outline: transparent;
+    background-color: var(--cor-secundaria);
+    border-radius: 10px;
+    height: inherit;
+
+    display: flex;
+    align-items: center;
+
+    color: white;
+    font-weight: 600;
+    font-size: 20;
+    
+    padding: 20px;
+    box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31);
+    transition: background-color 0.1s ease, box-shadow 0.1s ease, transform 0.1s ease;
+    cursor: pointer;
+}
+.butao:active{
+    background-color: var(--cor-secundaria-selecionado);
+    transform: scale(0.95);
+    box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31) inset;
+}
+.butao:focus-visible{
+    outline: 2px solid var(--cor-primaria-darkmode);
+    outline-offset: 3px;
+}
+.carrinho{
+    height: 40px;;
+    width: 40px;;
+}

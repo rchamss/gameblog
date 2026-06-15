@@ -7,13 +7,30 @@
     animation: 
         entrar 1s ease;
 }
-.container p{
+.descricaoContainer p{
     display: inline-block;
-    width: 70%;
     margin-top: 0px;
+}
+.descricaoContainer h3{
+    margin-top: 20px;
 }
 .container img{
     border-radius: 20px;
+}
+
+.categoria{
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: var(--cor-primaria);
+    color: var(--fundo);
+    font-weight: 500;
+}
+
+.subContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
 }
 
 @keyframes entrar {

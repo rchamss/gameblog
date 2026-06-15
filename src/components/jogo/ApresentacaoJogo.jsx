@@ -9,7 +9,6 @@ export default function ApresentacaoJogo(){
     const {jogo, jogoComplementaryData} = useContext(JogoContext)
     return(
         <main className={style.main}>
-            <p>Achamos que você vai gostar de...</p>
             <GameName src={jogo.nome}/>
             <GameTrailer src={jogoComplementaryData.video}/>
             <GameDescricao />

@@ -1,15 +1,16 @@
 import React, { useState } from "react"
-import { useRequestCategorias, useRequestJogos_private } from "../src/hooks/useRequestAPI"
+import useBuscarCategorias from "../src/hooks/Api/protected/useBuscarCategorias"
+
 
 export default function Categorias(){
-    const categorias = useRequestCategorias()
-    useRequestJogos_private()
+    const categorias = useBuscarCategorias()
+    console.log(categorias)
 
     return (
-        <div>
+        <main>
             <h2>Tipos de Jogos</h2>
-            {categorias.map((item) => <p key={item}>{item}</p>)}
+            {categorias.map((item) => <p key={item.id}>{item.nome}</p>)}
             <h2>Outras Categorias</h2>
-        </div>
+        </main>
     )
 }
