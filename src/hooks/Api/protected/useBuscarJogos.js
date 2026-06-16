@@ -16,7 +16,9 @@ export default function useBuscarJogos(){ //Requisita os jogos disponiveis na AP
             try{
                 const resposta = await fetch(`${apiPath}/jogos`, {
                 headers: {'Authorization': `Bearer ${token}`}})
-                const api = await resposta.json()   
+                const api = await resposta.json() 
+                console.log(resposta)  
+                console.log(api)
                 
                 if(!resposta.ok){
                     throw { status: resposta.status, mensagem: api.message }

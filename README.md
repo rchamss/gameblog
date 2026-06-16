@@ -9,3 +9,4 @@ Projeto desenvolvido pela equipe:
 - Cauã Leão Mendes
 - Rafael Ahmad Fonseca Marques Santos
 - Suleiman Majed Abd Alhadi Al-Qahtani
+- Tiago Eziquiel de Souza Santos Assis
