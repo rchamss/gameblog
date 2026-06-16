@@ -7,9 +7,21 @@
     background-color: var(--fundo-darkmode);
 }
 
+.hero{
+    position: absolute;
+    top: 20px;
+    width: 100%; 
+    z-index: 0;
+    mask-image: linear-gradient(to bottom, black 30%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent);
+    opacity: 40%;
+}
+
 .container_pg{
     display: flex;
-   justify-content: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
 .notFound{

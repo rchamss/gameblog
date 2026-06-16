@@ -15,7 +15,8 @@ export const jogosData = [
     {
         nome: "The Witcher 3: Wild Hunt",
         descrição: "Você é Geralt de Rívia, mercenário matador de monstros. Você está em um continente devastado pela guerra e infestado de monstros para você explorar à vontade. Sua tarefa é encontrar Ciri, a Criança da Profecia — uma arma viva que pode alterar a forma do mundo.",
-        capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/coaarl.webp",
+        bg: "https://cdn2.steamgriddb.com/hero_thumb/db5a2b11cd60316f5db7a66e657a626a.jpg",
+        capa: "https://cdn2.steamgriddb.com/thumb/b5aca6b4b9c5a288f31c8f2a5c54f8c0.jpg",
         video: "https://www.youtube.com/embed/MqQ3LeBgGDM?si=oV24BDMbAIvaY2aB",
         imagens: [
             "https://images.igdb.com/igdb/image/upload/t_720p/mnljdjtrh44x4snmierh.webp",
@@ -28,7 +29,8 @@ export const jogosData = [
     {
         nome: "Red Dead Redemption 2",
         descrição: "Arthur Morgan e a gangue Van der Linde são forçados a fugir. Com agentes federais e caçadores de recompensas no seu encalço, a gangue precisa roubar, assaltar e lutar para sobreviver no impiedoso coração dos Estados Unidos.",
-        capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co1q1f.webp",
+        hero: "https://cdn2.steamgriddb.com/hero_thumb/9e9e1b7ea4e250af8fe1f1865650d42b.jpg",
+        capa: "https://cdn2.steamgriddb.com/thumb/22774e7dbd2a3030e3e0c0b7381dee3e.jpg",
         video: "https://www.youtube.com/embed/94B-38sX5fs?si=yheWnmDHPTmNhfLv",
         imagens: [
             "https://images.igdb.com/igdb/image/upload/t_720p/xegpfnsvlyeld0zkjnrc.webp",
@@ -41,7 +43,7 @@ export const jogosData = [
     {
         nome: "The Legend of Zelda: Breath of the Wild",
         descrição: "Link acorda sozinho num mundo do qual ele não se lembra mais. Agora, o lendário herói deve explorar perigosas terras vastas e recuperar sua memória antes que Hyrule se perca para sempre. Armado apenas com o que encontra, Link parte em busca de respostas e dos recursos necessários para sobreviver.",
-        capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co3p2d.webp",
+        capa: "https://cdn2.steamgriddb.com/hero_thumb/27c1432fc405e038f64e678d92e4aef9.jpg",
         video: "https://www.youtube.com/embed/zw47_q9wbBE?si=Il_g-gRcrsPkEP2R",
         imagens: [
             "https://images.igdb.com/igdb/image/upload/t_720p/sckj69.webp",
@@ -158,7 +160,8 @@ export const jogosData = [
     {
         nome: "Horizon Zero Dawn",
         descrição: "Viva a experiência de Aloy em sua busca lendária para desvendar os mistérios de uma Terra do futuro controlada por máquinas. Use ataques táticos devastadores contra suas presas e explore um mundo aberto majestoso neste premiado RPG de aventura e ação!",
-        capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co90ti.webp",
+        hero: "https://cdn2.steamgriddb.com/hero_thumb/83a17b1aec90395c67bba676be661288.jpg",
+        capa: "https://cdn2.steamgriddb.com/thumb/14bcbb516f504f436b879a0752e8296a.jpg",
         video: "https://www.youtube.com/embed/rgDYyxOKBgg?si=qvCU8QyJfUYkfGRm",
         imagens: [
             "https://images.igdb.com/igdb/image/upload/t_720p/scuchq.webp",

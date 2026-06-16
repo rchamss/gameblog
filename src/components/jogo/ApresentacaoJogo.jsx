@@ -8,10 +8,10 @@ import GameDescricao from "./gameDescricao"
 export default function ApresentacaoJogo(){
     const {jogo, jogoComplementaryData} = useContext(JogoContext)
     return(
-        <main className={style.main}>
+        <div className={style.div}>
             <GameName src={jogo.nome}/>
             <GameTrailer src={jogoComplementaryData.video}/>
             <GameDescricao />
-        </main>
+        </div>
     )
 }

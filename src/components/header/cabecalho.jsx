@@ -11,7 +11,7 @@ const navBar = [
 
 export default function Cabecalho(){
     const router = useRouter()
-
+    
     return (
     <header className={style.header}>
         <span className={style.gameblog}>gameblog</span>

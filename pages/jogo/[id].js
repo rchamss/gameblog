@@ -27,16 +27,17 @@ export default function Jogo() {
 
     if (paginaPronta && dadosProntos) {
         if (jogo) {
-            return (
+            return ( // Achou Jogo
                 <JogoContext value={{jogo, jogoComplementaryData, jogoPublic}}>
-                    <div className={style.container_pg}>
+                    <img src={jogoComplementaryData.hero} className={style.hero}/>
+                    <main className={style.container_pg}>
                         <ApresentacaoJogo/>
-                    </div>
+                    </main>
                 </JogoContext>
             )
         }
         else { 
-            return (
+            return ( //404 
                 <main className={style.notFound}>
                     <div className={style.iconeContainer}>
                         <img src="/assets/404.svg"/>
