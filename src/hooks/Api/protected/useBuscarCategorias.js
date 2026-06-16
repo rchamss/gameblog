@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react"
 import { useRequireLogin } from "../../useRequireLogin"
 import { useRouter } from "next/router"
 import { MensagemContext } from "../../../../pages/_app"
+import {apiPath} from "../../../../infra/api";
 
 export default function useBuscarCategorias(){ //Requisita as Categorias disponiveis na API
     const { mostrarMensagem } = useContext(MensagemContext)
@@ -14,7 +15,7 @@ export default function useBuscarCategorias(){ //Requisita as Categorias disponi
 
         async function getAPI() {
             try{
-                const resposta = await fetch('https://gameblog-api-production-817a.up.railway.app/api/v1/categorias', {
+                const resposta = await fetch(`${apiPath}/categorias`, {
                 headers: {'Authorization': `Bearer ${token}`}})
                 const api = await resposta.json()
                 console.log(api)   

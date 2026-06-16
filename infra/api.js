@@ -1,0 +1,1 @@
+export const apiPath = "https://gameblog-api-production-817a.up.railway.app/api/v1"
