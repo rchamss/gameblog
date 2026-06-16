@@ -7,7 +7,7 @@ import {apiPath} from "../../../../infra/api";
 export default function useBuscarCategorias(){ //Requisita as Categorias disponiveis na API
     const { mostrarMensagem } = useContext(MensagemContext)
     const [categorias, setCategorias] = useState([])
-    const token = useRequireLogin()
+    const {token} = useRequireLogin()
     const router = useRouter()
     useEffect(() => {
 

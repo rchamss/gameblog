@@ -22,3 +22,20 @@ export function useRequireLogin() {
     } , [])
     return {token, id_user}
 }
+
+export function useVerificarLogin(){
+    const [logado, setLogado] = useState(false)
+    useEffect(() => {
+        const token = localStorage.getItem('token')
+        if(token){
+            setLogado(true)
+            console.log('Usuário logado!')
+        }
+
+        else{
+            setLogado(false)
+            console.log('Usuário não logado!')
+        }
+    }, []);
+    return logado
+}

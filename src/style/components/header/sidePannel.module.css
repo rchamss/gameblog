@@ -3,6 +3,7 @@
     align-items: center;
     position: absolute;
     color: aliceblue;
+    margin-right: 50px;
 
     right: 0rem;
 }
@@ -28,7 +29,7 @@
     align-items: center;
     background-color: #ffff;
     border-radius: 10px;
-    margin-right: 150px;
+    margin-right: 20px;
     width: 350px;
     height: 50px;
 

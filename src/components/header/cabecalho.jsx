@@ -2,6 +2,8 @@ import { useRouter } from 'next/router'
 import style from '../../style/components/header/cabecalho.module.css'
 import Link from 'next/link'
 import SidePannel from './sidePannel'
+import useBuscarUsuario from "../../hooks/Api/protected/useBuscarUsuario";
+import PerfilUsuario from "./PerfilUsuario";
 const navBar = [
     {pagina: 'Recomendados', caminho: '/recomendado'},
     {pagina: 'Categorias', caminho: '/categorias'},
@@ -11,6 +13,7 @@ const navBar = [
 
 export default function Cabecalho(){
     const router = useRouter()
+    const user = useBuscarUsuario()
     
     return (
     <header className={style.header}>
@@ -27,6 +30,7 @@ export default function Cabecalho(){
             })}
         </nav>
         <SidePannel/>
+
     </header>
     )
 }

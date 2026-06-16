@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from "react"
-import { useRequireLogin } from "../src/hooks/useRequireLogin"
+import React from "react"
 import Link from "next/link"
 import usePublicBuscarJogos from "../src/hooks/Api/useBuscarJogos"
 import useBuscarUsuario from "../src/hooks/Api/protected/useBuscarUsuario";
