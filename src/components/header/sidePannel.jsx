@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import style from '../../style/components/header/sidePannel.module.css'
+import PerfilUsuario from "./PerfilUsuario";
 
 export default function SidePannel(){
     const [theme, setTheme] = useState('dark');
@@ -28,6 +29,7 @@ export default function SidePannel(){
                 <input className={style.inputBusca} type='text' name='pesquisa' placeholder='Pesquisar na Loja'/> 
                 <button><img className={style.pesquisarIcon} src='/assets/pesquisar.svg'/></button>
             </form>
+            <PerfilUsuario/>
         </div>
     )
 }

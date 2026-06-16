@@ -1,5 +1,8 @@
+import {apiPath} from "../../infra/api";
+import {useState} from "react";
+
 export default async function FazerLogin(valueEmail, valueSenha){
-    const resposta = await fetch('https://gameblog-api.onrender.com/api/v1/auth/login', {
+    const resposta = await fetch(`${apiPath}/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -10,7 +13,10 @@ export default async function FazerLogin(valueEmail, valueSenha){
 
     const dados = await resposta.json()
     if (resposta.ok){
+        const payload = JSON.parse(atob(dados.token.split('.')[1])) // converte o token
         localStorage.setItem('token', dados.token)
+        localStorage.setItem('id_user', payload.id)
+        console.log(payload.id)
         return dados
     } 
     else { 
@@ -21,7 +27,7 @@ export default async function FazerLogin(valueEmail, valueSenha){
 }
 
 export async function RegistrarUsuario(valueEmail, valueSenha, valueNome, valueDtNasc){
-    const resposta = await fetch('https://gameblog-api.onrender.com/api/v1/auth/register', {
+    const resposta = await fetch(`${apiPath}/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

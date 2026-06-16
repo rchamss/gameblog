@@ -7,7 +7,7 @@ export default function usePublicBuscarJogos(){ //Retorna os jogos disponiveis n
     const [jogos, setJogos] = useState([])
     useEffect(() => {
         async function getAPI() {
-            const resposta = await fetch('https://gameblog-api.onrender.com/api/v1/public/jogos')
+            const resposta = await fetch('https://gameblog-api-production-817a.up.railway.app/api/v1/public/jogos')
             const api = await resposta.json()
             setJogos(api)
         }

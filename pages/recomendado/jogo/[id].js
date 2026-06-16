@@ -1,18 +1,18 @@
 import style from "../../src/style/pages/jogo/[id].module.css"
-import Carregamento from "../../src/components/loading";
+import Carregamento from "../../../src/components/loading";
 import { useRouter } from "next/router"
-import { jogosData } from "../../src/data/complementaryData";
+import { jogosData } from "../../../src/data/complementaryData";
 import { createContext, useEffect } from "react";
-import useAwaitLoading from "../../src/hooks/useAwaitLoading";
-import ApresentacaoJogo from "../../src/components/jogo/ApresentacaoJogo";
-import { useRequireLogin } from "../../src/hooks/useRequireLogin";
-import useBuscarJogos from "../../src/hooks/Api/protected/useBuscarJogos";
-import usePublicBuscarJogos from "../../src/hooks/Api/useBuscarJogos";
-import GaleriaJogo from "../../src/components/jogo/GaleriaJogo";
+import useAwaitLoading from "../../../src/hooks/useAwaitLoading";
+import ApresentacaoJogo from "../../../src/components/jogo/ApresentacaoJogo";
+import { useRequireLogin } from "../../../src/hooks/useRequireLogin";
+import useBuscarJogos from "../../../src/hooks/Api/protected/useBuscarJogos";
+import usePublicBuscarJogos from "../../../src/hooks/Api/useBuscarJogos";
+import GaleriaJogo from "../../../src/components/jogo/GaleriaJogo";
 
 export const JogoContext = createContext({})
 
-export default function Jogo() {
+export default function JogoRecomendado() {
     const router = useRouter()
     const paginaPronta = router.isReady
 
@@ -25,6 +25,7 @@ export default function Jogo() {
     const jogoComplementaryData = jogosData.find((item) => item.nome.toLowerCase() === jogo?.nome.toLowerCase())
 
     console.log(jogo)
+    console.log(jogosLista)
 
     if (paginaPronta && dadosProntos) {
         if (jogo) {

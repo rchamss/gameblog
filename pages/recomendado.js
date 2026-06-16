@@ -1,9 +1,23 @@
-import React, { useContext } from "react"
-import { useRequireLogin } from "../src/hooks/useRequireLogin"
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
-export default function Recomendado(){
-    useRequireLogin() // Hook de Proteção de Pagina
-    return (
-        <h1>Olá, Mundo! Estou na pagina de Recomendado</h1>
-    )
+import { useRequireLogin } from "../src/hooks/useRequireLogin";
+import useBuscarJogos from "../src/hooks/Api/protected/useBuscarJogos";
+
+export default function Recomendado() {
+    useRequireLogin();
+
+    const router = useRouter();
+    const jogos = useBuscarJogos();
+
+    useEffect(() => {
+        if (jogos.length > 0) {
+            const indiceAleatorio = Math.floor(Math.random() * jogos.length);
+            const jogoAleatorio = jogos[indiceAleatorio];
+
+            router.push(`recomendado/jogo/${jogoAleatorio.nome}`);
+        }
+    }, [jogos]);
+
+    return <h1>Escolhendo um jogo para você...</h1>;
 }

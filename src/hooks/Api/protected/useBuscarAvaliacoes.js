@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react"
 import { MensagemContext } from "../../../../pages/_app"
+import {apiPath} from "../../../../infra/api";
 
 export default function useRequestStars(token, gameId){ //Requisita a avaliação do jogo para a API (Precisa do ID do jogo)
     const [stars, setStars] = useState([])
@@ -11,7 +12,7 @@ export default function useRequestStars(token, gameId){ //Requisita a avaliaçã
 
         async function getAPI() {
             try{
-                const resposta = await fetch(`https://gameblog-api.onrender.com/api/v1/avaliacoes?jogoId=${gameId}`, {
+                const resposta = await fetch(`${apiPath}/avaliacoes?jogoId=${gameId}`, {
                     method: 'GET',
                     headers: {
                     'Authorization': `Bearer ${token}`

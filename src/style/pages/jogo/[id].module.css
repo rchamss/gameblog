@@ -7,9 +7,34 @@
     background-color: var(--fundo-darkmode);
 }
 
+.hero{
+    position: absolute;
+    top: 20px;
+    width: 100%; 
+    z-index: 0;
+    mask-image: linear-gradient(to bottom, black 30%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent);
+    opacity: 40%;
+
+    animation:
+            entrar 0.5s ease;
+}
+
 .container_pg{
     display: flex;
-   justify-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.divisor{
+    background-color: var(--cor-primaria);
+    border-radius: 5px;
+    width: 1000px;
+    height: 5px;
+    margin: 60px 0;
 }
 
 .notFound{
@@ -26,7 +51,13 @@
     border: 3px solid var(--cor-complementar);
     border-radius: 28px;
 }
+
 .iconeContainer{
     height: 10rem;
     width: 10rem;
+}
+
+@keyframes entrar {
+    from {opacity: 0%; transform: translateY(-20px);}
+    to {opacity: 40%; transform: translateY(0px);}
 }

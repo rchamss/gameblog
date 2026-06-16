@@ -1,22 +1,25 @@
-.div{
+.div {
     position: relative;
+    width: 100%;
 }
-.campo{
+
+.campo {
     display: block;
     position: relative;
-    border-radius: 20px;
+    border-radius: 18px;
     border: 2px solid #3c6691;
     outline: transparent;
 
     padding: 0px 15px;
 
-    width: 21.8rem;
-    height: 3.4rem;
+    width: 100%;
+    height: 3.2rem;
+    box-sizing: border-box;
 
     font-size: large;
     font-weight: bold;
 
-    color:#0D3D6B;
+    color: #0D3D6B;
 
     box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31);
 }
@@ -30,14 +33,16 @@
 
     font-weight: bold;
 
-    top: 30%;
-    left: 5%;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
 
-    cursor:text;
+    cursor: text;
     pointer-events: none;
 
     transition: opacity 0.2s ease;
 }
+
 .campo:placeholder-shown + .label{
     opacity: 50%;
 }
@@ -50,4 +55,19 @@
 .campo:focus-visible {
     outline: 2px solid var(--cor-primaria-darkmode);
     outline-offset: 3px;
+}
+
+@media (max-width: 344px) {
+    .campo {
+        height: 2.8rem;
+        font-size: medium;
+    }
+}
+
+
+@media (max-width: 360px) { /* Galaxy S8+ */
+    .campo {
+        height: 2.9rem;
+        font-size: medium;
+    }
 }
