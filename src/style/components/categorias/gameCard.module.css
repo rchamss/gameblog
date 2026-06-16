@@ -17,6 +17,7 @@
         entrar 0.5s ease;
 }
 
+
 .gameDados{
     display: flex;
     flex-direction: column;
@@ -40,6 +41,15 @@
     border-radius: 10px;
     height: 355px;
     width: 236px;
+    box-shadow: 0px 5px 10px 0px #0D0D0D;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+}
+
+.capa:hover{
+    transform: translateY(-8px);
+    box-shadow: 0px 15px 25px 0px #0D0D0D;
+    filter: brightness(1.15);
 }
 
 .butaoComprar{

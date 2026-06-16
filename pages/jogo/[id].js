@@ -8,6 +8,7 @@ import ApresentacaoJogo from "../../src/components/jogo/ApresentacaoJogo";
 import { useRequireLogin } from "../../src/hooks/useRequireLogin";
 import useBuscarJogos from "../../src/hooks/Api/protected/useBuscarJogos";
 import usePublicBuscarJogos from "../../src/hooks/Api/useBuscarJogos";
+import GaleriaJogo from "../../src/components/jogo/GaleriaJogo";
 
 export const JogoContext = createContext({})
 
@@ -32,6 +33,8 @@ export default function Jogo() {
                     <img src={jogoComplementaryData.hero} className={style.hero}/>
                     <main className={style.container_pg}>
                         <ApresentacaoJogo/>
+                        <hr className={style.divisor}/>
+                        <GaleriaJogo/>
                     </main>
                 </JogoContext>
             )

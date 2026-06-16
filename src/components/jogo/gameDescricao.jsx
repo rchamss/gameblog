@@ -15,7 +15,7 @@ export default function GameDescricao(){
                 </section>
                 <GamePrice/>
             </div>
-            <img src={jogoComplementaryData.capa} alter="Capa do Jogo"/>
+            <img src={jogoComplementaryData.capa} className={style.capa} alter="Capa do Jogo"/>
         </div>
     )
 }

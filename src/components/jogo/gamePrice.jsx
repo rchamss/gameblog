@@ -3,8 +3,7 @@ import { JogoContext } from "../../../pages/jogo/[id]";
 import style from "../../style/components/jogo/gamePrice.module.css"
 
 export default function GamePrice({jogoAPI}){
-    const {jogo, jogoComplementaryData, jogoPublic} = useContext(JogoContext)
-    console.log(jogoAPI)
+    const {jogo} = useContext(JogoContext)
 
     if(jogo){
         return(

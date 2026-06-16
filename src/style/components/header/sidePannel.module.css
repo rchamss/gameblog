@@ -18,6 +18,7 @@
 .alterMode img{
     width: 30px;
     height: 30px;
+    cursor: pointer;
 }
 .pesquisarIcon{
     height: 30px;
