@@ -15,7 +15,7 @@ export const jogosData = [
     {
         nome: "The Witcher 3: Wild Hunt",
         descrição: "Você é Geralt de Rívia, mercenário matador de monstros. Você está em um continente devastado pela guerra e infestado de monstros para você explorar à vontade. Sua tarefa é encontrar Ciri, a Criança da Profecia — uma arma viva que pode alterar a forma do mundo.",
-        bg: "https://cdn2.steamgriddb.com/hero_thumb/db5a2b11cd60316f5db7a66e657a626a.jpg",
+        hero: "https://cdn2.steamgriddb.com/hero_thumb/db5a2b11cd60316f5db7a66e657a626a.jpg",
         capa: "https://cdn2.steamgriddb.com/thumb/b5aca6b4b9c5a288f31c8f2a5c54f8c0.jpg",
         video: "https://www.youtube.com/embed/MqQ3LeBgGDM?si=oV24BDMbAIvaY2aB",
         imagens: [
@@ -265,7 +265,8 @@ export const jogosData = [
     {
         nome: "Yakuza: Like a Dragon",
         descrição: "Become Ichiban Kasuga, a low-ranking yakuza grunt left on the brink of death by the man he trusted most. Take up your legendary bat and get ready to crack some underworld skulls in dynamic RPG combat set against the backdrop of modern-day Japan.",
-        capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co2em9.webp",
+        capa: "https://cdn2.steamgriddb.com/thumb/974eecf7936504858fb28ae262692086.jpg",
+        hero: "https://cdn2.steamgriddb.com/hero_thumb/b533868508ec8c95aeabdc36ecc28e79.jpg",
         video: "https://www.youtube.com/embed/_uBK1MMC5KQ?si=4ek3QsUKi1uIJeLU",
         imagens: [
             "https://images.igdb.com/igdb/image/upload/t_720p/sc6wyn.webp",

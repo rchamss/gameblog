@@ -13,7 +13,7 @@ export default function useBuscarJogos(){ //Requisita os jogos disponiveis na AP
         if (!token) return
         async function getAPI() {
             try{
-                const resposta = await fetch('https://gameblog-api.onrender.com/api/v1/jogos', {
+                const resposta = await fetch('https://gameblog-api-production-817a.up.railway.app/api/v1/jogos', {
                 headers: {'Authorization': `Bearer ${token}`}})
                 const api = await resposta.json()   
                 

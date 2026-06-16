@@ -14,9 +14,10 @@ export default function useBuscarCategorias(){ //Requisita as Categorias disponi
 
         async function getAPI() {
             try{
-                const resposta = await fetch('https://gameblog-api.onrender.com/api/v1/categorias', {
+                const resposta = await fetch('https://gameblog-api-production-817a.up.railway.app/api/v1/categorias', {
                 headers: {'Authorization': `Bearer ${token}`}})
-                const api = await resposta.json()   
+                const api = await resposta.json()
+                console.log(api)   
                 
                 if(!resposta.ok){
                     throw { status: resposta.status, mensagem: api.message }

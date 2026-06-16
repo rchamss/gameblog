@@ -11,7 +11,7 @@ export default function useRequestStars(token, gameId){ //Requisita a avaliaçã
 
         async function getAPI() {
             try{
-                const resposta = await fetch(`https://gameblog-api.onrender.com/api/v1/avaliacoes?jogoId=${gameId}`, {
+                const resposta = await fetch(`https://gameblog-api-production-817a.up.railway.app/api/v1/avaliacoes?jogoId=${gameId}`, {
                     method: 'GET',
                     headers: {
                     'Authorization': `Bearer ${token}`
