@@ -43,7 +43,8 @@ export const jogosData = [
     {
         nome: "The Legend of Zelda: Breath of the Wild",
         descrição: "Link acorda sozinho num mundo do qual ele não se lembra mais. Agora, o lendário herói deve explorar perigosas terras vastas e recuperar sua memória antes que Hyrule se perca para sempre. Armado apenas com o que encontra, Link parte em busca de respostas e dos recursos necessários para sobreviver.",
-        capa: "https://cdn2.steamgriddb.com/hero_thumb/27c1432fc405e038f64e678d92e4aef9.jpg",
+        hero: "https://cdn2.steamgriddb.com/hero_thumb/71d1c0c06e1ab5049644acb5cc69a090.jpg",
+        capa: "https://cdn2.steamgriddb.com/thumb/121b81f7d167ca2c24fdab4f044048f8.jpg",
         video: "https://www.youtube.com/embed/zw47_q9wbBE?si=Il_g-gRcrsPkEP2R",
         imagens: [
             "https://images.igdb.com/igdb/image/upload/t_720p/sckj69.webp",
@@ -56,6 +57,7 @@ export const jogosData = [
     {
         nome: "Minecraft",
         descrição: "Em Minecraft, os jogadores exploram mundos gerados proceduralmente, coletam recursos, constroem estruturas e enfrentam criaturas em uma aventura aberta. Com infinitas possibilidades de criação e sobrevivência, cada partida permite moldar o mundo do seu próprio jeito, sozinho ou com amigos.",
+        hero: "https://cdn2.steamgriddb.com/hero_thumb/2284784c80b209b4e7b88b194edfe2e2.jpg",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co8fu7.webp",
         video: "https://www.youtube.com/embed/X-fMtNOS_gU?si=3cCqo0ejrDR41SdR",
         imagens: [
@@ -69,6 +71,7 @@ export const jogosData = [
     {
         nome: "Stardew Valley",
         descrição: "Você herdou a antiga fazenda do seu avô, em Stardew Valley. Com ferramentas de segunda-mão e algumas moedas, você parte para dar início a sua nova vida. Será que você vai aprender a viver da terra, a transformar esse matagal em um próspero lar?",
+        hero: "https://cdn2.steamgriddb.com/hero_thumb/6415c4907fe74dcdef94b0982a2e41fe.jpg",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/coa93h.webp",
         video: "https://www.youtube.com/embed/8A7A1X1TVNc?si=w25ePwEVSpYSOUpc",
         imagens: [
@@ -82,6 +85,7 @@ export const jogosData = [
     {
         nome: "Portal 2",
         descrição: "A Iniciativa de Testes Perpétuos foi expandida: crie câmaras cooperativas para você e os seus amigos!",
+        hero: "https://cdn2.steamgriddb.com/hero_thumb/1e0f65eb20acbfb27ee05ddc000b50ec.jpg",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rs4.webp",
         video: "https://www.youtube.com/embed/SJ5JY-ll2HY?si=o3SQyCYzVK-wBlss",
         imagens: [
@@ -95,6 +99,7 @@ export const jogosData = [
     {
         nome: "Half-Life: Alyx",
         descrição: "Half-Life: Alyx é a volta da Valve à série Half-Life em realidade virtual. Trata-se da história de uma impossível luta contra uma raça alienígena cruel, conhecida como Combine, situada entre os eventos de Half-Life e Half-Life 2.",
+        hero: "https://cdn2.steamgriddb.com/hero_thumb/a73d18446f20a30be28c26ab513da8d8.jpg",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co87vg.webp",
         video: "https://www.youtube.com/embed/O2W0N3uKXmo?si=HoWtBrMb4gv25cyb",
         imagens: [
@@ -108,6 +113,7 @@ export const jogosData = [
     {
         nome: "Cyberpunk 2077",
         descrição: "Cyberpunk 2077 é um RPG de ação e aventura em mundo aberto que se passa em Night City, uma megalópole perigosa onde todos são obcecados por poder, glamour e alterações corporais.",
+        hero: "https://cdn2.steamgriddb.com/hero_thumb/bba64e6137c253f4ae556a97869e31b1.jpg",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/coaih8.webp",
         video: "https://www.youtube.com/embed/qIcTM8WXFjk?si=Q890vxCbLdr1N-5H",
         imagens: [
@@ -121,6 +127,7 @@ export const jogosData = [
     {
         nome: "Among Us",
         descrição: "Um jogo de trabalho em equipe e trairagem online ou em rede local para 4 a 15 jogadores... no espaço!",
+        hero: "https://cdn2.steamgriddb.com/hero_thumb/eebb86912cb3cc808a6439d7f48bd764.jpg",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co6kqt.webp",
         video: "https://www.youtube.com/embed/JpalSQkmp2g?si=TKEkOzL5M_vZ_QOA",
         imagens: [
@@ -134,7 +141,8 @@ export const jogosData = [
     {
         nome: "A Lenda do Herói",
         descrição: "Aventure-se no mundo do Herói em pixel art no qual as ações do jogador são cantadas de forma cômica e dinâmica, nesse jogo de plataforma e muita aventura!",
-        capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co2k79.webp",
+        hero: "https://cdn2.steamgriddb.com/hero_thumb/1e082e6e16f0154233ba6ea0726e94cd.jpg",
+        capa: "https://cdn2.steamgriddb.com/thumb/c029d9d4b124cef75291bea08bd390c5.jpg",
         video: "https://www.youtube.com/embed/4VgRzOu-VU0?si=Rp28dHZdYgXRvi2V",
         imagens: [
             "https://images.igdb.com/igdb/image/upload/t_720p/sc8qhy.webp",
@@ -147,6 +155,7 @@ export const jogosData = [
     {
         nome: "Enigma do Medo",
         descrição: "Se torne Mia, uma detetive paranormal buscando por seu pai que desapareceu. Investigue e desvende os mistérios do Enigma do Medo, derrotando monstros assustadores em seu caminho.",
+        hero: "https://cdn2.steamgriddb.com/hero_thumb/3e174217945793e2b325ba858333f1e3.jpg",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co93ft.webp",
         video: "https://www.youtube.com/embed/OvibI1wQZAA?si=M9SOg3njPQiMatwG",
         imagens: [
@@ -174,6 +183,7 @@ export const jogosData = [
     {
         nome: "Bloodborne",
         descrição: "Enfrente seus pesadelos enquanto busca respostas na antiga cidade de Yharnam, agora amaldiçoada com uma estranha doença endêmica que se espalha pelas ruas. Perigo, morte e loucura estão em cada canto deste sombrio e horroroso mundo, e você deve descobrir seus segredos mais sombrios para sobreviver.",
+        hero: "https://cdn2.steamgriddb.com/hero_thumb/ec301ff34b99bdba5f66e1bb899f8724.jpg",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/cob99l.webp",
         video: "https://www.youtube.com/embed/AXiUYQ8eunw?si=ribzi2eG_AMue_7a",
         imagens: [
@@ -187,6 +197,7 @@ export const jogosData = [
     {
         nome: "Call of Duty: Modern Warfare",
         descrição: "Experimente uma Campanha visceral ou monte sua equipe em uma derradeira experiência online com diversos desafios de Operações Especiais e uma mistura de mapas e modos Multijogador.",
+        hero: "https://cdn2.steamgriddb.com/hero_thumb/28616ace1124f8e84ca84627160a09ef.jpg",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rsg.webp",
         video: "https://www.youtube.com/embed/bH1lHCirCGI?si=7EmeYIcchNGKs8j0",
         imagens: [
@@ -200,6 +211,7 @@ export const jogosData = [
     {
         nome: "Sekiro: Shadows Die Twice",
         descrição: "Jogo do Ano - The Game Awards 2019 Melhor Jogo de Ação de 2019 - IGN Trilhe seu próprio caminho de vingança nesta premiada aventura da FromSoftware, os criadores de Bloodborne e da franquia Dark Souls. Obtenha vingança. Retome sua honra. Mate astuciosamente.",
+        hero: "https://cdn2.steamgriddb.com/hero_thumb/94c8e4495d11846b18dd44998eed4968.png",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co2a23.webp",
         video: "https://www.youtube.com/embed/J3AbM_JRkWQ?si=hR4ho3YBwdR08nDQ",
         imagens: [
@@ -213,7 +225,8 @@ export const jogosData = [
     {
         nome: "The Elder Scrolls V: Skyrim",
         descrição: "Vencedor de mais de 200 prémios de Jogo do Ano, The Elder Scrolls V: Skyrim Special Edition dá vida à fantasia épica com um nível de detalhe espantoso. A Special Edition inclui o jogo aclamado pela crítica e suplementos com novas funcionalidades.",
-        capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/cobt0i.webp",
+        hero: "https://cdn2.steamgriddb.com/hero_thumb/a4267159aa970aa5a6542bcbb7ef575e.jpg",
+        capa: "https://cdn2.steamgriddb.com/thumb/eda54c73aca6387a7d72e7e1699a2c5a.jpg",
         video: "https://www.youtube.com/embed/0mHGygvlKCQ?si=k0_cHiYUNfoOB5v5",
         imagens: [
             "https://images.igdb.com/igdb/image/upload/t_720p/xzk2h41fiye7uwbhc6ub.webp",
@@ -226,6 +239,7 @@ export const jogosData = [
     {
         nome: "Fallout 4",
         descrição: "A Bethesda Game Studios, criadora premiada de Starfield e The Elder Scrolls V: Skyrim, também criou Fallout 4. Um marco no design de RPGs de mundo aberto e vencedor de mais de 200 prêmios de Melhor Jogo em várias categorias, incluindo o Jogo do Ano da DICE e do BAFTA.",
+        hero: "https://cdn2.steamgriddb.com/hero_thumb/eab1bceaa6c5823d7ed86cfc7a8bd824.jpg",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co1yc6.webp",
         video: "https://www.youtube.com/embed/X5aJfebzkrM?si=cSusIp6n24fRHLWr",
         imagens: [
@@ -239,6 +253,7 @@ export const jogosData = [
     {
         nome: "Monster Hunter: World",
         descrição: "Conheça o Novo Mundo! Em Monster Hunter: World, o jogo mais recente da série, você pode curtir a experiência máxima de caçada, usando tudo à sua disposição para caçar monstros em um novo mundo repleto de surpresas e emoções.",
+        hero: "https://cdn2.steamgriddb.com/hero_thumb/0e975254c6e211f21a5cca6eb2cf1a82.jpg",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co1rst.webp",
         video: "https://www.youtube.com/embed/TjKQ3fbB27Y?si=z4ho7X2-_fVO_n20",
         imagens: [
@@ -252,6 +267,7 @@ export const jogosData = [
     {
         nome: "Persona 5 Royal",
         descrição: "Lidere os Ladrões-Fantasma neste premiado e estiloso RPG em turnos, com direito a exploração de masmorras, personalização de grupos, combate estratégico e fusão de Personas. Aventure-se por Tóquio, forme relacionamentos, enfrente Sombras e infiltre as mentes dos corruptos para mudar suas atitudes!",
+        hero: "https://cdn2.steamgriddb.com/hero_thumb/6bfc65ce262b2fbca99b82605d18a52a.jpg",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co8ozn.webp",
         video: "https://www.youtube.com/embed/IR_7H_zzU7Y?si=jFjhMdErX6MBLgQH",
         imagens: [
@@ -265,8 +281,8 @@ export const jogosData = [
     {
         nome: "Yakuza: Like a Dragon",
         descrição: "Become Ichiban Kasuga, a low-ranking yakuza grunt left on the brink of death by the man he trusted most. Take up your legendary bat and get ready to crack some underworld skulls in dynamic RPG combat set against the backdrop of modern-day Japan.",
-        capa: "https://cdn2.steamgriddb.com/thumb/974eecf7936504858fb28ae262692086.jpg",
         hero: "https://cdn2.steamgriddb.com/hero_thumb/b533868508ec8c95aeabdc36ecc28e79.jpg",
+        capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co2em9.webp",
         video: "https://www.youtube.com/embed/_uBK1MMC5KQ?si=4ek3QsUKi1uIJeLU",
         imagens: [
             "https://images.igdb.com/igdb/image/upload/t_720p/sc6wyn.webp",
@@ -279,7 +295,8 @@ export const jogosData = [
     {
         nome: "Resident Evil 7: Biohazard",
         descrição: "Medo e isolamento se infiltram nas paredes de uma casa de campo abandonada. 7 marca um novo início para o horror de sobrevivência com a Visão Isolada da visceral perspectiva em primeira pessoa.",
-        capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/cobd4o.webp",
+        hero: "https://cdn2.steamgriddb.com/hero_thumb/b54610023aec2ff8ce90f49fd969249b.jpg",
+        capa: "https://cdn2.steamgriddb.com/thumb/54ecd1b65bf8ad35021858062271013b.jpg",
         video: "https://www.youtube.com/embed/0osKz2rOTHo?si=hXbkBxW58bwrv7bS",
         imagens: [
             "https://images.igdb.com/igdb/image/upload/t_720p/kvo8i8r4frk2hlvsyebm.webp",
@@ -292,6 +309,7 @@ export const jogosData = [
     {
         nome: "Grand Theft Auto V",
         descrição: "Aproveite os fenômenos do entretenimento Grand Theft Auto V e Grand Theft Auto Online melhorados para uma nova geração, com gráficos deslumbrantes, tempos de carregamento mais rápidos, áudio 3D e mais, além de conteúdo exclusivo para jogadores do GTA Online.",
+        hero: "https://cdn2.steamgriddb.com/hero_thumb/d87a115c9d86093c5cf8e181a795ba8d.jpg",
         capa: "https://images.igdb.com/igdb/image/upload/t_cover_big/co2lbd.webp",
         video: "https://www.youtube.com/embed/PIF_fqFZEuk?si=ZsV81kA9pEl_xXs2",
         imagens: [
