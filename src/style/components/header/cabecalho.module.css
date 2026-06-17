@@ -1,6 +1,6 @@
 .header{
     display: flex;
-    position: fixed;
+    position: sticky;
     align-items: center;
 
     margin-top: -150px;

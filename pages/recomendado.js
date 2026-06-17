@@ -15,7 +15,7 @@ export default function Recomendado() {
             const indiceAleatorio = Math.floor(Math.random() * jogos.length);
             const jogoAleatorio = jogos[indiceAleatorio];
 
-            router.push(`recomendado/jogo/${jogoAleatorio.nome}`);
+            router.push(`jogo/${jogoAleatorio.nome}`);
         }
     }, [jogos]);
 

@@ -1,0 +1,82 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.title {
+  font-size: 1.4rem;
+  color: var(--cor-primaria);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-left: 4px solid var(--cor-complementar);
+  padding-left: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.2rem;
+  margin-bottom: 3rem;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  min-height: 160px;
+  border-radius: 10px;
+  text-decoration: none;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 140, 255, 0.3); 
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(to right, var(--cor-complementar) 0%, var(--cor-principal) 100%);
+  opacity: 0.45; /* Alterado de 0.82 para 0.45 */
+  z-index: 1;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .overlay {
+  opacity: 0.25;
+}
+
+.cardName {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+  transition: transform 0.3s ease;
+}
+
+.card:hover .cardName {
+  transform: scale(1.05);
+}
+
+.loadingText {
+  color: var(--cor-primaria);
+  opacity: 0.7;
+  font-size: 0.95rem;
+  font-style: italic;
+}
