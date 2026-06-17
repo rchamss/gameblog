@@ -1,0 +1,103 @@
+.mainContainer {
+    position: relative;
+    width: 100%;
+    /* Ocupa a tela toda (descontando o cabeçalho se houver) */
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    /* Cor de fundo caso o vídeo demore a carregar */
+    background-color: #1c1c1d;
+}
+
+.videoBackground {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    /* Reduz um pouco o brilho do vídeo base */
+    filter: brightness(0.7);
+
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* Gradiente: Escuro transparente no topo, Azul no fundo para mesclar com o site */
+    background: linear-gradient(
+            to bottom,
+            transparent 0%,
+            var(--cor-index) 100%
+    );
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    /* Pequena animação de entrada */
+    animation: fadeUp 0.8s ease-out forwards;
+}
+
+.title {
+    font-size: clamp(2.5rem, 3vw, 3rem);
+    color: var(--cor-primaria);
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+
+.subtitle {
+    font-size: clamp(1.2rem, 2vw, 1.5rem);
+    color: #e0e0e0;
+    margin: 0 0 1rem 0;
+    font-weight: 400;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.ctaButton {
+    /* Usando a cor azul da sua navbar */
+    background-color: #01569A;
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 1rem 2.5rem;
+    border-radius: 20px;
+    text-decoration: none;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ctaButton:hover {
+    background-color: #016bbf; /* Azul um pouco mais claro */
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 12px 25px rgba(1, 86, 154, 0.5);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Animação suave para o conteúdo principal */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

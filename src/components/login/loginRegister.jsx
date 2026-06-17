@@ -21,6 +21,7 @@ export default function LoginRegisterForm(){
             setCarregando(true)
             const dados = await RegistrarUsuario(valueEmail, valueSenha, valueNome, valueDtNasc)
             mostrarMensagem(200, dados.message)
+            await router.push('/login')
         }
         catch (error){
             setCarregando(false)

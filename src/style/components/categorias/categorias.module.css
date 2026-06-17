@@ -112,28 +112,25 @@
   box-shadow: 0 10px 25px rgba(28, 28, 29, 0.76);
 }
 
+/* ... Restante do seu CSS original acima permanece igual ... */
+
 @keyframes entradaCard {
   from {
     opacity: 0;
-    transform: translateY(20px) scale(0.95); /* Começa mais baixo e menor */
+    transform: translateY(20px) scale(0.95);
   }
   to {
     opacity: 1;
-    transform: translateY(0) scale(1); /* Termina na posição original */
+    transform: translateY(0) scale(1);
   }
 }
 
 .animarEntrada {
   opacity: 0;
-
-
   animation: entradaCard 0.5s ease-out forwards;
-
-
   animation-delay: var(--delay-entrada);
 }
 
 .card.animarEntrada {
-
   transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.5s ease;
 }

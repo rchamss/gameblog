@@ -1,10 +1,11 @@
 :root {
   --fonte-principal: 'Google Sans';
   --cor-primaria: #ffffff;
-  --fundo: #2D2D2D;
+  --fundo: #0e0e0e;
   --fundo-gradiente: #2D2D2D;
   --cor-principal: #01569A;
   --cor-complementar: #008CFF;
+  --cor-index: #0e0e0e;
   --cor-secundaria: #008704;
   --cor-secundaria-selecionado: #006e04;
   --cor-secundaria-complementar: #02a707;
@@ -14,6 +15,7 @@
 [data-theme="light"] {
   --cor-primaria: #01569A;
   --fundo: #dddddd;
+  --cor-index: rgb(182, 214, 241);
 }
 
 * {

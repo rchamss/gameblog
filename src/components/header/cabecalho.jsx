@@ -16,7 +16,7 @@ export default function Cabecalho(){
 
     return (
         <header className={style.header}>
-            <span className={style.gameblog}>gameblog</span>
+            <Link href="/"><span className={style.gameblog}>gameblog</span></Link>
             <nav className={style.navLinks}>
                 {navBar.map(pg => {
                     const isActive = router.pathname === pg.caminho
