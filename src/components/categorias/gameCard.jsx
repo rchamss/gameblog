@@ -1,8 +1,10 @@
+import { useState } from 'react';
 import Link from "next/link";
 import style from "../../style/components/categorias/gameCard.module.css"
 import GamePrice from "../jogo/gamePrice";
 
 export default function GameCard({jogoAPI, categoria, dadosComplementares}){
+    const [expandido, setExpandido] = useState(false)
     console.log(jogoAPI)
     return(
         <div className={style.center}>
@@ -14,7 +16,10 @@ export default function GameCard({jogoAPI, categoria, dadosComplementares}){
                         <Link href={`/jogo/${jogoAPI.nome}`}>
                                 <h1>{jogoAPI.nome}</h1>
                                 <p>{jogoAPI.descricao}</p>
-                                <p>{dadosComplementares.descrição}</p>
+                                <button className={style.lerMais} onClick={(e) => { e.preventDefault(); setExpandido(!expandido) }}>
+                                  {expandido ? 'Ler menos' : 'Ler mais'}
+                                </button>
+                                <p className={`${style.descricao} ${expandido ? style.expandido : ''}`}>{dadosComplementares.descrição}</p>
                                 <span className={style.categoria}>{categoria.nome}</span>
                         </Link>
                         <GamePrice jogoAPI={jogoAPI}/>

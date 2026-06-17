@@ -54,3 +54,11 @@
 .dropdown a:hover {
     background-color: #f0f0f0;
 }
+
+@media (max-width: 768px) {
+    .dropdown {
+        top: auto;
+        bottom: 100%;
+        margin-bottom: 1rem;
+    }
+}

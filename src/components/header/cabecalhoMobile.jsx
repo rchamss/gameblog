@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
 import style from '../../style/components/header/cabecalhoMobile.module.css';
+import PerfilUsuario from './PerfilUsuario';
 
 import { navBar } from './cabecalho';
 
@@ -35,8 +36,7 @@ export default function CabecalhoMobile() {
                     ☰
                 </button>
                 <input className={style.inputBusca} type='text' placeholder='Pesquisar na Loja...' />
-                <button className={style.avatarBtn}>
-                </button>
+                <PerfilUsuario />
             </div>
         </footer>
     )

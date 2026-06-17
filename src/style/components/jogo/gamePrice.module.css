@@ -50,3 +50,35 @@
     height: 35px;
     width: 35px;
 }
+
+@media (max-width: 768px) {
+.priceBG {
+    width: 100%;
+    min-width: 0;
+    margin-top: 10px;
+    box-sizing: border-box;
+    padding: 0 10px;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.priceBG h2{
+    font-size: clamp(14px, 4vw, 18px);
+    margin-right: 0;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+.butao{
+    height: 36px;
+    font-size: 14px;
+    padding: 0 8px;
+    flex-shrink: 1;
+    min-width: 0;
+}
+.carrinho{
+    height: 20px;
+     width: 20px;
+     flex-shrink: 0;
+}
+
+}

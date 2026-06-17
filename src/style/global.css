@@ -37,3 +37,9 @@ a {
 main {
     padding-top: 100px;
 }
+
+@media (max-width: 768px){
+    main {
+     padding-bottom: 100px;
+    }
+}
