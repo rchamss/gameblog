@@ -9,6 +9,7 @@ import { useRequireLogin } from "../../src/hooks/useRequireLogin";
 import useBuscarJogos from "../../src/hooks/Api/protected/useBuscarJogos";
 import usePublicBuscarJogos from "../../src/hooks/Api/useBuscarJogos";
 import GaleriaJogo from "../../src/components/jogo/GaleriaJogo";
+import EscreverAvaliacao from "../../src/components/jogo/gameCreateAvaliacao";
 
 export const JogoContext = createContext({})
 
@@ -35,6 +36,8 @@ export default function Jogo() {
                         <ApresentacaoJogo/>
                         <hr className={style.divisor}/>
                         <GaleriaJogo/>
+                        <hr className={style.divisor}/>
+                        <EscreverAvaliacao/>
                     </main>
                 </JogoContext>
             )

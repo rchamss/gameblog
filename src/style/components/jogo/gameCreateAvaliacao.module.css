@@ -1,0 +1,64 @@
+.escreverContainer {
+    background-color: #0d2644; /* Azul escuro do fundo */
+    border-radius: 12px;
+    overflow: hidden;
+    color: white;
+    width: 1000px;
+}
+
+.escreverHeader {
+    background-color: #1266b5;
+    border-radius: 12px;
+    border: solid 2px var(--cor-complementar);
+    padding: 16px 24px;
+    box-shadow: 0px 7px 10px 1px rgb(13 13 13 / 0.33);
+}
+
+.escreverHeader h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.escreverBody {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.estrelasInterativas {
+    display: flex;
+    gap: 8px;
+}
+
+.estrelaInterativa {
+    cursor: pointer;
+    transition: transform 0.2s, fill 0.2s;
+}
+
+.estrelaInterativa:hover {
+    transform: scale(1.1);
+}
+
+.textareaComentario {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    line-height: 1.5;
+    resize: none;
+    outline: none;
+    font-family: inherit;
+}
+
+.textareaComentario::placeholder {
+    color: #a0aec0;
+}
+.SubmitButton {
+    margin-left: 30px;
+    margin-bottom: 30px;
+    width: 30%;
+}

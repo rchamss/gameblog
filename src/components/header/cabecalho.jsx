@@ -9,21 +9,10 @@ export const navBar = [
     {pagina: 'Recomendados', caminho: '/recomendado'},
     {pagina: 'Categorias', caminho: '/categorias'},
     {pagina: 'Distribuir', caminho: '/distribuir'},
-    {pagina: 'index', caminho: '/'},
 ]
 
 export default function Cabecalho(){
     const router = useRouter()
-    const [isMobile, setIsMobile] = useState(false)
-
-    useEffect(() => {
-        const checarTamanho = () => setIsMobile(window.innerWidth <= 768)
-        checarTamanho()
-        window.addEventListener('resize', checarTamanho)
-        return () => window.removeEventListener('resize', checarTamanho)
-    }, [])
-
-    if(isMobile) return <CabecalhoMobile />
 
     return (
         <header className={style.header}>

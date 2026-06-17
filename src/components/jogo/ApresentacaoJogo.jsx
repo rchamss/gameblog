@@ -11,7 +11,7 @@ export default function ApresentacaoJogo(){
         <div className={style.div}>
             <GameName src={jogo.nome}/>
             <GameTrailer src={jogoComplementaryData.video}/>
-            <GameDescricao />
+            <GameDescricao/>
         </div>
     )
 }
