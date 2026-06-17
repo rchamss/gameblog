@@ -2,7 +2,6 @@ import { useContext } from "react"
 import { JogoContext } from "../../../pages/jogo/[id]"
 import GameTrailer from "./gameTrailer"
 import style from "../../style/components/jogo/ApresentacaoJogo.module.css"
-import GameName from "./gameName"
 import GameDescricao from "./gameDescricao"
 
 export default function ApresentacaoJogo(){

@@ -18,7 +18,6 @@ export default function useBuscarCategorias(){ //Requisita as Categorias disponi
                 const resposta = await fetch(`${apiPath}/categorias`, {
                 headers: {'Authorization': `Bearer ${token}`}})
                 const api = await resposta.json()
-                console.log(api)   
                 
                 if(!resposta.ok){
                     throw { status: resposta.status, mensagem: api.message }

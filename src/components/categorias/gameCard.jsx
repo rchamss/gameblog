@@ -2,10 +2,12 @@ import { useState } from 'react';
 import Link from "next/link";
 import style from "../../style/components/categorias/gameCard.module.css"
 import GamePrice from "../jogo/gamePrice";
+import useBuscarAvaliacoes from "../../hooks/Api/protected/useBuscarAvaliacoes";
+import GameAvaliacoes from "../jogo/gameAvaliacoes";
 
 export default function GameCard({jogoAPI, categoria, dadosComplementares}){
     const [expandido, setExpandido] = useState(false)
-    console.log(jogoAPI)
+    const estrelas = useBuscarAvaliacoes(jogoAPI.id)
     return(
         <div className={style.center}>
             <article className={style.card_bg}>
@@ -21,6 +23,7 @@ export default function GameCard({jogoAPI, categoria, dadosComplementares}){
                                 </button>
                                 <p className={`${style.descricao} ${expandido ? style.expandido : ''}`}>{dadosComplementares.descrição}</p>
                                 <span className={style.categoria}>{categoria.nome}</span>
+                                <GameAvaliacoes nota={estrelas.media} quantidadeAvaliacoes={estrelas.totalAvaliacoes}/>
                         </Link>
                         <GamePrice jogoAPI={jogoAPI}/>
                     </div>

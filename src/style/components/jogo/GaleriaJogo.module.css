@@ -4,7 +4,14 @@
     align-items: center;
     justify-content: space-between;
     gap: 30px;
+
+    border-radius: 20px;
 }
+
+.sessao h1{
+    border-bottom: 2px solid var(--cor-primaria-jogo);
+}
+
 
 .destaque{
     width: 1000px;

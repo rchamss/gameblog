@@ -8,7 +8,6 @@ export default function useBuscarUsuario(){ //Requisita o usuário logado para a
     const { mostrarMensagem } = useContext(MensagemContext)
     const [user, setUser] = useState(null)
     const { token, id_user } = useRequireLogin()
-    console.log(id_user)
     const router = useRouter()
     useEffect(() => {
         if (!token) return
@@ -17,8 +16,6 @@ export default function useBuscarUsuario(){ //Requisita o usuário logado para a
                 const resposta = await fetch(`${apiPath}/usuarios/${id_user}`, {
                     headers: {'Authorization': `Bearer ${token}`}})
                 const api = await resposta.json()
-
-
                 if(!resposta.ok){
                     throw { status: resposta.status, mensagem: api.message }
                 }

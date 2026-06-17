@@ -12,6 +12,7 @@
 
     background-color: var(--cor-principal);
     border: 0.18rem solid var(--cor-complementar);
+    border-top: transparent;
     border-radius: 0 0 1.5rem 1.5rem;
 }
 

@@ -11,7 +11,6 @@ import Avaliacoes from "../src/components/perfil/avaliacoes";
 export default function Perfil(){
     useRequireLogin()
     const user = useBuscarUsuario()
-    console.log(user)
     if(user){
         return (
             <div className={style.background}>

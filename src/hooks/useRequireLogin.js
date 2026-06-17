@@ -29,12 +29,10 @@ export function useVerificarLogin(){
         const token = localStorage.getItem('token')
         if(token){
             setLogado(true)
-            console.log('Usuário logado!')
         }
 
         else{
             setLogado(false)
-            console.log('Usuário não logado!')
         }
     }, []);
     return logado

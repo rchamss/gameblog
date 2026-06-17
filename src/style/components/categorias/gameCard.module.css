@@ -29,11 +29,13 @@
 }
 
 .categoria{
+    display: inline-block;
     padding: 5px 10px;
     border-radius: 10px;
     background-color: white;
     color: black;
     font-weight: 500;
+    margin-bottom: 20px;
 }
 
 .capa{

@@ -10,6 +10,8 @@ import useBuscarJogos from "../../src/hooks/Api/protected/useBuscarJogos";
 import usePublicBuscarJogos from "../../src/hooks/Api/useBuscarJogos";
 import GaleriaJogo from "../../src/components/jogo/GaleriaJogo";
 import EscreverAvaliacao from "../../src/components/jogo/gameCreateAvaliacao";
+import TitulosSimilares from "../../src/components/jogo/gameSimilares"
+import GameEmpresa from "../../src/components/jogo/gameEmpresa";
 
 export const JogoContext = createContext({})
 
@@ -44,7 +46,7 @@ export default function Jogo() {
                     {/* ⚙️ NOVO CONTAINER DO PARALAXE */}
                     <div
                         className={style.heroWrapper}
-                        style={{ '--parallax-offset': `${offsetY * 0.4}px` }} // 0.4 controla a velocidade do efeito
+                        style={{ '--parallax-offset': `${offsetY * 0.6}px` }} // 0.4 controla a velocidade do efeito
                     >
                         <img src={jogoComplementaryData.hero} className={style.hero}/>
                     </div>
@@ -55,6 +57,15 @@ export default function Jogo() {
                         <GaleriaJogo/>
                         <hr className={style.divisor}/>
                         <EscreverAvaliacao/>
+                        <hr className={style.divisor}/>
+                        <TitulosSimilares
+                            jogosAPI={jogosListaPublic}
+                            jogosComplementares={jogosData}
+                            categoriaAtual={jogoPublic.categoria}
+                            nomeJogoAtual={jogo.nome}
+                        />
+                        <hr className={style.divisor}/>
+                        <GameEmpresa/>
                     </main>
                 </JogoContext>
             )

@@ -47,7 +47,6 @@ export default function App({ Component, pageProps}) {
   }, [])
 
   function mostrarMensagem(codigo, texto){
-    console.log('mostrarMensagem:', codigo, texto, Date.now())
     setMensagem({ status: codigo, mensagem: texto, ID: Date.now() })
   }
 

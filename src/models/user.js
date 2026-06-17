@@ -16,11 +16,9 @@ export default async function FazerLogin(valueEmail, valueSenha){
         const payload = JSON.parse(atob(dados.token.split('.')[1])) // converte o token
         localStorage.setItem('token', dados.token)
         localStorage.setItem('id_user', payload.id)
-        console.log(payload.id)
         return dados
     } 
-    else { 
-        console.log(dados)
+    else {
         throw { status: resposta.status, mensagem: dados.message }
     }
 

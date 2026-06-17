@@ -13,8 +13,10 @@
 }
 .descricaoContainer h3{
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 .capa{
+    margin-left: 20px;
     border-radius: 20px;
     box-shadow: 0px 7px 10px 1px rgb(13 13 13 / 0.66);
 }

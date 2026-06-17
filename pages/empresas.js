@@ -4,7 +4,6 @@ import Link from "next/link";
 import React from "react";
 export default function Distribuir() {
     const empresas = useBuscarEmpresas()
-    console.log(empresas)
     return (
         <div className={styles.container}>
 

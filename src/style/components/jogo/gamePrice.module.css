@@ -1,8 +1,7 @@
 .priceBG{
     display: flex;
     align-items: center;
-    justify-content: space-between;    
-    background-color: #626262;
+    background-color: var(--cor-principal);
     border-radius: 10px;
     height: 60px;
     width: 370px;
@@ -13,7 +12,7 @@
     height: inherit;    
 }
 .priceBG h2{
-    margin-right: 10px;
+    margin-left: 10px;
     color: white;
     font-size: 30; 
 }

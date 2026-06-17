@@ -1,63 +1,61 @@
-import style from '../../style/components/jogo/gameAvaliacoes.module.css'
-import { useContext } from "react";
-import { JogoContext } from "../../../pages/jogo/[id]";
+import React, { useId } from "react";
 
-// Subcomponente que suporta estrelas inteiras, meias e vazias
-const StarRating = ({ media }) => {
-    const estrelas = [];
+const StarDisplay = ({ index, value, tamanho }) => {
+    const idUnico = useId();
+    const gradientId = `star-gradient-${idUnico}-${index}`;
 
-    for (let i = 1; i <= 5; i++) {
-        // Se a média for maior ou igual ao índice atual, a estrela está cheia
-        if (media >= i) {
-            estrelas.push({ id: i, tipo: 'full', caractere: '★' });
-        }
-        // Se estiver entre o índice anterior e o atual (ex: 4.25 ou 4.5), exibe meia estrela
-        else if (media > i - 1 && media < i) {
-            estrelas.push({ id: i, tipo: 'half', caractere: '½' }); // Ou use um SVG de meia-estrela
-        }
-        // Caso contrário, a estrela está vazia
-        else {
-            estrelas.push({ id: i, tipo: 'empty', caractere: '☆' });
-        }
+    let fillPercent = 0;
+    if (value >= index) {
+        fillPercent = 100;
+    } else if (value > index - 1) {
+        fillPercent = (value - (index - 1)) * 100;
     }
 
     return (
-        <div
-            className={style.starsWrapper}
-            role="img"
-            aria-label={`Avaliação: ${media} de 5 estrelas`}
+        <svg
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            width={tamanho}
+            height={tamanho}
         >
-            {estrelas.map((estrela) => (
-                <span
-                    key={estrela.id}
-                    aria-hidden="true"
-                    className={`${style.star} ${style[estrela.tipo]}`}
-                >
-                    {estrela.caractere}
-                </span>
-            ))}
-        </div>
+            <defs>
+                <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset={`${fillPercent}%`} stopColor="#ffffff" stopOpacity="1" />
+                    <stop offset={`${fillPercent}%`} stopColor="#6c757d" stopOpacity="1" />
+                </linearGradient>
+            </defs>
+            <path
+                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                fill={`url(#${gradientId})`}
+            />
+        </svg>
     );
 };
 
-export default function GameAvaliacoes() {
-    const { jogo, jogoComplementaryData, jogoPublic } = useContext(JogoContext);
-
-    // Extração dos dados da API de dentro do objeto do Contexto
-    // Substitua 'jogo?.dadosAvaliacao' pelo caminho real onde guardou o JSON da API
-    const dadosDados = jogo?.dadosAvaliacao || { media: 0, totalAvaliacoes: 0 };
-    const { media, totalAvaliacoes } = dadosDados;
+export default function GameAvaliacoes({ nota, quantidadeAvaliacoes, tamanho = 24 }) {
+    const notaSegura = Math.max(0, Math.min(5, Number(nota) || 0));
+    const totalAvaliacoes = Number(quantidadeAvaliacoes) || 0;
 
     return (
-        <section className={style.avaliacoesContainer}>
-            <div className={style.ratingHeader}>
-                <StarRating media={media} />
-                <span className={style.ratingText}>
-                    {media.toFixed(1)} ({totalAvaliacoes} avaliações)
-                </span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '2px' }}>
+                {[1, 2, 3, 4, 5].map((index) => (
+                    <StarDisplay
+                        key={index}
+                        index={index}
+                        value={notaSegura}
+                        tamanho={tamanho}
+                    />
+                ))}
             </div>
 
-            {/* Opcional: Renderizar a lista de avaliações aqui se necessário */}
-        </section>
+            <div style={{ color: 'var(--cor-primaria, #ffffff)', fontSize: '0.95rem' }}>
+                <strong>{notaSegura.toFixed(1)}</strong>
+                <span style={{ opacity: 0.7, marginLeft: '6px', fontSize: '0.85rem' }}>
+                    ({totalAvaliacoes} {totalAvaliacoes === 1 ? 'avaliação' : 'avaliações'})
+                </span>
+            </div>
+        </div>
     );
 }

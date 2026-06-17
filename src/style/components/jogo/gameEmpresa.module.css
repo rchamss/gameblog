@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 80px;
+    padding: 0 20px;
+}
+
+.botaoEmpresa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px; /* Limita a largura para não esticar na tela inteira do PC */
+    padding: 16px 24px;
+
+    /* Gradiente baseado na sua imagem de referência */
+    background: linear-gradient(90deg, #18009c 0%, #008cff 100%);
+
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.botaoEmpresa:hover {
+    transform: translateY(-4px);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
+    filter: brightness(1.15); /* Deixa as cores mais vivas ao passar o mouse */
+}
+
+.botaoEmpresa:active {
+    transform: translateY(0);
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* 📱 Responsividade para telas menores */
+@media (max-width: 768px) {
+    .botaoEmpresa {
+        max-width: 100%; /* No celular, ele ocupa quase toda a largura disponível */
+        font-size: 1.1rem;
+        padding: 14px 20px;
+    }
+}
