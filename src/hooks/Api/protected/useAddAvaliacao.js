@@ -16,7 +16,7 @@ export default function useAddAvaliacao() {
             return;
         }
 
-        try {
+        try { // try padrão de POST na API
             const resposta = await fetch(`${apiPath}/avaliacoes`, {
                 method: 'POST',
                 headers: {

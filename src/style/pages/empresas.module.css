@@ -1,0 +1,71 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 1.4rem;
+    color: var(--cor-primaria);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    margin-top: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-left: 4px solid var(--cor-complementar);
+    padding-left: 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    min-height: 160px;
+    border-radius: 10px;
+    text-decoration: none;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--cor-complementar);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(32, 32, 34, 0.3);
+}
+
+.cardName {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease;
+}
+
+.card:hover .cardName {
+    transform: scale(1.05);
+}
+
+.loadingText {
+    color: var(--cor-primaria);
+    opacity: 0.7;
+    font-size: 0.95rem;
+    font-style: italic;
+}

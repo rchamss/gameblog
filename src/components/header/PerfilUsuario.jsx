@@ -7,7 +7,6 @@ import {useEffect, useState} from "react";
 export default function PerfilUsuario() {
     const [isAutenticado, setisAutenticado] = useState(false)
     const user = useBuscarUsuario()
-    console.log(user)
     useEffect(() => {
         if (!user) return
         if (user.fkPerfil === 1) {
@@ -20,7 +19,7 @@ export default function PerfilUsuario() {
 
                 <div className={style.dropdown}>
                     <Link href={'/perfil'}>Perfil</Link>
-                    {isAutenticado ? <Link href={'/perfil'}>Empresas</Link> : null}
+                    {isAutenticado ? <Link href={'/empresas'}>Empresas</Link> : null}
                     <Link href={'/'}>Biblioteca</Link>
                     <Link href={'/'}>Configurações</Link>
                 </div>

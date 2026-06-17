@@ -1,7 +1,7 @@
 import style from "../../src/style/pages/jogo/[id].module.css"
 import Carregamento from "../../src/components/loading";
 import { useRouter } from "next/router"
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import useAwaitLoading from "../../src/hooks/useAwaitLoading";
 import { useRequireLogin } from "../../src/hooks/useRequireLogin";
 import useBuscarJogos from "../../src/hooks/Api/protected/useBuscarJogos";
@@ -10,6 +10,7 @@ import usePublicBuscarJogos from "../../src/hooks/Api/useBuscarJogos";
 import Link from "next/link";
 import { jogosData } from "../../src/data/complementaryData";
 import GameCard from "../../src/components/categorias/gameCard";
+import styles from "../../src/style/components/categorias/categorias.module.css";
 
 export default function Jogo() {
     const router = useRouter()
@@ -28,14 +29,16 @@ export default function Jogo() {
     if (paginaPronta && dadosProntos) {
         if (categoriaRequisitada) {
             return (
-                <main>
-                    <h1>Olá Mundo! Você esta na página de {categoriaRequisitada.nome}</h1>
-                    {jogosCategoria.map((jogo) => 
-                        <GameCard 
-                            jogoAPI={jogo} 
-                            categoria={categoriaRequisitada} 
-                            dadosComplementares={jogosComplementaryData.find((complementar) => complementar.nome === jogo.nome)}/>)}
-                </main>
+                <div className={style.center}>
+                    <main>
+                        <h2 className={styles.title}>Jogos de {categoriaRequisitada.nome}</h2>
+                        {jogosCategoria.map((jogo) =>
+                            <GameCard
+                                jogoAPI={jogo}
+                                categoria={categoriaRequisitada}
+                                dadosComplementares={jogosComplementaryData.find((complementar) => complementar.nome === jogo.nome)}/>)}
+                    </main>
+                </div>
             )
         }
         else { 

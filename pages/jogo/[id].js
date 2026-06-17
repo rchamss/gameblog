@@ -57,7 +57,7 @@ export default function Jogo() {
     else{
         return (
             <div className={style.container_carregamento}>
-                <Carregamento /> 
+                <Carregamento/>
             </div>
         )
     }

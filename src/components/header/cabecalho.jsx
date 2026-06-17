@@ -6,7 +6,7 @@ import SidePannel from './sidePannel'
 import CabecalhoMobile from './cabecalhoMobile'
 
 export const navBar = [
-    {pagina: 'Recomendados', caminho: '/recomendado'},
+    {pagina: 'Recomendar Jogo', caminho: '/recomendado'},
     {pagina: 'Categorias', caminho: '/categorias'},
     {pagina: 'Distribuir', caminho: '/distribuir'},
 ]
