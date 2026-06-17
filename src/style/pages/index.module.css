@@ -34,8 +34,8 @@
     /* Gradiente: Escuro transparente no topo, Azul no fundo para mesclar com o site */
     background: linear-gradient(
             to bottom,
-            transparent 0%,
-            var(--cor-index) 100%
+            transparent 00%,
+            var(--fundo) 70%
     );
 }
 
@@ -63,7 +63,7 @@
 
 .subtitle {
     font-size: clamp(1.2rem, 2vw, 1.5rem);
-    color: #e0e0e0;
+    color: var(--cor-primaria);
     margin: 0 0 1rem 0;
     font-weight: 400;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
@@ -71,7 +71,7 @@
 
 .ctaButton {
     /* Usando a cor azul da sua navbar */
-    background-color: #01569A;
+    background-color: var(--cor-principal);
     color: #ffffff;
     font-size: 1.25rem;
     font-weight: 700;
@@ -79,14 +79,20 @@
     border-radius: 20px;
     text-decoration: none;
     border: 2px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .ctaButton:hover {
-    background-color: #016bbf; /* Azul um pouco mais claro */
-    transform: translateY(-4px) scale(1.02);
-    box-shadow: 0 12px 25px rgba(1, 86, 154, 0.5);
+    background-color: var(--cor-complementar); /* Azul um pouco mais claro */
+    box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31) inset;
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.ctaButton:focus-visible {
+     /* Azul um pouco mais claro */
+    transform: translateY(2px);
+    box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31) inset;
     border-color: rgba(255, 255, 255, 0.3);
 }
 

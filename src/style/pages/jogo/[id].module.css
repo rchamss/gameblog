@@ -27,19 +27,16 @@
     transition: color 0.3s ease;
 }
 
-.hero{
-    position: absolute;
-    top: 20px;
-    width: 100%; 
-    z-index: 0;
-    mask-image: linear-gradient(to bottom, black 30%, transparent);
+.hero {
+    width: 100%;
+    display: block;
+    mask-image: linear-gradient(to bottom, black 90%, transparent);
     -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent);
-    opacity: 40%;
+    opacity: 90%;
 
-    animation:
-            entrar 0.5s ease;
+    /* Executa a animação de entrada sem conflitar com o scroll */
+    animation: entrar 0.5s ease forwards;
 }
-
 .container_pg{
     display: flex;
     align-items: center;
@@ -80,4 +77,17 @@
 @keyframes entrar {
     from {opacity: 0%; transform: translateY(-20px);}
     to {opacity: 40%; transform: translateY(0px);}
+}
+
+.heroWrapper {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    z-index: 0;
+    /* Aplica o deslocamento vertical dinâmico vindo do JS */
+    transform: translateY(var(--parallax-offset, 0px));
+    /* Otimiza a renderização na GPU para o scroll ficar liso */
+    will-change: transform;
+    /* Impede que cliques fantasmas travem na imagem de fundo */
+    pointer-events: none;
 }

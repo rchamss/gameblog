@@ -1,12 +1,18 @@
 .container_gametrailer{
     overflow: hidden;
-    border-radius: 20px;
+    border-radius: 15px;
     width: 1000px;
     height: 562px;
-    margin: 30 0px;
 
-    animation: 
+    animation:
         entrar 1s ease;
+}
+
+.container{
+    backdrop-filter: blur(40px);
+    border: 2px solid var(--cor-primaria-jogo);
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .gametrailer{

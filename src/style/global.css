@@ -1,10 +1,11 @@
 :root {
   --fonte-principal: 'Google Sans';
   --cor-primaria: #ffffff;
+  --cor-primaria-jogo: rgba(255, 255, 255, 0.49);
   --fundo: #0e0e0e;
   --fundo-gradiente: #2D2D2D;
   --cor-principal: #01569A;
-  --cor-complementar: #008CFF;
+  --cor-complementar: #068fff;
   --cor-index: #0e0e0e;
   --cor-secundaria: #008704;
   --cor-secundaria-selecionado: #006e04;
@@ -13,9 +14,10 @@
 
 /* Light mode sobrescreve as variáveis */
 [data-theme="light"] {
-  --cor-primaria: #01569A;
+  --cor-primaria: #01355f;
+  --cor-principal: #01355f;
+  --cor-primaria-jogo: rgba(1, 86, 154, 0.5);
   --fundo: #dddddd;
-  --cor-index: rgb(182, 214, 241);
 }
 
 * {
@@ -37,7 +39,7 @@ a {
   color: inherit;
 }
 main {
-    padding-top: 100px;
+    padding-top: 120px;
 }
 
 @media (max-width: 768px){
