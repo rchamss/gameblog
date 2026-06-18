@@ -1,83 +1,94 @@
-.priceBG{
+.priceBG {
     display: flex;
     align-items: center;
     border-radius: 10px;
     height: 60px;
     width: 370px;
 }
-.priceBG div{
+
+.priceBG div {
     display: flex;
     align-items: center;
     height: inherit;    
 }
-.priceBG h2{
+
+.priceBG h2 {
     margin-left: 10px;
     color: var(--cor-primaria);
-    font-size: 30; 
+    font-size: 30px;
 }
-.butao{
+
+.butao {
     border: 2px solid var(--cor-secundaria-complementar);
     position: relative;
     outline: transparent;
     background-color: var(--cor-secundaria);
     border-radius: 10px;
     height: inherit;
-
     display: flex;
     align-items: center;
-
     color: white;
     font-weight: 600;
-    font-size: 16;
-    
+    font-size: 16px;
     padding: 20px;
     box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31);
     transition: background-color 0.1s ease, box-shadow 0.1s ease, transform 0.1s ease;
     cursor: pointer;
 }
-.butao:active{
+
+.butao:active {
     background-color: var(--cor-secundaria-selecionado);
     transform: scale(0.95);
     box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31) inset;
 }
-.butao:focus-visible{
+
+.butao:focus-visible {
     outline: 2px solid var(--cor-primaria-darkmode);
     outline-offset: 3px;
 }
-.carrinho{
+
+.carrinho {
     height: 35px;
     width: 35px;
 }
 
 @media (max-width: 768px) {
-.priceBG {
-    width: 100%;
-    min-width: 0;
-    margin-top: 10px;
-    box-sizing: border-box;
-    padding: 0 10px;
-    justify-content: flex-start;
-    gap: 8px;
-}
+    .priceBG {
+        width: 100%;
+        max-width: 90vw;
+        height: 55px;
+        justify-content: space-between;
+        box-sizing: border-box;
+        padding: 0 10px;
+        overflow: hidden;
+        margin: 15px auto;
+        gap: 10px;
+    }
 
-.priceBG h2{
-    font-size: clamp(14px, 4vw, 18px);
+    .priceBG h2 {
+    font-size: clamp(16px, 5vw, 22px);
     color: var(--cor-primaria);
     margin-right: 0;
     flex-shrink: 0;
-    white-space: nowrap;
-}
-.butao{
-    height: 36px;
-    font-size: 14px;
-    padding: 0 8px;
-    flex-shrink: 1;
-    min-width: 0;
-}
-.carrinho{
-    height: 20px;
-     width: 20px;
-     flex-shrink: 0;
-}
+    white-space: nowrap; 
+    }
 
+    .priceBG div {
+        gap: 8px;
+    }
+
+    .butao {
+        height: 36px;
+        font-size: 14px;
+        padding: 0 8px;
+        flex-shrink: 1;
+        min-width: 0;
+        border-radius: 10px;
+    }
+
+    .carrinho {
+        height: 20px;
+        width: 20px;
+        flex-shrink: 0;
+    }
 }

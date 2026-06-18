@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 1000px; /* Alinhado com a largura do seu conteúdo principal */
+    max-width: 1000px; 
 }
 
 .title {
@@ -20,12 +20,12 @@
     justify-content: center;
     gap: 25px;
     width: 100%;
-    flex-wrap: wrap; /* Permite quebrar linha se a tela for pequena */
+    flex-wrap: wrap; 
 }
 
 .card {
     display: block;
-    width: 160px; /* Largura base da capa */
+    width: 160px; 
     border-radius: 12px;
     overflow: hidden;
     text-decoration: none;
@@ -37,7 +37,7 @@
 .capa {
     width: 100%;
     height: auto;
-    aspect-ratio: 2 / 3; /* Força a proporção clássica de capas de DVD/Jogos */
+    aspect-ratio: 2 / 3; 
     object-fit: cover;
     display: block;
 }
@@ -49,20 +49,27 @@
 }
 
 @media (max-width: 768px) {
-    .grid {
-        justify-content: flex-start;
-        flex-wrap: nowrap; /* Força scroll horizontal no celular */
-        overflow-x: auto;
-        padding: 0 20px 20px 20px;
-        gap: 15px;
-        -webkit-overflow-scrolling: touch; /* Scroll suave no iOS */
+    .container {
+        width: 100%;
+        max-width: 90vw;
+        margin: 0 auto;
     }
 
-    .grid::-webkit-scrollbar {
-        display: none;
+    .title {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+
+    .grid {
+        justify-content: center; 
+        flex-wrap: wrap;         
+        gap: 20px;               
+        padding: 0 10px;
+        overflow-x: visible;     
     }
 
     .card {
-        min-width: 130px;
+        width: 140px;            
+        min-width: 0;           
     }
 }

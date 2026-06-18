@@ -1,26 +1,37 @@
-.jogoNome{
+.jogoNome {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     padding: 10px;
-
     margin-bottom: 5px;
-    animation: 
-        entrar 0.5s ease;
+    animation: entrar 0.5s ease;
 }
 
-.jogoNome h1{
+.jogoNome h1 {
     text-align: center;
-    font-size: 38;
+    font-size: 38px; 
+    margin-bottom: 10px;
 }
-.jogoNome p{
+
+.jogoNome p {
     margin-top: 0px;
-    font-size: 20;
+    font-size: 20px; 
     text-align: center;
 }
 
 @keyframes entrar {
     from {opacity: 0%; transform: translateY(-20px);}
     to {opacity: 100%; transform: translateY(0px);}
+}
+
+@media (max-width: 768px) {
+    .jogoNome h1 {
+        font-size: 28px; 
+        padding: 0 15px; 
+    }
+
+    .jogoNome p {
+        font-size: 16px; 
+    }
 }

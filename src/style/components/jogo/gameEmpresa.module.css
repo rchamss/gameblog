@@ -11,10 +11,9 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 600px; /* Limita a largura para não esticar na tela inteira do PC */
+    max-width: 600px; 
     padding: 16px 24px;
 
-    /* Gradiente baseado na sua imagem de referência */
     background: linear-gradient(90deg, #18009c 0%, #008cff 100%);
 
     color: #ffffff;
@@ -29,7 +28,7 @@
 .botaoEmpresa:hover {
     transform: translateY(-4px);
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
-    filter: brightness(1.15); /* Deixa as cores mais vivas ao passar o mouse */
+    filter: brightness(1.15); 
 }
 
 .botaoEmpresa:active {
@@ -37,10 +36,16 @@
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.4);
 }
 
-/* 📱 Responsividade para telas menores */
+
 @media (max-width: 768px) {
+    .container {
+        margin-bottom: 40px; 
+        padding: 0;          
+    }
+
     .botaoEmpresa {
-        max-width: 100%; /* No celular, ele ocupa quase toda a largura disponível */
+        width: 90vw;         
+        max-width: 100%; 
         font-size: 1.1rem;
         padding: 14px 20px;
     }

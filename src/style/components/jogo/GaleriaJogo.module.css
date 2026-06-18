@@ -90,3 +90,39 @@
     from { transform: scale(0.85); opacity: 0; }
     to   { transform: scale(1);    opacity: 1; }
 }
+@media (max-width: 768px) {
+    .sessao {
+        width: 100%;
+        max-width: 90vw;
+        margin: 0 auto;         
+        gap: 15px; 
+    }
+
+    .sessao h1 {
+        font-size: 1.5rem;
+        margin-bottom: 5px;
+    }
+
+    .destaque {
+        width: 100%; 
+        margin-top: 10px;
+    }
+
+    .destaque img {
+        border-radius: 12px; 
+    }
+
+    .grid {
+        width: 100%;            
+        flex-direction: column; 
+        gap: 15px;              
+    }
+
+    
+    .grid figure {
+        margin: 0;
+        width: 100%;
+    }.grid figure img {
+        border-radius: 12px;
+    }
+}

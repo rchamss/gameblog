@@ -1,21 +1,19 @@
-.container_gametrailer{
+.container_gametrailer {
     overflow: hidden;
     border-radius: 15px;
     width: 1000px;
     height: 562px;
-
-    animation:
-        entrar 1s ease;
+    animation: entrar 1s ease;
 }
 
-.container{
+.container {
     backdrop-filter: blur(40px);
     border: 2px solid var(--cor-primaria-jogo);
     border-radius: 20px;
     overflow: hidden;
 }
 
-.gametrailer{
+.gametrailer {
     display: block;
     width: 100%;
     height: 100%;
@@ -44,4 +42,25 @@ Jogem duro!
 @keyframes entrar {
     from {opacity: 0%; transform: translateY(-40px);}
     to {opacity: 100%; transform: translateY(0px);}
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+        max-width: 90vw;
+        margin: 20px auto;
+        border-radius: 15px;
+    }
+
+    .container_gametrailer {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        border-radius: 0;
+    }
+
+    .gametrailer {
+        width: 100%;
+        height: 100%;
+    }
 }

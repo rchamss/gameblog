@@ -18,3 +18,17 @@
 :global([data-theme="light"]) .lightIcon{
     display: block;
 }
+
+@media (max-width: 768px) {
+    .botao {
+        padding: 10px;         
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .darkIcon, .lightIcon {
+        width: 24px;           
+        height: 24px;
+    }
+}

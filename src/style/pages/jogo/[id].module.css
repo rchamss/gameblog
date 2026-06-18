@@ -1,18 +1,16 @@
-.container_carregamento{
+.container_carregamento {
     display: flex;
     align-items: center;
     justify-content: center;
-
     height: 100vh;
     background-color: var(--fundo);
 }
 
-.center{
+.center {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 
 .title {
     font-size: 1.4rem;
@@ -33,43 +31,43 @@
     mask-image: linear-gradient(to bottom, black 90%, transparent);
     -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent);
     opacity: 90%;
-
-    /* Executa a animação de entrada sem conflitar com o scroll */
     animation: entrar 0.5s ease forwards;
 }
-.container_pg{
+
+.container_pg {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     position: relative;
     z-index: 1;
+    width: 100%;
+    padding-top: 90px;
+    box-sizing: border-box;
 }
 
-.divisor{
+.divisor {
     background-color: transparent;
     border: transparent;
-    width: 1000px;
+    width: min(1000px, 95vw);
     height: 5px;
     margin: 60px 0;
 }
 
-.notFound{
+.notFound {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     height: 100vh;
+    padding: 20px;
+    text-align: center;
 }
 
-.iconeContainer{
+.iconeContainer {
     background-color: var(--cor-principal);
     border: 3px solid var(--cor-complementar);
     border-radius: 28px;
-}
-
-.iconeContainer{
     height: 10rem;
     width: 10rem;
 }
@@ -84,10 +82,20 @@
     top: 20px;
     width: 100%;
     z-index: 0;
-    /* Aplica o deslocamento vertical dinâmico vindo do JS */
     transform: translateY(var(--parallax-offset, 0px));
-    /* Otimiza a renderização na GPU para o scroll ficar liso */
     will-change: transform;
-    /* Impede que cliques fantasmas travem na imagem de fundo */
     pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .container_pg {
+        padding-top: 90px;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .divisor {
+        width: 90vw;
+        margin: 30px 0;
+    }
 }
