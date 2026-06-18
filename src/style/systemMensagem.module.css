@@ -4,21 +4,28 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 99999;
-  width: calc(100% - 2rem);
-  max-width: 28rem;
-  min-height: auto;
+  
+  width: 90%;
+  max-width: 400px;
+  min-height: 3.5rem;
+  padding: 1.25rem 1.50rem;
+
+  flex-shrink: 0;
+  box-sizing: border-box;
+  
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 1rem;
-  padding: 1rem 1.25rem;
+  padding: 1.25rem 1.5rem;
+  
   background-color: var(--cor-principal);
   border: 3px solid var(--cor-complementar);
-  border-radius: 12px;
+  border-radius: 14px;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
   animation: 
-    entrarMobile 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-    sairMobile 0.4s cubic-bezier(0.16, 1, 0.3, 1) 3.5s forwards;
+    entrarMobile 0.4s ease,
+    sairMobile 0.4s ease 3.5s forwards;
 }
 
 .output div {
@@ -29,17 +36,18 @@
 }
 
 .output div img {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
   flex-shrink: 0;
 }
 
 .output span {
   margin-left: 0.75rem;
-  font-size: 0.875rem;
-  line-height: 1.4;
+  font-size: 1.1rem;
+  line-height: 1.3;
   color: white;
   word-break: break-word;
+  flex: 1;
 }
 
 .output button {
@@ -47,7 +55,7 @@
   background-color: transparent;
   border: transparent;
   outline: transparent;
-  font-size: 1.15rem;
+  font-size: 1.5rem;
   cursor: pointer;
   padding: 0.5rem;
   margin: -0.5rem;
@@ -65,23 +73,41 @@
 @media (min-width: 768px) {
   .output {
     left: auto;
-    right: 2rem;
+    top: 140px;
+    right: 2.5rem;
     transform: none;
-    width: 26rem;
+    width: 32rem;
+    max-width: 32rem;
+    padding: 1.25rem 1.75rem;
+    gap: 1.25rem;
     animation: 
-      entrarDesktop 0.4s cubic-bezier(0.16, 1, 0.3, 1),
-      sairDesktop 0.4s cubic-bezier(0.16, 1, 0.3, 1) 3.5s forwards;
+      entrarDesktop 0.4s ease,
+      sairDesktop 0.4s ease 3.5s forwards;
+  }
+
+  .output div img {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .output span {
+    font-size: 1.05rem;
+    margin-left: 0.75rem;
+  }
+
+  .output button {
+    font-size: 1.35rem;
   }
 }
 
 @keyframes entrarMobile {
-  from { opacity: 0; transform: translate(-50%, -2rem); } /* Vem de fora da tela, de cima para baixo */
+  from { opacity: 0; transform: translate(-50%, -2rem); }
   to   { opacity: 1; transform: translate(-50%, 0); }
 }
 
 @keyframes sairMobile {
   from { opacity: 1; transform: translate(-50%, 0); }
-  to   { opacity: 0; transform: translate(-50%, -2rem); } /* Sobe de volta para fora da tela */
+  to   { opacity: 0; transform: translate(-50%, -2rem); }
 }
 
 @keyframes entrarDesktop {
