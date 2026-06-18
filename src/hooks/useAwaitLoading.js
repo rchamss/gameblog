@@ -4,7 +4,7 @@ export default function useAwaitLoading(dados){ // Recebe uma array de dados e a
     const [pronto, setPronto] = useState(false)
 
     useEffect(() =>{
-        if(dados && dados.length > 0){
+        if(dados && dados.length > 0 || dados){
             const timer = setTimeout(() => setPronto(true), 1000)
             return () => clearTimeout(timer)
         }

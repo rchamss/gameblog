@@ -4,6 +4,9 @@ import carregamentoAnimation from '../../public/assets/carregando.json'
 
 export default function Carregamento(){
     return(
-        <Lottie animationData={carregamentoAnimation} loop={true} className={style.carregamento}/>
+        <div className={style.container}>
+            <Lottie animationData={carregamentoAnimation} loop={true} className={style.carregamento}/>
+        </div>
+
     )
 }

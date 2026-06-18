@@ -1,0 +1,163 @@
+/* Fundo escuro que cobre a tela toda */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.2s ease-out;
+}
+
+/* Janela principal do Popup */
+.modal {
+    background-color: var(--fundo, #1a1a1a);
+    border: 2px solid var(--cor-principal, #01569A);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 550px;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    animation: slideUp 0.3s ease-out;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 25px;
+    background-color: rgba(1, 86, 154, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.titulo {
+    color: var(--cor-primaria, #ffffff);
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.botaoFechar {
+    background: transparent;
+    border: none;
+    color: #a0a0a0;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.botaoFechar:hover { color: #ff4d4d; }
+
+.conteudo {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.subtitulo {
+    color: var(--cor-primaria, #ffffff);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--cor-complementar, #008CFF);
+    padding-left: 10px;
+}
+
+/* Lista de Jogos Simplificada */
+.listaJogos {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    overflow-y: auto;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.itemResumo {
+    display: flex;
+    justify-content: space-between;
+    color: #e0e0e0;
+    font-size: 1rem;
+    border-bottom: 1px dashed rgba(255,255,255,0.1);
+    padding-bottom: 5px;
+}
+
+.itemResumo:last-child { border-bottom: none; }
+.itemResumo strong { color: var(--cor-primaria, #ffffff); }
+
+/* Seletores de Pagamento */
+.opcoesPagamento {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 15px;
+}
+
+.opcaoCard {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    justify-content: center;
+    color: #e0e0e0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 600;
+}
+
+.opcaoCard:hover { border-color: var(--cor-complementar, #008CFF); }
+
+.opcaoCard.selecionado {
+    background-color: var(--cor-complementar);
+    border-color: var(--cor-complementar, #008CFF);
+    color: white;
+}
+
+.radioOculto { display: none; }
+
+/* Rodapé */
+.footer {
+    padding: 20px 25px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.totalInfo span { color: #a0a0a0; font-size: 0.9rem; }
+.totalInfo h2 { color: var(--cor-primaria, #ffffff); margin: 0; font-size: 1.8rem; }
+
+.botaoConfirmar {
+    background-color: var(--cor-secundaria, #008704);
+    border: 2px solid var(--cor-secundaria-complementar, #02a707);
+    color: white;
+    font-weight: bold;
+    padding: 12px 25px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: transform 0.1s, background-color 0.2s;
+}
+
+.botaoConfirmar:not(:disabled):hover { background-color: var(--cor-secundaria-complementar); }
+.botaoConfirmar:not(:disabled):active { transform: translateY(2px); }
+.botaoConfirmar:disabled {
+    background-color: #555;
+    border-color: #444;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }

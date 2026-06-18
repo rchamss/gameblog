@@ -1,10 +1,9 @@
 import { useContext } from "react"
 import { JogoContext } from "../../../pages/jogo/[id]"
 import style from "../../style/components/jogo/gameDescricao.module.css"
-import GameCategoria from "./gameCategoria"
-import GamePrice from "./gamePrice"
 import useBuscarAvaliacoes from "../../hooks/Api/protected/useBuscarAvaliacoes";
 import GameAvaliacoes from "./gameAvaliacoes";
+import GamePrice from "./gamePrice";
 
 
 export default function GameDescricao(){
@@ -18,10 +17,11 @@ export default function GameDescricao(){
                     <h3>Categoria: <strong className={style.categoria}>{jogoPublic.categoria}</strong></h3>
                     <GameAvaliacoes nota={estrelas.media} quantidadeAvaliacoes={estrelas.totalAvaliacoes}/>
                 </section>
-
                 <GamePrice/>
             </div>
-            <img src={jogoComplementaryData.capa} className={style.capa} alter="Capa do Jogo"/>
+            <figure>
+                <img src={jogoComplementaryData.capa} className={style.capa} alter="Capa do Jogo"/>
+            </figure>
         </div>
     )
 }

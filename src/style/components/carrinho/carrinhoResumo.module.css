@@ -1,0 +1,78 @@
+.resumoCard {
+    background-color: var(--cor-principal);
+    border: 2px solid var(--cor-complementar);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.resumoCard h2 {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.divisor {
+    border: none;
+    height: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+    margin: 15px 0;
+}
+
+.linhaResumo {
+    display: flex;
+    justify-content: space-between;
+    color: #e0e0e0;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.linhaTotal {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.botaoFinalizar {
+    width: 100%;
+    background-color: var(--cor-secundaria, #008704);
+    border: 2px solid var(--cor-secundaria-complementar, #02a707);
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.botaoFinalizar:hover {
+    transform: translateY(-3px);
+    background-color: var(--cor-secundaria-complementar, #02a707);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.4);
+}
+
+.botaoFinalizar:active {
+    transform: translateY(0);
+    background-color: var(--cor-secundaria-selecionado, #006e04);
+}
+
+.animacaoEntrada {
+    animation: surgirCard 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    will-change: transform, opacity;
+}
+
+@keyframes surgirCard {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

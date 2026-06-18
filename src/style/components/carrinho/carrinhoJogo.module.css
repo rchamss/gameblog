@@ -1,0 +1,154 @@
+.card_bg {
+    display: flex;
+    background-color: var(--cor-principal);
+    border: 2px solid #008CFF;
+    border-radius: 15px;
+    height: 250px;
+    padding: 20px;
+    margin-bottom: 20px;
+    align-items: center; /* Centraliza os itens verticalmente */
+}
+
+.capa {
+    border-radius: 10px;
+    height: 200px;
+    width: 133px;
+    box-shadow: 0px 5px 10px 0px #0D0D0D;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    cursor: pointer;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.capa:hover {
+    transform: translateY(-4px);
+    filter: brightness(1.1);
+}
+
+/* Container para organizar os textos e o botão */
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 200px; /* Mesma altura da capa */
+    flex: 1;
+}
+
+.textos {
+    text-decoration: none;
+    color: white;
+}
+
+.textos h1 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.textos h2 {
+    font-size: 1.5rem;
+    margin-top: 15px;
+}
+
+.categoria {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+}
+
+/* -------------------------------------- */
+/* BASE DOS BOTÕES (Seu padrão adaptado)  */
+/* -------------------------------------- */
+.botaoPadrao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 6px;
+    outline: transparent;
+    font-weight: 600;
+    color: white;
+    height: 2.5rem; /* Um pouco menor que o submit padrão para caber no card */
+    cursor: pointer;
+    transition: background-color 0.1s ease, box-shadow 0.1s ease, top 0.1s ease;
+    box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31);
+    top: 0px;
+}
+
+.botaoPadrao:active {
+    top: 3px;
+    box-shadow: -1px 1px 1px 0px rgba(0,0,0,0.31) inset;
+}
+
+/* Variação: Remover */
+.botaoRemover {
+    background-color: #961414;
+    border: 2px solid #d62323;
+    padding: 20px;
+}
+.botaoRemover:active { background-color: #b71c1c; }
+
+/* Variação: Confirmar (Verde) */
+.botaoConfirmar {
+    background-color: var(--cor-secundaria);
+    border: 2px solid var(--cor-secundaria-complementar);
+    width: 60px;
+}
+.botaoConfirmar:active { background-color: var(--cor-secundaria-selecionado); }
+
+/* Variação: Cancelar (Cinza) */
+.botaoCancelar {
+    background-color: #555;
+    border: 2px solid #333;
+    width: 60px;
+}
+.botaoCancelar:active { background-color: #333; }
+
+/* -------------------------------------- */
+/* LAYOUT DA CONFIRMAÇÃO                  */
+/* -------------------------------------- */
+.acaoContainer {
+    display: flex;
+    align-items: flex-end;
+}
+
+.confirmacao {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 8px 15px;
+    border-radius: 12px;
+    animation: fadeIn 0.3s ease;
+}
+
+.pergunta {
+    color: white;
+    font-weight: 600;
+}
+
+.botoesConfirmacao {
+    display: flex;
+    gap: 8px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.animacaoEntrada {
+    animation: surgirCardIndividual 0.5s cubic-bezier(0.25, 1, 0.5, 1) both;
+    will-change: transform, opacity;
+}
+
+@keyframes surgirCardIndividual {
+    0% {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -17,7 +17,7 @@
   --cor-primaria: #01355f;
   --cor-principal: #01355f;
   --cor-primaria-jogo: rgba(1, 86, 154, 0.5);
-  --fundo: #dddddd;
+  --fundo: #b1b1b1;
 }
 
 * {
@@ -25,6 +25,11 @@
   padding: 0;
   box-sizing: border-box;
   font-family: var(--fonte-principal);
+}
+*:focus-visible{
+  outline: 2px solid var(--cor-primaria);
+  outline-offset: 5px;
+  border-radius: 20px;
 }
 
 body {
@@ -40,6 +45,11 @@ a {
 }
 main {
     padding-top: 120px;
+}
+
+button:focus-visible{
+    outline: 2px solid var(--cor-primaria);
+    outline-offset: 3px;
 }
 
 @media (max-width: 768px){

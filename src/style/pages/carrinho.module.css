@@ -1,0 +1,107 @@
+/* Layout Principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tituloPagina {
+    font-size: 1.4rem;
+    color: var(--cor-primaria);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-left: 4px solid var(--cor-complementar);
+    padding-left: 0.75rem;
+    transition: color 0.3s ease;
+}
+
+.conteudo {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* 🧱 Estrutura das Colunas */
+.colunaEsquerda {
+    flex: 1; /* Ocupa todo o espaço restante */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.colunaDireita {
+    width: 380px; /* Largura fixa para o resumo lateral */
+    position: sticky;
+    top: 120px; /* Faz a coluna acompanhar o scroll da página */
+}
+
+/* 📱 Responsividade Mobile */
+@media (max-width: 992px) {
+    .conteudo {
+        flex-direction: column;
+    }
+
+    .colunaDireita {
+        width: 100%;
+        position: static; /* Remove o comportamento fixo no celular */
+    }
+}
+
+.textoCarregando {
+    color: #a0a0a0;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 60px 0;
+    font-style: italic;
+}
+
+.carrinhoVazioContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    text-align: center;
+    background-color: var(--fundo);
+    border: 2px solid var(--cor-principal, #01569A);
+    border-radius: 15px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    animation: entrar 0.4s ease;
+}
+
+.carrinhoVazioContainer p {
+    color: #e0e0e0;
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    font-weight: 500;
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+.botaoDescobrir {
+    background-color: var(--cor-secundaria);
+    border: 2px solid var(--cor-secundaria-complementar);
+    color: white;
+    font-size: large;
+    font-weight: 600;
+    outline: transparent;
+    padding: 12px 35px;
+    border-radius: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.1s ease, box-shadow 0.1s ease, transform 0.1s ease;
+    box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31);
+}
+
+.botaoDescobrir:active {
+    background-color: var(--cor-secundaria-selecionado);
+    transform: translateY(3px);
+    box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31) inset;
+}
+
+.botaoDescobrir:focus-visible {
+    outline: 2px solid var(--cor-primaria);
+    outline-offset: 3px;
+}
+

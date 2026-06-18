@@ -20,7 +20,7 @@ export default function Empresa() {
     const lista_empresas = useBuscarEmpresas()
     const dadosProntos = useAwaitLoading(lista_empresas)
 
-    // 🔄 ESTADOS PARA O PARALAXE E IMAGEM DE FUNDO
+    // ESTADOS PARA O PARALAXE E IMAGEM DE FUNDO
     const [offsetY, setOffsetY] = useState(0);
     const [heroImage, setHeroImage] = useState(null);
 
@@ -42,13 +42,12 @@ export default function Empresa() {
                 (jogo) => jogo.empresa_nome?.toLowerCase() === empresa.nome.toLowerCase()
             );
 
-            // 2. Procura as imagens 'hero' correspondentes no jogosData
             const imagensDisponiveis = jogosDaEmpresa.map((jogo) => {
                 const dadosExtra = jogosData.find(
                     (data) => data.nome.toLowerCase() === jogo.nome.toLowerCase()
                 );
-                return dadosExtra?.hero; // Retorna a URL ou undefined
-            }).filter(Boolean); // Remove os nulos/indefinidos caso algum jogo não tenha imagem
+                return dadosExtra?.hero;
+            }).filter(Boolean);
 
             if (imagensDisponiveis.length > 0) {
                 const indiceAleatorio = Math.floor(Math.random() * imagensDisponiveis.length);

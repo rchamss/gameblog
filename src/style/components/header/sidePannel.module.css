@@ -57,3 +57,42 @@
     border: 5px solid white;
     border-radius: 10px;
 }
+
+.carrinhoContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    text-decoration: none;
+    margin-right: 15px; /* Espaçamento entre o carrinho e a barra de busca */
+}
+
+.carrinhoIcon {
+    width: 28px;
+    height: 28px;
+    transition: transform 0.2s ease;
+}
+
+.carrinhoContainer:hover .carrinhoIcon {
+    transform: scale(1.1); /* Dá um leve zoom ao passar o mouse */
+}
+
+.carrinhoBadge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    background-color: var(--cor-secundaria, #008704); /* Cor verde do botão padrão */
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Essa borda cria um efeito de "recorte" combinando com o fundo do seu header */
+    border: 2px solid var(--cor-principal, #01569A);
+    box-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+}
