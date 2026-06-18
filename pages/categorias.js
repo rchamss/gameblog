@@ -43,7 +43,6 @@ export default function Categorias(){
                                     className={styles.animarEntrada}
                                     style={{ '--delay-entrada': delaySeconds }}
                                 >
-                                    {/* LINK FILHO: Livre para executar a animação de Hover sem bloqueios */}
                                     <Link
                                         href={`/categoria/${encodeURIComponent(item.nome)}`}
                                         className={styles.card}
@@ -62,7 +61,6 @@ export default function Categorias(){
 
                 <h2 className={styles.title}>Outras Categorias</h2>
 
-                {/* DIV PAI (Empresas): Entra logo após o último card da lista anterior */}
                 <div
                     className={styles.animarEntrada}
                     style={{ '--delay-entrada': `${listaSegura.length * 0.1}s` }}

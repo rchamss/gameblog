@@ -11,9 +11,7 @@ export default function useBuscarEmpresas(){ //Requisita as Empresas disponiveis
     const router = useRouter()
 
     useEffect(() => {
-
         if (!token) return
-
         async function getAPI() {
             try{
                 const resposta = await fetch(`${apiPath}/empresas`, {

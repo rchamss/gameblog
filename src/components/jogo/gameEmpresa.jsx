@@ -13,7 +13,7 @@ export default function GameEmpresa() {
     return (
         <div className={style.container}>
             <Link
-                href={`/empresas/${encodeURIComponent(jogoPublic.empresa_nome)}`}
+                href={`/empresa/${encodeURIComponent(jogoPublic.empresa_nome)}`}
                 className={style.botaoEmpresa}
             >
                 Mais de {jogoPublic.empresa_nome}
