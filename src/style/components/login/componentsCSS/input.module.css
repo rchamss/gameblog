@@ -57,17 +57,27 @@
     outline-offset: 3px;
 }
 
-@media (max-width: 344px) {
+@media (max-width: 430px) {
+    .label {
+        font-size: 12px;
+        left: 12px;
+    }
+
     .campo {
-        height: 2.8rem;
         font-size: medium;
     }
 }
 
-
-@media (max-width: 360px) { /* Galaxy S8+ */
+@media (max-width: 360px) {
     .campo {
         height: 2.9rem;
+        font-size: medium;
+    }
+}
+
+@media (max-width: 344px) {
+    .campo {
+        height: 2.8rem;
         font-size: medium;
     }
 }
