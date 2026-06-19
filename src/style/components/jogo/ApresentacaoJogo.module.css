@@ -2,11 +2,10 @@
     font-size: 20px;
 }
 @media (max-width: 1366px) {
-    
-    /* ⚠️ Substitua ".container" pelo nome da classe wrapper que 
-       envolve a descrição e a foto da capa juntas nesse arquivo */
+
     .container { 
         width: 800px;     /* Reduz de 1000px para 800px para alinhar com o trailer */
-        margin: 0 auto;   /* Garante que o bloco permaneça perfeitamente centralizado */
+        margin: 0 auto;
     }
 }
+
