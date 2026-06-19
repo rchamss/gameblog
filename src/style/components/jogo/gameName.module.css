@@ -35,3 +35,11 @@
         font-size: 16px; 
     }
 }
+@media (max-width: 1366px) {
+    .container_module {
+        width: 800px;
+        max-width: 90vw;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+}

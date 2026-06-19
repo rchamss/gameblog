@@ -126,3 +126,13 @@
         border-radius: 12px;
     }
 }
+@media (max-width: 1366px) {
+    .destaque {
+        width: 800px; /* Reduz de 1000px para 800px para caber na tela do notebook */
+    }
+
+    .grid {
+        width: 800px; /* Reduz a grade inteira para acompanhar o topo */
+        gap: 20px;    /* Reduz um pouco o espaçamento lateral entre as fotos */
+    }
+}

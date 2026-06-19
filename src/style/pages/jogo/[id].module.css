@@ -90,6 +90,26 @@
     pointer-events: none;
 }
 
+
+.fadeOut {
+    opacity: 0;
+    visibility: hidden;
+}
+
+
+@media (max-width: 1366px) {
+    .container_pg {
+        padding-top: 130px;
+        width: 100%;
+        align-items: center;
+    }
+
+    .divisor {
+        width: min(800px, 95vw); 
+    }
+}
+
+
 @media (max-width: 768px) {
     .container_pg {
         padding-top: 90px;
@@ -101,9 +121,4 @@
         width: 90vw;
         margin: 30px 0;
     }
-}
-
-.fadeOut {
-    opacity: 0;
-    visibility: hidden;
 }

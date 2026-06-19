@@ -64,3 +64,22 @@ Jogem duro!
         height: 100%;
     }
 }
+@media (max-width: 1366px) {
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 800px;         /* Casamento perfeito: mesma largura do vídeo abaixo */
+        margin: 0 auto;       /* Centraliza o card de vidro na tela */
+        padding-top: 2px;    /* Altura extra para o título respirar */
+        padding-bottom: 0px; /* Margem de acabamento na parte de baixo */
+    }
+
+    .container_gametrailer {
+        width: 100%;          /* Faz o vídeo ocupar os mesmos 800px do card pai */
+        max-width: 90vw;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        margin: 0 auto;
+    }
+}
