@@ -1,42 +1,57 @@
-import { useContext, useEffect, useState } from "react"
+import { useContext, useEffect, useState, useCallback } from "react"
 import { MensagemContext } from "../../../../pages/_app"
-import {apiPath} from "../../../../infra/api";
-import {useRequireLogin} from "../../useRequireLogin";
+import { apiPath } from "../../../../infra/api";
+import { useRequireLogin } from "../../useRequireLogin";
 
-export default function useBuscarCarrinhoAtivo(){ //Requisita a avaliação do jogo para a API (Precisa do ID do jogo)
+export default function useBuscarCarrinhoAtivo(){ 
     const [carrinho, setCarrinho] = useState([])
     const { mostrarMensagem } = useContext(MensagemContext)
-    const {token} = useRequireLogin()
+    const { token } = useRequireLogin()
+
+    // 🔄 Isolamos a função de busca e usamos useCallback para ela ser reaproveitada pelo EventListener
+    const getAPI = useCallback(async () => {
+        if (!token) return;
+
+        try {
+            const resposta = await fetch(`${apiPath}/carrinho/ativo`, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+
+            if(!resposta.ok) { 
+                // Corrigido: 'api' ainda não existia aqui para pegar a mensagem
+                throw { status: resposta.status, mensagem: "Falha ao consultar o carrinho." };
+            }
+
+            try {
+                const dados = await resposta.json();
+                setCarrinho(dados);
+            } catch (error) {
+                // Se a API não devolver JSON (carrinho vazio), zeramos a lista
+                setCarrinho([]); 
+            }
+
+        } catch(error) {
+            mostrarMensagem(error.status || 400, error.mensagem || "Erro na conexão");
+        }
+    }, [token, mostrarMensagem]);
 
     useEffect(() => {
+        if (!token) return;
 
-        if (!token) return // Protege o carregamento para não executar a requisição sem o token ou o gameId
+        // 1. Faz a busca normal assim que o componente carrega na tela
+        getAPI();
 
-        async function getAPI() {
-            try{
-                const resposta = await fetch(`${apiPath}/carrinho/ativo`, {
-                    method: 'GET',
-                    headers: {
-                        'Authorization': `Bearer ${token}`
-                    }
-                })
-                if(!resposta.ok)
-                { throw { status: resposta.status, mensagem: api.message }
-                }
-                try{
-                    const api = await resposta.json()
-                    setCarrinho(api)
-                }
-                catch (error) {
-                    mostrarMensagem(400, 'Sem itens no carrinho')
-                }
-            }
-            catch(error) {
-                mostrarMensagem(error.status, error.mensagem)
-            }
+        // 2. Fica "ouvindo" o aviso de que um novo item foi adicionado
+        window.addEventListener('carrinhoAtualizado', getAPI);
 
-        }
-        getAPI()
-    }, [token])
-    return carrinho
+        // 3. Remove o ouvido quando o componente for destruído (evita vazamento de memória)
+        return () => {
+            window.removeEventListener('carrinhoAtualizado', getAPI);
+        };
+    }, [token, getAPI]);
+
+    return carrinho;
 }

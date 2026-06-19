@@ -21,8 +21,6 @@ export default function Perfil(){
                         <h2>{user.nome}</h2>
                     </div>
                     <section className={style.abas}>
-                        <EditarPerfil/>
-                        <Config/>
                         <HistoricoCompras/>
                         <Avaliacoes/>
                     </section>

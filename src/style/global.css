@@ -58,3 +58,12 @@ button:focus-visible{
      padding-bottom: 100px;
     }
 }
+
+html, body {
+    /* 2. Garante que a largura respeite os limites */
+    width: 100%;
+    max-width: 100%;
+    
+    /* 3. A mágica: Reserva o espaço da barra vertical para evitar o "pulo" */
+    scrollbar-gutter: stable; 
+}

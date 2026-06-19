@@ -3,12 +3,14 @@ import style from '../../style/components/carrinho/carrinhoCheckout.module.css';
 import { CarrinhoContext } from '../../../pages/carrinho';
 import useBuscarJogos from '../../hooks/Api/protected/useBuscarJogos';
 import useAddFinalizarCompra from "../../hooks/Api/protected/useAddFinalizarCompra";
+import { useRouter } from 'next/router';
 
 export default function CarrinhoCheckout({ onClose }) {
     const carrinho = useContext(CarrinhoContext);
     const listaJogos = useBuscarJogos();
     const {endCarrinho} = useAddFinalizarCompra()
     const [metodoPagamento, setMetodoPagamento] = useState('');
+    const router = useRouter()
 
     const itens = carrinho?.carrinho?.itens || [];
 
@@ -24,6 +26,7 @@ export default function CarrinhoCheckout({ onClose }) {
         }
         // Aqui entrará o hook futuro de processar a venda na API
         endCarrinho(metodoPagamento);
+        router.push('/biblioteca')
     };
 
     return (

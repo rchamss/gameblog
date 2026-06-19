@@ -8,7 +8,7 @@ import CabecalhoMobile from './cabecalhoMobile'
 export const navBar = [
     {pagina: 'Recomendar Jogo', caminho: '/recomendado'},
     {pagina: 'Categorias', caminho: '/categorias'},
-    {pagina: 'Distribuir', caminho: '/distribuir'},
+    {pagina: 'Sobre Nós', caminho: '/sobre'},
 ]
 
 export default function Cabecalho(){

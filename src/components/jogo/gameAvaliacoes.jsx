@@ -21,8 +21,8 @@ const StarDisplay = ({ index, value, tamanho }) => {
         >
             <defs>
                 <linearGradient id={gradientId} x1="0%" y1="0%" x2="100%" y2="0%">
-                    <stop offset={`${fillPercent}%`} stopColor="#ffffff" stopOpacity="1" />
-                    <stop offset={`${fillPercent}%`} stopColor="#6c757d" stopOpacity="1" />
+                    <stop offset={`${fillPercent}%`} stopColor="var(--cor-primaria)" stopOpacity="1" />
+                    <stop offset={`${fillPercent}%`} stopColor="var(--cor-primaria)" stopOpacity="1" />
                 </linearGradient>
             </defs>
             <path
@@ -50,7 +50,7 @@ export default function GameAvaliacoes({ nota, quantidadeAvaliacoes, tamanho = 2
                 ))}
             </div>
 
-            <div style={{ color: 'var(--cor-primaria, #ffffff)', fontSize: '0.95rem' }}>
+            <div style={{ color: 'var(--cor-primaria)', fontSize: '0.95rem' }}>
                 <strong>{notaSegura.toFixed(1)}</strong>
                 <span style={{ opacity: 0.7, marginLeft: '6px', fontSize: '0.85rem' }}>
                     ({totalAvaliacoes} {totalAvaliacoes === 1 ? 'avaliação' : 'avaliações'})

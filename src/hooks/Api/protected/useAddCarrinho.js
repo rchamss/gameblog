@@ -39,6 +39,7 @@ export default function useAddCarrinho() {
                 throw { status: resposta.status, mensagem: dadosApi.message || 'Erro na requisição' };
             }
             mostrarMensagem(200, dadosApi.message || 'Jogo adicionado ao carrinho!');
+            window.dispatchEvent(new Event('carrinhoAtualizado'));
 
         } catch (error) {
             mostrarMensagem(error.status || 400, error.mensagem || 'Não foi possível processar a compra.');

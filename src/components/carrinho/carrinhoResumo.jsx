@@ -46,7 +46,7 @@ export default function CarrinhoResumo({ abrirModal }) {
 
             <button
                 className={style.botaoFinalizar}
-                onClick={abrirModal} // 👈 Executa a função passada pela página principal
+                onClick={abrirModal}
                 disabled={itens.length === 0}
             >
                 Continuar Compra

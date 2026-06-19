@@ -1,0 +1,247 @@
+/* 🌍 CONTAINER E VARIÁVEIS */
+.container {
+    --card-bg: rgba(26, 30, 42, 0.85);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --text-muted: #94a3b8;
+    --text-main: #e2e8f0;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --shadow-hover: rgba(0, 0, 0, 0.65);
+    
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    padding: 2vh 20px;
+    overflow-x: hidden;
+}
+
+:global([data-theme="light"]) .container {
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --card-border: rgba(0, 0, 0, 0.1);
+    --text-muted: var(--cor-primaria);
+    --text-main: var(--cor-primaria);
+    --shadow-color: rgba(0, 0, 0, 0.15);
+    --shadow-hover: rgba(0, 0, 0, 0.25);
+}
+
+/* 🖼️ HERO BACKGROUND (Estilo Loja) */
+.heroWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Garante que ele tenha altura de tela cheia */
+    z-index: 0;
+    transform: translateY(var(--parallax-offset, 0px));
+    will-change: transform;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.hero {
+    width: 100%;
+    height: 100%; /* Agora ele herda a altura do wrapper (100vh) */
+    object-fit: cover;
+    mask-image: linear-gradient(to bottom, black 60%, transparent);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
+    opacity: 0.15;
+    animation: entrarHero 0.8s ease forwards;
+}
+
+/* 📝 CONTEÚDO PRINCIPAL */
+.conteudoPrincipal {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+}
+.header {
+    text-align: center;
+    margin-bottom: 3vh;
+}
+
+.tituloMain {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    margin: 0;
+    color: white;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+:global([data-theme="light"]) .tituloMain {
+    color: var(--cor-primaria);
+    text-shadow: none;
+}
+
+/* 🎮 GRID DE CARDS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    width: 100%;
+    justify-items: center;
+}
+
+/* 🃏 CARDS MINIMALISTAS (Levantam sem brilhar) */
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    border: 2px solid var(--cor-complementar);
+    padding: 24px 18px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0px 6px 18px var(--shadow-color);
+    
+    transition: translate 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+}
+
+/* 🆙 Efeito de levantar puro, pausando as outras animações */
+.card:hover {
+    translate: translateY(-12px);
+    box-shadow: 0px 16px 32px var(--shadow-hover);
+    z-index: 10;
+    animation-play-state: paused;
+}
+
+/* 📸 RETRATO DOS INTEGRANTES */
+.fotoWrapper {
+    position: relative;
+    width: clamp(85px, 11vh, 115px);
+    height: clamp(85px, 11vh, 115px);
+    border-radius: 50%;
+    margin-bottom: 16px;
+    cursor: pointer;
+    background: var(--cor-principal);
+    border: 3px solid var(--cor-complementar);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.fotoWrapper:hover {
+    transform: scale(1.04);
+}
+
+.foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.fotoClicada {
+    animation: cliqueMagico 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards !important;
+}
+
+/* 📝 TIPOGRAFIA INTEGRAÇÃO */
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nome {
+    font-size: clamp(1.15rem, 2vw, 1.45rem);
+    color: var(--text-main);
+    margin: 0;
+    font-weight: 800;
+}
+
+.tituloCargo {
+    font-size: clamp(0.7rem, 1.5vw, 0.85rem);
+    color: var(--cor-secundaria-complementar);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.descricao {
+    font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+    color: var(--text-muted);
+    line-height: 1.45;
+    margin: 6px 0 0 0;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* 📱 RESPONSIVIDADE EM ÁREA VISÍVEL (Sem rolagem vertical) */
+@media (max-width: 950px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+    .container {
+        padding-top: 8vh;
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    .container {
+        overflow-y: auto; /* Permite rolar apenas em celulares pequenos */
+    }
+}
+
+@media (max-height: 760px) {
+    .card {
+        padding: 16px 12px;
+    }
+    .fotoWrapper {
+        margin-bottom: 8px;
+    }
+    .header {
+        margin-bottom: 2vh;
+    }
+}
+
+/* ✨ COMPORTAMENTO DAS ANIMAÇÕES */
+@keyframes entrarHero {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 0.15; transform: translateY(0px); }
+}
+
+.animacaoEntrada {
+    opacity: 0;
+    animation: surgirSubindo 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.animacaoIdle {
+    /* Combinamos a entrada com a flutuação */
+    animation: surgirSubindo 0.5s forwards, flutuarIdle 4s ease-in-out infinite alternate;
+    animation-delay: 0s, var(--idle-delay);
+    /* O estado inicial é rodando */
+    animation-play-state: running; 
+}
+
+@keyframes surgirSubindo {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes flutuarIdle {
+    from { transform: translateY(0px); }
+    to { transform: translateY(-8px); }
+}
+
+@keyframes cliqueMagico {
+    0% { transform: scale(1) rotateY(0deg); }
+    50% { transform: scale(1.15) rotateY(180deg); }
+    100% { transform: scale(1) rotateY(360deg); }
+}

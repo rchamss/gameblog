@@ -185,17 +185,6 @@ export default function Gerenciar() {
                             {jogoSelecionado && (
                                 <>
                                     <div className={styles.formGroup}>
-                                        <label>Nome:</label>
-                                        <input 
-                                            type="text" 
-                                            className={styles.inputField}
-                                            placeholder={jogoSelecionado.nome}
-                                            value={formJogo.nome}
-                                            onChange={(e) => setFormJogo({ ...formJogo, nome: e.target.value })}
-                                        />
-                                    </div>
-
-                                    <div className={styles.formGroup}>
                                         <label>Ano:</label>
                                         <input 
                                             type="number" 

@@ -24,7 +24,6 @@ export default function useUpdateJogo() {
                     'Authorization': `Bearer ${token}`
                 },
                 body: JSON.stringify({
-                    nome: dadosJogo.nome,
                     ano: dadosJogo.ano,
                     preco: dadosJogo.preco,
                     fkCategoria: dadosJogo.fkCategoria,

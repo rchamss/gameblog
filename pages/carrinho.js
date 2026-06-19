@@ -21,10 +21,11 @@ export default function Carrinho() {
     const carregando = carrinho === undefined;
     const temItens = carrinho?.carrinho?.itens && carrinho.carrinho.itens.length > 0;
 
+
     if (!dadosProntos) return 
 
     return (
-        <CarrinhoContext.Provider value={carrinho}>
+        <CarrinhoContext value={carrinho}>
             <main className={style.container}>
                 <Head>
                     <title>Carrinho de Compras</title>
@@ -58,6 +59,6 @@ export default function Carrinho() {
             {isModalOpen && (
                 <CarrinhoCheckout onClose={() => setIsModalOpen(false)} />
             )}
-        </CarrinhoContext.Provider>
+        </CarrinhoContext>
     );
 }
