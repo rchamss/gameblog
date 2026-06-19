@@ -1,0 +1,95 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--cor-primaria);
+}
+
+.titulo {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.subtitulo {
+    font-size: 1.1rem;
+    color: #94a3b8;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    justify-items: center;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    width: 150px;
+}
+
+.capa {
+    border-radius: 8px;
+    height: 225px;
+    width: 150px;
+    object-fit: cover;
+    box-shadow: 0px 4px 8px 0px #0D0D0D;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.card:hover .capa {
+    transform: translateY(-6px);
+    box-shadow: 0px 12px 20px 0px #0D0D0D;
+    filter: brightness(1.15);
+}
+
+.nomeJogo {
+    margin-top: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--cor-primaria);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.loading {
+    margin-top: 50px;
+    color: var(--cor-primaria);
+}
+
+@media (max-width: 768px) {
+    .grid {
+        gap: 15px;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+    
+    .card {
+        width: 100px;
+    }
+
+    .capa {
+        height: 150px;
+        width: 100px;
+        border-radius: 6px;
+    }
+
+    .nomeJogo {
+        font-size: 0.8rem;
+        margin-top: 6px;
+    }
+}
