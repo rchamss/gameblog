@@ -4,6 +4,7 @@ import Logo from "../src/components/logo"
 import LoginAuthForm from "../src/components/login/loginAuth"
 import LoginRegisterForm from "../src/components/login/loginRegister"
 import LoginCardBG from "../src/components/login/login-bg";
+import Head from "next/head"
 
 export default function Login(){
     const [isNew, setNew] = useState(false)
@@ -29,11 +30,14 @@ export default function Login(){
     }
     return( // Renderiza o plano de fundo
         <div className={style.background}> 
+        <Head>
+            <title>Bem vindo(a)! Faça login para continuar</title>
+        </Head>
             <LoginCardBG>
-                <div className={style.card}>
+                <main className={style.card}>
                     <Logo/>
                     {isNewCheck()}
-                </div>
+                </main>
             </LoginCardBG>
         </div>
     )

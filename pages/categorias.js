@@ -5,6 +5,7 @@ import styles from "../src/style/components/categorias/categorias.module.css"
 import { categoriasData } from "../src/data/complementaryDataCategorias"
 import useAwaitLoading from "../src/hooks/useAwaitLoading"
 import Carregamento from "../src/components/loading"
+import Head from "next/head"
 
 export default function Categorias(){
     const categorias = useBuscarCategorias()
@@ -28,6 +29,9 @@ export default function Categorias(){
     if (dadosProntos) {
         return (
             <main className={styles.container}>
+                <Head>
+                    <title>Categorias</title>
+                </Head>
                 <h2 className={styles.title}>Tipos de Jogos</h2>
 
                 <div className={styles.grid}>
@@ -70,6 +74,18 @@ export default function Categorias(){
                         className={styles.cardOther}
                     >
                         <span className={styles.cardName}>Empresas</span>
+                    </Link>
+                    <Link
+                        href={'/metricas/vendas'}
+                        className={styles.cardOther}
+                    >
+                        <span className={styles.cardName}>Jogos mais vendidos</span>
+                    </Link>
+                    <Link
+                        href={'/metricas/melhores'}
+                        className={styles.cardOther}
+                    >
+                        <span className={styles.cardName}>Melhores Jogos</span>
                     </Link>
                 </div>
 

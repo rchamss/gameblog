@@ -3,21 +3,41 @@
     opacity: 0;
     max-height: 0;
     overflow: hidden;
+    margin-top: 10px; /* Dá um respiro entre o título e as linhas */
 }
 
 .aberto .conteudoAnimado {
     opacity: 1;
     max-height: 500px;
+    overflow-y: auto; /* Permite rolar como um bloco de notas longo */
+    padding-right: 5px; /* Evita que o scroll cole no texto */
+}
+
+.conteudoAnimado article {
+    padding: 15px 10px;
+}
+
+.conteudoAnimado article:last-child {
+    border-bottom: none; 
+}
+
+.conteudoAnimado p {
+    line-height: 1.5;
 }
 
 .background {
     box-shadow: -1px 3px 3px 0px rgba(0,0,0,0.31);
     border: 2px solid #3c6691;
     border-radius: 20px;
-    padding: 15px;
+    padding: 15px 20px;
     transition: background-color 0.3s;
     background-color: white;
     color: #0D3D6B;
+}
+
+.background h1 {
+    cursor: pointer;
+    margin: 0; /* Remove a margem padrão do h1 para a sanfona ficar mais alinhada */
 }
 
 .background:focus-visible {
@@ -29,6 +49,20 @@
     text-align: center;
 }
 
-.campo{
+.campo {
     margin: 20px;
+}
+
+/* Customização da barra de rolagem (opcional, para combinar com o tema) */
+.aberto .conteudoAnimado::-webkit-scrollbar {
+    width: 6px;
+}
+
+.aberto .conteudoAnimado::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.aberto .conteudoAnimado::-webkit-scrollbar-thumb {
+    background-color: #3c6691;
+    border-radius: 10px;
 }

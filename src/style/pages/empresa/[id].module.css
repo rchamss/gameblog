@@ -54,6 +54,16 @@
     min-height: 100vh;
     padding-bottom: 50px;
 }
+.container_pg {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    padding-bottom: 50px;
+}
 
 .container_catalogo {
     display: flex;
@@ -77,14 +87,14 @@
 
 .empresaTitulo {
     font-size: clamp(2.5rem, 4vw, 4rem);
-    color: var(--cor-primaria, #ffffff);
+    color: var(--cor-primaria);
     text-shadow: 0 4px 12px rgba(0,0,0,0.8);
     font-weight: 800;
     margin: 0;
 }
 
 .empresaSubtitulo {
-    color: #e0e0e0;
+    color: var(--cor-complementar);
     font-size: 1.2rem;
     text-shadow: 0 2px 8px rgba(0,0,0,0.6);
     margin: 0;

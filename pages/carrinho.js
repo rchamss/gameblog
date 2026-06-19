@@ -7,6 +7,7 @@ import { useRouter } from "next/router";
 import useAwaitLoading from "../src/hooks/useAwaitLoading";
 import Carregamento from "../src/components/loading";
 import CarrinhoCheckout from "../src/components/carrinho/carrinhoCheckout";
+import Head from 'next/head';
 
 export const CarrinhoContext = createContext();
 
@@ -20,11 +21,14 @@ export default function Carrinho() {
     const carregando = carrinho === undefined;
     const temItens = carrinho?.carrinho?.itens && carrinho.carrinho.itens.length > 0;
 
-    if (!dadosProntos) return <Carregamento/>
+    if (!dadosProntos) return 
 
     return (
         <CarrinhoContext.Provider value={carrinho}>
             <main className={style.container}>
+                <Head>
+                    <title>Carrinho de Compras</title>
+                </Head>
                 <h1 className={`${style.tituloPagina} ${style.animarTitulo}`}>MEU CARRINHO</h1>
 
                 {carregando ? (

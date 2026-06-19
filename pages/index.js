@@ -1,12 +1,19 @@
 import React from "react";
 import Link from "next/link";
 import styles from "../src/style/pages/index.module.css";
+import useBuscarCarrinhos from "../src/hooks/Api/protected/useBuscarCarrinhos";
+import useBuscarJogosMaisVendidos from "../src/hooks/Api/protected/useBuscarJogosMaisVendidos";
 // import usePublicBuscarJogos from "../src/hooks/Api/useBuscarJogos"
 // import useBuscarUsuario from "../src/hooks/Api/protected/useBuscarUsuario";
+import Head from "next/head";
 
 export default function Gameblog() {
+
     return (
         <main className={styles.mainContainer}>
+            <Head>
+                <title>gameblog!</title>
+            </Head>
             <video
                 autoPlay
                 loop

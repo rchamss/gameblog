@@ -8,6 +8,7 @@ import ApresentacaoJogo from "../../src/components/jogo/ApresentacaoJogo";
 import { useRequireLogin } from "../../src/hooks/useRequireLogin";
 import useBuscarJogos from "../../src/hooks/Api/protected/useBuscarJogos";
 import usePublicBuscarJogos from "../../src/hooks/Api/useBuscarJogos";
+import Head from "next/head";
 
 import dynamic from "next/dynamic";
 import { useInView } from "react-intersection-observer";
@@ -22,7 +23,6 @@ export const JogoContext = createContext({})
 function LazySection({ children }) {
     const { ref, inView } = useInView({
         triggerOnce: true, 
-        // 👇 Aumentado para 1500px: Carrega muito antes do usuário chegar perto
         rootMargin: "1500px 0px", 
     });
 
@@ -39,10 +39,11 @@ export default function Jogo() {
 
     const jogosLista = useBuscarJogos()
     const dadosProntos = useAwaitLoading(jogosLista)
+    
     const jogosListaPublic = usePublicBuscarJogos()
+    const categoriasProntos = useAwaitLoading(jogosListaPublic)
 
     const [offsetY, setOffsetY] = useState(0);
-    // 👇 Novos estados para controlar a transição suave do loading
     const [renderizarSite, setRenderizarSite] = useState(false);
     const [ocultarLoading, setOcultarLoading] = useState(false);
 
@@ -54,28 +55,40 @@ export default function Jogo() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    // 👇 Efeito que constrói o DOM em segundo plano antes de tirar a tela de loading
+    // ⏳ Controle do fluxo de Loading
     useEffect(() => {
-        if (paginaPronta && dadosProntos) {
-            setRenderizarSite(true); // 1. Renderiza o HTML por trás do loading
+        // Agora verificamos se TODAS as listas essenciais terminaram de carregar
+        if (paginaPronta && dadosProntos && categoriasProntos) {
+            setRenderizarSite(true); 
             
-            // 2. Dá 600ms para o navegador baixar imagens e processar CSS sem engasgar
             setTimeout(() => {
-                setOcultarLoading(true); // 3. Tira a tela de loading com fade-out
+                setOcultarLoading(true); 
             }, 600);
         }
-    }, [paginaPronta, dadosProntos]);
+    }, [paginaPronta, dadosProntos, categoriasProntos]);
 
-    const jogo = jogosLista.find((item) => item.nome.toLowerCase() === router.query.id?.toLowerCase())
-    const jogoPublic = jogosListaPublic.find((item) => item.nome.toLowerCase() === router.query.id?.toLowerCase())
-    const jogoComplementaryData = jogosData.find((item) => item.nome.toLowerCase() === jogo?.nome.toLowerCase())
+    // 🛡️ PROTEÇÃO CONTRA CRASHES: Extração segura de dados
+    let jogo = null;
+    let jogoPublic = null;
+    let jogoComplementaryData = null;
 
-    // Tela de Erro 404 (Sobe imediatamente se a API carregou e não achou o jogo)
+    // Só tenta ler as propriedades do jogo se os dados já chegaram
+    if (dadosProntos && categoriasProntos && router.query.id) {
+        jogo = jogosLista?.find((item) => item.nome.toLowerCase() === router.query.id.toLowerCase());
+        jogoPublic = jogosListaPublic?.find((item) => item.nome.toLowerCase() === router.query.id.toLowerCase());
+        
+        if (jogo) {
+            // Só faz o toLowerCase se tiver certeza absoluta que 'jogo' existe
+            jogoComplementaryData = jogosData.find((item) => item.nome.toLowerCase() === jogo.nome.toLowerCase());
+        }
+    }
+
+    // ❌ TELA 404 (Renderiza se acabou de carregar tudo, mas não achou o jogo)
     if (renderizarSite && !jogo) {
         return (
             <main className={style.notFound}>
                 <div className={style.iconeContainer}>
-                    <img src="/assets/404.svg" alt="Não encontrado"/>
+                    <img src="/assets/404.svg" alt="Erro 404"/>
                 </div>
                 <h1>Oops!</h1>
                 <p>Não encontramos nada aqui. Tem certeza que veio no lugar certo?</p>
@@ -85,16 +98,19 @@ export default function Jogo() {
 
     return (
         <>
-            {/* 🛑 TELA DE LOADING OVERLAY (Fica por cima até ocultarLoading ser true) */}
+            {/* 🛑 COMPONENTE DE CARREGAMENTO (Fica por cima de tudo) */}
             {!ocultarLoading && (
                 <div className={`${style.container_carregamento} ${renderizarSite ? style.fadeOut : ''}`}>
-                    <Carregamento/>
+                    <Carregamento />
                 </div>
             )}
 
-            {/* 🟢 CONTEÚDO DO SITE (Renderiza silenciosamente atrás do loading) */}
-            {renderizarSite && jogo && (
+            {/* 🟢 CONTEÚDO PRINCIPAL (Renderizado silenciosamente) */}
+            {renderizarSite && jogo && jogoPublic && jogoComplementaryData && (
                 <JogoContext.Provider value={{jogo, jogoComplementaryData, jogoPublic}}>
+                    <Head>
+                        <title>{jogo.nome}</title>
+                    </Head>
                     <div
                         className={style.heroWrapper}
                         style={{ '--parallax-offset': `${offsetY * 0.6}px` }} 

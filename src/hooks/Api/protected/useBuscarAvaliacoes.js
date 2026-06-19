@@ -13,28 +13,23 @@ export default function useBuscarAvaliacoes(gameId){ //Requisita a avaliação d
          if (!token || !gameId) return // Protege o carregamento para não executar a requisição sem o token ou o gameId
 
         async function getAPI() {
-            try{
-                const resposta = await fetch(`${apiPath}/avaliacoes/media/${gameId}`, {
+            const resposta = await fetch(`${apiPath}/avaliacoes/media/${gameId}`, {
                     method: 'GET',
                     headers: {
                     'Authorization': `Bearer ${token}`
                     }
                 })
+
+                if(resposta.status === 204){
+                    return
+                }
+                
                 if(!resposta.ok)
                     {throw { status: resposta.status, mensagem: api.message }
                 }
 
-                try{
-                    const api = await resposta.json()
-                    setStars(api)
-                }
-                catch (error) {
-                    mostrarMensagem(400, 'Este jogo não possui avaliações')
-                }
-                }
-            catch(error) {
-                mostrarMensagem(error.status, error.mensagem)
-            }
+                const api = await resposta.json()
+                setStars(api)
             
         }
         getAPI()

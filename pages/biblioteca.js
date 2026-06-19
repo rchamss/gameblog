@@ -3,7 +3,9 @@ import { useRouter } from "next/router";
 import { useRequireLogin } from "../src/hooks/useRequireLogin";
 import useBuscarMeusJogos from "../src/hooks/Api/protected/useBuscarMeusJogos"; 
 import { jogosData } from "../src/data/complementaryData"; 
-import styles from "../src/style/pages/biblioteca.module.css"; 
+import styles from "../src/style/pages/biblioteca.module.css";
+import Head from 'next/head';
+import Carregamento from "../src/components/loading";
 
 export default function Biblioteca() {
     useRequireLogin();
@@ -27,7 +29,6 @@ export default function Biblioteca() {
                 .map((item) => jogosData.find((j) => j.nome === item.jogo.nome))
                 .filter((data) => data && data.hero);
 
-            // 2. Se encontrou jogos com hero, sorteia um índice aleatório
             if (jogosComHero.length > 0) {
                 const indiceSorteado = Math.floor(Math.random() * jogosComHero.length);
                 setHeroDestaque(jogosComHero[indiceSorteado].hero);
@@ -54,7 +55,11 @@ export default function Biblioteca() {
     };
 
     return (
+        
         <main className={styles.container}>
+            <Head>
+                <title>Minha Biblioteca</title>
+            </Head>
             {/* ⚙️ CONTAINER DO PARALAXE (Agora usa o estado heroDestaque) */}
             {heroDestaque && (
                 <div
@@ -73,9 +78,7 @@ export default function Biblioteca() {
                 </div>
 
                 {carregando ? (
-                    <div className={styles.loading}>
-                        <h2>Carregando sua biblioteca...</h2>
-                    </div>
+                    <Carregamento/>
                 ) : meusJogos.length === 0 ? (
                     <div className={styles.loading}>
                         <h2>Você ainda não possui nenhum jogo adquirido.</h2>
