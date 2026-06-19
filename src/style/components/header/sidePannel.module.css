@@ -4,7 +4,6 @@
     position: absolute;
     color: aliceblue;
     margin-right: 50px;
-
     right: 0rem;
 }
 .alterMode{
@@ -25,6 +24,7 @@
     height: 30px;
 }
 .busca {
+    position: relative;
     display: flex;
     align-items: center;
     background-color: #ffff;
@@ -32,7 +32,6 @@
     margin-right: 20px;
     width: 350px;
     height: 50px;
-
     box-shadow: 1px 3px 5px 1px rgba(0,0,0,0.29);
     -webkit-box-shadow: 1px 3px 5px 1px rgba(0,0,0,0.29);
     -moz-box-shadow: 1px 3px 5px 1px rgba(0,0,0,0.29);
@@ -43,6 +42,7 @@
     border: transparent ;
     margin-left: 10px;
     font-size: large;
+    color: #333333;
 }
 .busca input:focus{
     outline: none;
@@ -56,6 +56,7 @@
     background-color: #01569A;
     border: 5px solid white;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .carrinhoContainer {
@@ -65,7 +66,7 @@
     justify-content: center;
     cursor: pointer;
     text-decoration: none;
-    margin-right: 15px; /* Espaçamento entre o carrinho e a barra de busca */
+    margin-right: 15px;
 }
 
 .carrinhoIcon {
@@ -75,14 +76,14 @@
 }
 
 .carrinhoContainer:hover .carrinhoIcon {
-    transform: scale(1.1); /* Dá um leve zoom ao passar o mouse */
+    transform: scale(1.1);
 }
 
 .carrinhoBadge {
     position: absolute;
     top: -5px;
     right: -8px;
-    background-color: var(--cor-secundaria, #008704); /* Cor verde do botão padrão */
+    background-color: var(--cor-secundaria, #008704);
     color: #ffffff;
     font-size: 0.75rem;
     font-weight: bold;
@@ -92,7 +93,47 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* Essa borda cria um efeito de "recorte" combinando com o fundo do seu header */
     border: 2px solid var(--cor-principal, #01569A);
     box-shadow: 0px 2px 4px rgba(0,0,0,0.3);
+}
+
+.dropdown {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.dropdownItem {
+    padding: 12px 15px;
+    cursor: pointer;
+    border-bottom: 1px solid #eeeeee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #1a1e2a;
+}
+
+.dropdownItem:last-child {
+    border-bottom: none;
+}
+
+.dropdownItem:hover {
+    background-color: #f0f5ff;
+}
+
+.itemTipo {
+    font-size: 10px;
+    color: #475569;
+    background-color: #cbd5e1;
+    padding: 2px 6px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
 }

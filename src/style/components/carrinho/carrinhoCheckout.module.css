@@ -1,4 +1,4 @@
-/* Fundo escuro que cobre a tela toda */
+/* Fundo escuro que cobre a tela toda (mantido escuro para destacar o modal) */
 .overlay {
     position: fixed;
     top: 0;
@@ -16,8 +16,8 @@
 
 /* Janela principal do Popup */
 .modal {
-    background-color: var(--fundo, #1a1a1a);
-    border: 2px solid var(--cor-principal, #01569A);
+    background-color: var(--fundo);
+    border: 2px solid var(--cor-principal);
     border-radius: 20px;
     width: 90%;
     max-width: 550px;
@@ -27,6 +27,7 @@
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
     overflow: hidden;
     animation: slideUp 0.3s ease-out;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .header {
@@ -35,26 +36,33 @@
     align-items: center;
     padding: 20px 25px;
     background-color: rgba(1, 86, 154, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    /* Borda adaptável ao invés de branco fixo */
+    border-bottom: 1px solid var(--cor-primaria); 
+    transition: border-color 0.3s ease;
 }
 
 .titulo {
-    color: var(--cor-primaria, #ffffff);
+    color: var(--cor-primaria);
     margin: 0;
     font-size: 1.5rem;
     font-weight: 800;
+    transition: color 0.3s ease;
 }
 
 .botaoFechar {
     background: transparent;
     border: none;
-    color: #a0a0a0;
+    color: var(--cor-primaria);
+    opacity: 0.5; /* Substitui o cinza #a0a0a0 de forma dinâmica */
     font-size: 1.5rem;
     cursor: pointer;
-    transition: color 0.2s;
+    transition: color 0.2s, opacity 0.2s;
 }
 
-.botaoFechar:hover { color: #ff4d4d; }
+.botaoFechar:hover { 
+    color: #ff4d4d; 
+    opacity: 1;
+}
 
 .conteudo {
     padding: 25px;
@@ -64,16 +72,19 @@
 }
 
 .subtitulo {
-    color: var(--cor-primaria, #ffffff);
+    color: var(--cor-primaria);
     font-size: 1.2rem;
     margin-bottom: 15px;
-    border-left: 4px solid var(--cor-complementar, #008CFF);
+    border-left: 4px solid var(--cor-complementar);
     padding-left: 10px;
+    transition: color 0.3s ease;
 }
 
 /* Lista de Jogos Simplificada */
 .listaJogos {
-    background-color: rgba(0, 0, 0, 0.2);
+    /* Suavizamos o fundo e colocamos uma borda dinâmica */
+    background-color: rgba(0, 0, 0, 0.05); 
+    border: 1px solid var(--cor-primaria);
     border-radius: 10px;
     padding: 15px;
     overflow-y: auto;
@@ -81,19 +92,23 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+    transition: border-color 0.3s ease;
 }
 
 .itemResumo {
     display: flex;
     justify-content: space-between;
-    color: #e0e0e0;
+    color: var(--cor-primaria);
+    opacity: 0.9;
     font-size: 1rem;
-    border-bottom: 1px dashed rgba(255,255,255,0.1);
+    /* Linha tracejada agora usa a cor primária */
+    border-bottom: 1px dashed var(--cor-primaria);
     padding-bottom: 5px;
+    transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 .itemResumo:last-child { border-bottom: none; }
-.itemResumo strong { color: var(--cor-primaria, #ffffff); }
+.itemResumo strong { color: var(--cor-primaria); opacity: 1; font-weight: 800; }
 
 /* Seletores de Pagamento */
 .opcoesPagamento {
@@ -103,24 +118,30 @@
 }
 
 .opcaoCard {
-    background-color: rgba(0, 0, 0, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.1);
+    background-color: transparent;
+    border: 2px solid var(--cor-primaria);
     border-radius: 10px;
     padding: 15px;
     text-align: center;
     justify-content: center;
-    color: #e0e0e0;
+    color: var(--cor-primaria);
+    opacity: 0.6; /* Deixa apagado quando não selecionado */
     cursor: pointer;
     transition: all 0.2s ease;
     font-weight: 600;
 }
 
-.opcaoCard:hover { border-color: var(--cor-complementar, #008CFF); }
+.opcaoCard:hover { 
+    border-color: var(--cor-complementar); 
+    color: var(--cor-complementar);
+    opacity: 1;
+}
 
 .opcaoCard.selecionado {
     background-color: var(--cor-complementar);
-    border-color: var(--cor-complementar, #008CFF);
-    color: white;
+    border-color: var(--cor-complementar);
+    color: white; /* Branco sempre contrasta bem com o fundo da cor complementar */
+    opacity: 1;
 }
 
 .radioOculto { display: none; }
@@ -128,19 +149,31 @@
 /* Rodapé */
 .footer {
     padding: 20px 25px;
-    background-color: rgba(0, 0, 0, 0.3);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.05);
+    border-top: 1px solid var(--cor-primaria);
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: border-color 0.3s ease;
 }
 
-.totalInfo span { color: #a0a0a0; font-size: 0.9rem; }
-.totalInfo h2 { color: var(--cor-primaria, #ffffff); margin: 0; font-size: 1.8rem; }
+.totalInfo span { 
+    color: var(--cor-primaria); 
+    opacity: 0.7; 
+    font-size: 0.9rem; 
+    transition: color 0.3s ease;
+}
+
+.totalInfo h2 { 
+    color: var(--cor-primaria); 
+    margin: 0; 
+    font-size: 1.8rem; 
+    transition: color 0.3s ease;
+}
 
 .botaoConfirmar {
-    background-color: var(--cor-secundaria, #008704);
-    border: 2px solid var(--cor-secundaria-complementar, #02a707);
+    background-color: var(--cor-secundaria);
+    border: 2px solid var(--cor-secundaria-complementar);
     color: white;
     font-weight: bold;
     padding: 12px 25px;

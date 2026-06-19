@@ -20,8 +20,8 @@ export default function PerfilUsuario() {
                 <div className={style.dropdown}>
                     <Link href={'/perfil'}>Perfil</Link>
                     {isAutenticado ? <Link href={'/empresas'}>Empresas</Link> : null}
-                    <Link href={'/'}>Biblioteca</Link>
-                    <Link href={'/'}>Configurações</Link>
+                    <Link href={'/biblioteca'} >Biblioteca</Link>
+                    {isAutenticado ? <Link href={'/gerenciar'}>Gerenciar</Link> : null}
                 </div>
             </div>
         )

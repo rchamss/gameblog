@@ -1,0 +1,148 @@
+/* src/style/pages/gerenciar.module.css */
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  text-align: center;
+  /* A cor do texto principal adapta-se à variável do global.css */
+  color: var(--cor-primaria);
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.botoesContainer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btnAction {
+  background-color: var(--cor-principal);
+  color: #ffffff;
+  border: none;
+  /* Aumentado o padding e o tamanho da fonte para o botão ficar maior */
+  padding: 20px 40px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btnAction:hover {
+  background-color: var(--cor-complementar);
+  transform: translateY(-2px);
+}
+
+/* MODAL (POP-UP) */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.modalContent {
+  /* Usa o fundo dinâmico do tema para a caixa do modal */
+  background-color: var(--fundo);
+  padding: 40px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.modalContent h2 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 8px;
+}
+
+.formGroup label {
+  font-weight: 600;
+  font-size: 16px; /* Ajustado para acompanhar os botões maiores */
+}
+
+.inputField, .selectField {
+  width: 100%;
+  padding: 14px; /* Aumentado ligeiramente para harmonizar com os botões */
+  border-radius: 8px;
+  border: 2px solid var(--cor-principal);
+  background-color: transparent; 
+  color: var(--cor-primaria);
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.inputField:focus, .selectField:focus {
+  border-color: var(--cor-complementar);
+}
+
+.selectField option {
+  background-color: var(--fundo);
+  color: var(--cor-primaria);
+}
+
+.inputField::placeholder {
+  color: var(--cor-primaria);
+  opacity: 0.5;
+}
+
+/* BOTÕES DO FORMULÁRIO */
+.btnSave {
+  background-color: var(--cor-secundaria);
+  color: #ffffff;
+  border: none;
+  /* Aumentado o padding e o tamanho da fonte */
+  padding: 18px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.btnSave:hover {
+  background-color: var(--cor-secundaria-selecionado);
+}
+
+.btnCancel {
+  background-color: transparent;
+  color: var(--cor-primaria);
+  border: 2px solid var(--cor-primaria);
+  /* Aumentado o padding e o tamanho da fonte */
+  padding: 16px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btnCancel:hover {
+  background-color: var(--cor-primaria);
+  color: var(--fundo);
+}
