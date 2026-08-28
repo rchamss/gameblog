@@ -22,17 +22,17 @@ export default function useDashboard() {
             };
 
             const jogosReq = await fetch(
-                "https://gameblog-api-production-817a.up.railway.app/api/v1/jogos",
+                `${apiPath}/v1/jogos`,
                 { headers }
             );
 
             const categoriasReq = await fetch(
-                "https://gameblog-api-production-817a.up.railway.app/api/v1/categorias",
+                `${apiPath}/categorias`,
                 { headers }
             );
 
             const empresasReq = await fetch(
-                "https://gameblog-api-production-817a.up.railway.app/api/v1/empresas",
+                `${apiPath}/empresas`,
                 { headers }
             );
 

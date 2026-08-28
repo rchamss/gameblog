@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import style from '../../style/components/header/sidePannel.module.css';
 import PerfilUsuario from "./PerfilUsuario";
 import useBuscarCarrinhoAtivo from "../../hooks/Api/protected/useBuscarCarrinhoAtivo";
+import { apiPath } from '../../../infra/api';
 
 export default function SidePannel() {
     const [theme, setTheme] = useState('dark');
@@ -27,14 +28,14 @@ export default function SidePannel() {
 
     const buscarDadosParaPesquisa = async () => {
         try {
-            const resJogos = await fetch('https://gameblog-api-production-817a.up.railway.app/api/v1/public/jogos');
+            const resJogos = await fetch(`${apiPath}/public/jogos`);
             const jogos = resJogos.ok ? await resJogos.json() : [];
 
             const token = localStorage.getItem('token');
             let empresas = [];
             
             if (token) {
-                const resEmpresas = await fetch('https://gameblog-api-production-817a.up.railway.app/api/v1/empresas', {
+                const resEmpresas = await fetch(`${apiPath}/empresas`, {
                     headers: { 'Authorization': `Bearer ${token}` }
                 });
                 
