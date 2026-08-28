@@ -1,1 +1,1 @@
-export const apiPath = "https://gameblog-api.onrender.com/api/v1/"
+export const apiPath = "https://gameblog-api.onrender.com/api/v1"
